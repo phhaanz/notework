@@ -1,5 +1,34 @@
 @charset "UTF-8";
 
-h1{
-	display:block;
+.header
+{
+	background: #000;
 }
+
+	.main-menu
+	{
+		width: 100%;
+		height: 70px;
+	}
+	
+		.main-menu ul
+		{
+			width: inherit;
+			height: inherit;
+			display: flex;
+			justify-content: space-around;
+		}
+	
+			.main-menu li
+			{
+				width: 20%;
+			}
+		
+				.main-menu li a
+				{
+					color: #fff;
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}

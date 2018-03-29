@@ -3,7 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 
-<main>
-	인덱스라공
-	${root}
+<main class="main">
+	<h1 class="hidden">메인</h1>
+	<div class="root-container">
+		<section>
+	
+		
+	
+		</section>
+	</div>
 </main>

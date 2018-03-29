@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+body
+{
+	margin: 0px;
+}
+
+ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+li
+{
+	list-style-type: none;
+}
+
+a
+{
+	text-decoration: none;
+	color: #000;
+}
+
+h1
+{
+	margin: 0px;
+	padding: 0px;
+}

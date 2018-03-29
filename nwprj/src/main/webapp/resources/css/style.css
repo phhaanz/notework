@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
-h1{
-	display:block;
+.main
+{
+	background: #fff;
+	width: 100%;
+	min-height: 490px;
+}
+
+	.root-container
+	{
+		padding: 5px;
+		
+	}
+
+
+
+
+
+.hidden
+{
+	display: none;
 }
