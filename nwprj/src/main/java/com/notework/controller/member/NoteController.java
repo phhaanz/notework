@@ -34,7 +34,7 @@ public class NoteController {
 		List<Note> notes = service.getNoteList(page);
 		model.addAttribute("notes", notes);
 
-		return "member/note/list";
+		return "member.note.list";
 	}
 	
 	@RequestMapping("{id}")
@@ -43,21 +43,21 @@ public class NoteController {
 		Note note = service.getNote(id);
 		model.addAttribute("note", note);
 		
-		return "member/note/detail";
+		return "member.note.detail";
 	}
 	
 	@RequestMapping("edit")
 	public String edit(Note note)
 	{
 		
-		return "member/note/edit";
+		return "member.note.edit";
 	}
 	
 	@RequestMapping(value="reg", method=RequestMethod.GET)
 	public String reg()
 	{
 		
-		return "member/note/reg";
+		return "member.note.reg";
 	}
 
 	@RequestMapping(value="reg", method=RequestMethod.POST)

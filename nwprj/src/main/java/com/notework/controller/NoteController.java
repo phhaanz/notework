@@ -25,7 +25,7 @@ public class NoteController {
 		List<Note> notes = service.getNoteList(page);
 		model.addAttribute("notes", notes);
 
-		return "note/list";
+		return "note.list";
 	}
 	
 	@RequestMapping("{id}")
@@ -34,7 +34,7 @@ public class NoteController {
 		Note note = service.getNote(id);
 		model.addAttribute("note", note);
 		
-		return "note/detail";
+		return "note.detail";
 	}
 
 }
