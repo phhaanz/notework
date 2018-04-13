@@ -1,4 +1,4 @@
-package com.notework;
+package com.notework.nw;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

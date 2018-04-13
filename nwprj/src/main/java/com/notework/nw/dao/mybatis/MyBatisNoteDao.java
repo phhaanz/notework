@@ -1,12 +1,12 @@
-package com.notework.dao.mybatis;
+package com.notework.nw.dao.mybatis;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.notework.dao.NoteDao;
-import com.notework.entity.Note;
+import com.notework.nw.dao.NoteDao;
+import com.notework.nw.prjentity.Note;
 
 public class MyBatisNoteDao implements NoteDao 
 {

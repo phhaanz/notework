@@ -1,4 +1,4 @@
-package com.notework.controller.member;
+package com.notework.nw.controller.member;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.notework.entity.Note;
-import com.notework.service.member.NoteService;
+import com.notework.nw.prjentity.Note;
+import com.notework.nw.service.member.NoteService;
 
 @Controller("MemberNoteController")
 @RequestMapping("/member/note/")

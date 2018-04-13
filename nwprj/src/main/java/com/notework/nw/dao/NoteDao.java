@@ -1,8 +1,8 @@
-package com.notework.dao;
+package com.notework.nw.dao;
 
 import java.util.List;
 
-import com.notework.entity.Note;
+import com.notework.nw.prjentity.Note;
 
 public interface NoteDao {
 

@@ -1,4 +1,4 @@
-package com.notework.controller;
+package com.notework.nw.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.notework.entity.Note;
-import com.notework.service.NoteService;
+import com.notework.nw.prjentity.Note;
+import com.notework.nw.service.NoteService;
 
 @Controller
 @RequestMapping("/note/")

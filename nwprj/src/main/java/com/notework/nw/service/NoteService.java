@@ -1,11 +1,11 @@
-package com.notework.service.member;
+package com.notework.nw.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.notework.dao.NoteDao;
-import com.notework.entity.Note;
+import com.notework.nw.dao.NoteDao;
+import com.notework.nw.prjentity.Note;
 
 public class NoteService 
 {
@@ -24,12 +24,5 @@ public class NoteService
 		Note note = noteDao.get(id);
 		
 		return note;
-	}
-
-	public int insertNote(Note note) {
-		
-		int result = noteDao.insert(note);
-	
-		return result;
 	}
 }

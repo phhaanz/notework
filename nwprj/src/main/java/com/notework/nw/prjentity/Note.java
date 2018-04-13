@@ -1,4 +1,4 @@
-package com.notework.entity;
+package com.notework.nw.prjentity;
 
 import java.util.Date;
 

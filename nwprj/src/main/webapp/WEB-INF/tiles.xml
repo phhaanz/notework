@@ -4,22 +4,27 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-	<definition name="member.*.*" template="/WEB-INF/views/inc/layout.jsp">    
+	<definition name="Template*" template="/WEB-INF/views/inc/layout.jsp">    
+		<put-attribute name="aside" value="/WEB-INF/views/inc/aside.jsp" />
 		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
-		<put-attribute name="main" value="/WEB-INF/views/member/{1}/{2}.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
-	</definition>
-	
-	<definition name="note.*" template="/WEB-INF/views/inc/layout.jsp">    
-		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
-		<put-attribute name="main" value="/WEB-INF/views/note/{1}.jsp" />
+		<put-attribute name="header" value="/WEB-INF/views/inc/aside.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
 	</definition>
 
-	<definition name="index" template="/WEB-INF/views/inc/layout.jsp">    
-		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+	<definition name="member.*"  extends="Template">    
+		<put-attribute name="main" value="/WEB-INF/views/member/{1}.jsp" />
+	</definition>
+	
+	<definition name="member.*.*" extends="Template">    
+		<put-attribute name="main" value="/WEB-INF/views/member/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="note.*" extends="Template">
+		<put-attribute name="main" value="/WEB-INF/views/note/{1}.jsp" />
+	</definition>
+
+	<definition name="index" extends="Template">    
 		<put-attribute name="main" value="/WEB-INF/views/index.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
 	</definition>
   
 </tiles-definitions>

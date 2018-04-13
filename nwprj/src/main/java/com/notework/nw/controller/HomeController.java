@@ -1,4 +1,4 @@
-package com.notework.controller;
+package com.notework.nw.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
