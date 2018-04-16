@@ -1,9 +1,8 @@
-package com.notework.nw;
+package com.notework.nw.config;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,38 +21,42 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource dataSource;
 	
-	@Bean
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 
 	{
 		http.
 			csrf().disable()
 				.authorizeRequests()
-					.antMatchers("/**", "/resources/**").permitAll()
-					.antMatchers("/user/**").anonymous()
+					.antMatchers("/*", "/user/*", "/resources/**").permitAll()
 					.antMatchers("/member/**").hasRole("AUTHOR")
 					.anyRequest().authenticated()
 					.and()
 				.formLogin()
+					.usernameParameter("id")
+					.passwordParameter("password")
 					.loginPage("/user/login")
-					.loginProcessingUrl("/user/login").
-					defaultSuccessUrl("/member/index")
+					.loginProcessingUrl("/user/login")
+					.defaultSuccessUrl("/member/index")
+					.permitAll()
 					.and()
 				.logout()
 					.logoutUrl("/user/logout")
 					.logoutSuccessUrl("/index")
 					.invalidateHttpSession(true);
+
+				
 	}
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception 
 	{
 		UserBuilder users = User.builder();
-		
-		auth.jdbcAuthentication()
+
+		auth.
+		jdbcAuthentication()
 			.dataSource(dataSource)
-			.usersByUsernameQuery("select id, pwd password, 1 enabled from Member where id=?")
-			.authoritiesByUsernameQuery("select memberId id, roleId authority from MemberRole where memberId=?")
+			.usersByUsernameQuery("select id username, pwd password, 1 enabled from Member where id=?")
+			.authoritiesByUsernameQuery("select memberId username, roleId authority from MemberRole where memberId=?")
 			.passwordEncoder(new BCryptPasswordEncoder());
 	}
 }

@@ -1,6 +1,4 @@
-package com.notework.nw;
-
-import java.io.IOException;
+package com.notework.nw.config;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,14 +11,12 @@ import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
 @ComponentScans(value={
 		@ComponentScan("com.notework.nw.service"),
-		@ComponentScan("com.notework.nw.service.member"),
 		@ComponentScan("com.notework.nw.dao.mybatis")
 })
 @MapperScan(basePackages="com.notework.nw.dao.mybatis.mapper")
@@ -40,7 +36,7 @@ public class NwMybatisConfig {
 	}
 	
 	@Bean
-	public SqlSessionFactoryBean sqlSessionFactory() throws IOException {
+	public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 		sqlSessionFactory.setDataSource(dataSouce());
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
@@ -49,10 +45,10 @@ public class NwMybatisConfig {
 		return sqlSessionFactory;
 	}
 	
-	@Bean
-	public SqlSessionTemplate sqlSession(SqlSessionFactoryBean sqlSessionFactory) throws Exception
+	@Bean(destroyMethod="clearCache")
+	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) throws Exception
 	{
-		SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory.getObject());
+		SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory);
 		
 		return sqlSession;
 	}

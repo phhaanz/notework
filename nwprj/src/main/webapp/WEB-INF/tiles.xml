@@ -10,6 +10,10 @@
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
 	</definition>
 
+	<definition name="user.*"  extends="Template">    
+		<put-attribute name="main" value="/WEB-INF/views/user/{1}.jsp" />
+	</definition>
+
 	<definition name="member.*.*" extends="Template">    
 		<put-attribute name="main" value="/WEB-INF/views/member/{1}/{2}.jsp" />
 	</definition>

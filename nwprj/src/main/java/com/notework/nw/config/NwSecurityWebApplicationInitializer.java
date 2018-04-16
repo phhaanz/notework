@@ -1,4 +1,4 @@
-package com.notework.nw;
+package com.notework.nw.config;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

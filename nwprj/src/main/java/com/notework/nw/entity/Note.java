@@ -2,8 +2,7 @@ package com.notework.nw.entity;
 
 import java.util.Date;
 
-public class Note 
-{
+public class Note {
 	private long id;
 	private String title;
 	private String content;
@@ -14,7 +13,7 @@ public class Note
 	private long chapterId;
 	
 	public Note() {
-		// TODO Auto-generated constructor stub
+
 	}
 	public Note(String title, String content, String writerId) {
 		this.title = title;
