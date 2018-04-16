@@ -1,5 +1,7 @@
 package com.notework.nw;
 
+import java.io.IOException;
+
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -9,7 +11,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -19,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 		@ComponentScan("com.notework.nw.service.member"),
 		@ComponentScan("com.notework.nw.dao.mybatis")
 })
-@MapperScan()
+@MapperScan(basePackages="com.notework.nw.dao.mybatis.mapper")
 public class NwMybatisConfig {
 	
 	@Bean(destroyMethod="close")
@@ -36,26 +40,26 @@ public class NwMybatisConfig {
 	}
 	
 	@Bean
-	public SqlSessionFactoryBean sqlSessionFactory() {
+	public SqlSessionFactoryBean sqlSessionFactory() throws IOException {
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 		sqlSessionFactory.setDataSource(dataSouce());
-		/*sqlSessionFactory.setMapperLocations("classpath:com/notework/nw/dao/mybatis/mapper/*.xml");*/
+		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+		sqlSessionFactory.setMapperLocations(resolver.getResources("classpath:com/notework/nw/dao/mybatis/mapper/*.xml"));
 		
 		return sqlSessionFactory;
 	}
 	
+	@Bean
 	public SqlSessionTemplate sqlSession(SqlSessionFactoryBean sqlSessionFactory) throws Exception
 	{
 		SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory.getObject());
 		
 		return sqlSession;
 	}
-/*	
+	
+	@Bean
 	public DataSourceTransactionManager transactionManager()
 	{
-		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-		transactionManager.set
-	}*/
-	
-
+		return new DataSourceTransactionManager(dataSouce());
+	}
 }

@@ -3,10 +3,12 @@ package com.notework.nw.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.notework.nw.dao.NoteDao;
-import com.notework.nw.prjentity.Note;
+import com.notework.nw.entity.Note;
 
+@Service
 public class NoteService 
 {
 	@Autowired

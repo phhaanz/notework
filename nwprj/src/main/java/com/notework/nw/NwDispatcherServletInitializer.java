@@ -6,6 +6,7 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+	
 	private Filter characterEncodingFilter()
 	{
 		CharacterEncodingFilter ceFilter = new CharacterEncodingFilter();
@@ -17,7 +18,7 @@ public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDisp
 	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return null; 
+		return new Class[] { NwSecurityConfig.class }; 
 		//new Class[] { NwSecurityWebApplicationInitializer.class };
 	}
 
@@ -27,8 +28,7 @@ public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDisp
 				NwServletConfig.class,
 				NwMvcConfig.class,
 				NwMybatisConfig.class,
-				NwTilesConfig.class,
-				NwSecurityConfig.class
+				NwTilesConfig.class
 		};
 	}
 

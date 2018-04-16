@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.notework.nw.prjentity.Note;
+import com.notework.nw.entity.Note;
 import com.notework.nw.service.NoteService;
 
 @Controller

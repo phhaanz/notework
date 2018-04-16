@@ -7,12 +7,12 @@
 		<ul>
 			<li><span>회원 메뉴</span></li>
 			<li>
-				<form action="note/search">
+<!-- 				<form action="note/search">
 					<input id="search" type="text" />
 					<button type="submit" >
 						<span>검색</span>
 					</button>
-				</form>
+				</form> -->
 			</li>
 		</ul>
 	</nav>

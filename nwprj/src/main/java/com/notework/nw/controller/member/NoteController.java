@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.notework.nw.prjentity.Note;
+import com.notework.nw.entity.Note;
 import com.notework.nw.service.member.NoteService;
 
-@Controller("MemberNoteController")
+@Controller("memberNoteController")
 @RequestMapping("/member/note/")
 public class NoteController {
 	

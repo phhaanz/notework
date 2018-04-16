@@ -2,7 +2,7 @@ package com.notework.nw.dao;
 
 import java.util.List;
 
-import com.notework.nw.prjentity.Note;
+import com.notework.nw.entity.Note;
 
 public interface NoteDao {
 

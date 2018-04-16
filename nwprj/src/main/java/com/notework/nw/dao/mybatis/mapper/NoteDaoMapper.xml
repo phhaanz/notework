@@ -2,18 +2,18 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.notework.dao.NoteDao">
+<mapper namespace="com.notework.nw.dao.NoteDao">
 		
-	<select id="getList" resultType="com.notework.entity.Note">
+	<select id="getList" resultType="com.notework.nw.entity.Note">
 		select * from Note
 		limit ${(_parameter-1)*15}, 15
 	</select>
 		
-	<select id="get" resultType="com.notework.entity.Note">
+	<select id="get" resultType="com.notework.nw.entity.Note">
 		select * from Note where id=#{id}
 	</select>
 	
-	<insert id="insert" parameterType="com.notework.entity.Note">
+	<insert id="insert" parameterType="com.notework.nw.entity.Note">
 		insert into Note(title, content, writerId)
 		values(#{title}, #{content}, #{writerId})
 	</insert>
