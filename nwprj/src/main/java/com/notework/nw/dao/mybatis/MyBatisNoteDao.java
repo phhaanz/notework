@@ -10,14 +10,12 @@ import com.notework.nw.dao.NoteDao;
 import com.notework.nw.entity.Note;
 
 @Repository
-public class MyBatisNoteDao implements NoteDao 
-{
+public class MyBatisNoteDao implements NoteDao {
 	@Autowired
 	private SqlSession sqlsession;
 	
 	@Override
-	public List<Note> getList(Integer page)
-	{
+	public List<Note> getList(Integer page) {
 		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
 		List<Note> result = noteDao.getList(page);
 		
@@ -25,8 +23,7 @@ public class MyBatisNoteDao implements NoteDao
 	}
 
 	@Override
-	public Note get(Integer id)
-	{
+	public Note get(Integer id) {
 		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);	
 		Note result = noteDao.get(id);
 		
@@ -35,7 +32,6 @@ public class MyBatisNoteDao implements NoteDao
 
 	@Override
 	public int insert(Note note) {
-		
 		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
 		int result = noteDao.insert(note);
 

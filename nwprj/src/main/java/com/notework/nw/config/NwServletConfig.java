@@ -10,6 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @ComponentScan(basePackages="com.notework.nw.controller")
 public class NwServletConfig {
+	
 	@Bean
 	public InternalResourceViewResolver irViewResolver() {
 		InternalResourceViewResolver irViewResolver = new InternalResourceViewResolver();
@@ -28,4 +29,5 @@ public class NwServletConfig {
 		
 		return multipartResolver;
 	}
+	
 }

@@ -2,9 +2,10 @@
 
 .main
 {
-	background: #fff;
 	width: 100%;
-	min-height: 490px;
+	min-height: 515px;
+	background: #fff;
+	padding-top: 45px;
 }
 
 	.root-container

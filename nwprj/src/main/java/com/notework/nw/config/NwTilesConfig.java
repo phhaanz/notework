@@ -10,8 +10,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 public class NwTilesConfig {
 	
 	@Bean
-	public TilesConfigurer tilesConfig()
-	{
+	public TilesConfigurer tilesConfig() {
 		TilesConfigurer tilesConfig = new TilesConfigurer();
 		tilesConfig.setDefinitions(new String[] { "/WEB-INF/tiles.xml" });
 		tilesConfig.setCheckRefresh(true);

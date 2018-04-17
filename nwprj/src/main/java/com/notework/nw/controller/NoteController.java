@@ -20,8 +20,7 @@ public class NoteController {
 	private NoteService service;
 	
 	@RequestMapping("list")
-	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model)
-	{
+	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model) {
 		List<Note> notes = service.getNoteList(page);
 		model.addAttribute("notes", notes);
 
@@ -29,8 +28,7 @@ public class NoteController {
 	}
 	
 	@RequestMapping("{id}")
-	public String detail(@PathVariable("id")Integer id, Model model)
-	{
+	public String detail(@PathVariable("id")Integer id, Model model) {
 		Note note = service.getNote(id);
 		model.addAttribute("note", note);
 		

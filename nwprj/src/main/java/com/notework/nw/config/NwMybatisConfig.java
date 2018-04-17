@@ -15,11 +15,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+@MapperScan(basePackages="com.notework.nw.dao.mybatis.mapper")
 @ComponentScans(value={
 		@ComponentScan("com.notework.nw.service"),
 		@ComponentScan("com.notework.nw.dao.mybatis")
 })
-@MapperScan(basePackages="com.notework.nw.dao.mybatis.mapper")
 public class NwMybatisConfig {
 	
 	@Bean(destroyMethod="close")
@@ -46,16 +46,16 @@ public class NwMybatisConfig {
 	}
 	
 	@Bean(destroyMethod="clearCache")
-	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) throws Exception
-	{
+	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) throws Exception {
 		SqlSessionTemplate sqlSession = new SqlSessionTemplate(sqlSessionFactory);
 		
 		return sqlSession;
 	}
 	
 	@Bean
-	public DataSourceTransactionManager transactionManager()
-	{
+	public DataSourceTransactionManager transactionManager() {
+		
 		return new DataSourceTransactionManager(dataSouce());
 	}
+	
 }

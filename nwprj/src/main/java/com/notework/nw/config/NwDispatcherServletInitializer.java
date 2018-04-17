@@ -7,8 +7,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 	
-	private Filter characterEncodingFilter()
-	{
+	private Filter characterEncodingFilter()	{
 		CharacterEncodingFilter ceFilter = new CharacterEncodingFilter();
 		ceFilter.setEncoding("UTF-8");
 		ceFilter.setForceEncoding(true);
@@ -19,9 +18,8 @@ public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDisp
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class[] { 	NwMybatisConfig.class, NwSecurityConfig.class }; 
-		//new Class[] { NwSecurityWebApplicationInitializer.class };
 	}
-
+	
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class[] {
@@ -30,12 +28,12 @@ public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDisp
 				NwTilesConfig.class
 		};
 	}
-
+	
 	@Override
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
 	}
-
+	
 	@Override
 	protected Filter[] getServletFilters() {
 		return new Filter[] { characterEncodingFilter() };

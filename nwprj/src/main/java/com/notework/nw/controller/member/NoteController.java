@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,8 +31,7 @@ public class NoteController {
 	private NoteService service;
 	
 	@RequestMapping("list")
-	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model)
-	{
+	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model) {
 		List<Note> notes = service.getNoteList(page);
 		model.addAttribute("notes", notes);
 
@@ -38,8 +39,7 @@ public class NoteController {
 	}
 	
 	@RequestMapping("{id}")
-	public String detail(@PathVariable("id")Integer id, Model model)
-	{
+	public String detail(@PathVariable("id")Integer id, Model model) {
 		Note note = service.getNote(id);
 		model.addAttribute("note", note);
 		
@@ -47,26 +47,23 @@ public class NoteController {
 	}
 	
 	@RequestMapping("edit")
-	public String edit(Note note)
-	{
+	public String edit(Note note) {
 		
 		return "member.note.edit";
 	}
 	
-	@RequestMapping(value="reg", method=RequestMethod.GET)
-	public String reg()
-	{
+	@GetMapping("reg")
+	public String reg() {
 		
 		return "member.note.reg";
 	}
 
-	@RequestMapping(value="reg", method=RequestMethod.POST)
+	@PostMapping("reg")
 	public String reg(Note note, MultipartFile file, HttpServletRequest request)
 	{
 		int result = service.insertNote(note);
 		
-		try 
-		{
+		try {
 			ServletContext ctx = request.getServletContext();
 			String path = ctx.getRealPath("/resources/upload/");
 			String id = "himan";
@@ -91,8 +88,7 @@ public class NoteController {
 			os.close();
 			is.close();
 		} 
-		catch (IOException e) 
-		{
+		catch (IOException e) {
 			//에러페이지 따로 지정해주는게 무조건 좋음
 			e.printStackTrace();
 		}

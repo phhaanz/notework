@@ -15,14 +15,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
+@ComponentScan(basePackages="com.notework.nw.config")
 public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private DataSource dataSource;
 	
 	@Override
-	protected void configure(HttpSecurity http) throws Exception 
-	{
+	protected void configure(HttpSecurity http) throws Exception 	{
 		http.
 			csrf().disable()
 				.authorizeRequests()
@@ -42,19 +42,12 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 					.logoutSuccessUrl("/index")
 					.invalidateHttpSession(true);
 
-				
 	}
 
 	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception 
-	{
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		UserBuilder users = User.builder();
-/*
-		auth.inMemoryAuthentication()
-		.withUser(users.username("phz").password("{noop}12345").roles("ADMIN"))
-		.withUser(users.username("geek").password("{noop}12345").roles("AUTHOR"));*/
-		
-		
+
 		auth
 			.jdbcAuthentication()
 			.dataSource(dataSource)
@@ -62,4 +55,5 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 			.authoritiesByUsernameQuery("select memberId id, roleId authority from MemberRole where memberId=?")
 			.passwordEncoder(new BCryptPasswordEncoder());
 	}
+	
 }

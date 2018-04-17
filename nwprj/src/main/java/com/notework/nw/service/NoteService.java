@@ -9,22 +9,21 @@ import com.notework.nw.dao.NoteDao;
 import com.notework.nw.entity.Note;
 
 @Service
-public class NoteService 
-{
+public class NoteService {
+	
 	@Autowired
 	private NoteDao noteDao;
 	
-	public List<Note> getNoteList(Integer page) 
-	{
+	public List<Note> getNoteList(Integer page) {
 		List<Note> notes = noteDao.getList(page);
 		
 		return notes;
 	}
 	
-	public Note getNote(Integer id) 
-	{
+	public Note getNote(Integer id) {
 		Note note = noteDao.get(id);
 		
 		return note;
 	}
+
 }
