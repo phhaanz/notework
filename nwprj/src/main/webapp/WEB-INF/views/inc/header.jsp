@@ -3,25 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />
 
-<script>
-$(function() {
-	var hamButton = $("#hamburger-button");
-	var asideMenu = $(".aside");
-	
-	hamButton.click(function(e) {
-			asideMenu.addClass("show");
-		e.preventDefault();
-	});
-	
-	asideMenu.click(function(e) {
-		if(e!=null)
-			asideMenu.removeClass("show");
-	});
-	
-	
-});
-</script>
-
 <header class="header">
 	<h1 class="hidden">헤더</h1>
 	<nav class="main-menu">

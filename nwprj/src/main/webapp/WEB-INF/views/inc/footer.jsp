@@ -9,9 +9,8 @@
 			<li><a href="">개인정보이용방침</a></li>
 			<li><a href="">고객센터</a></li>
 		</ul>
-		
-		<div>
-			Copyright © 2018 by NoteWork
-		</div>
 	</nav>
+	<div>
+		Copyright © 2018 by NoteWork
+	</div>
 </footer>
