@@ -26,8 +26,8 @@ public class NwMybatisConfig {
 	public BasicDataSource dataSouce() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://211.238.142.97/newlecture?autoReconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8");
-		dataSource.setUsername("sist");
+		dataSource.setUrl("jdbc:mysql://vaio.notepubs.com/notepubsdb?serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8");
+		dataSource.setUsername("notepubs");
 		dataSource.setPassword("cclass");
 		dataSource.setInitialSize(20);
 		dataSource.setMaxActive(30);

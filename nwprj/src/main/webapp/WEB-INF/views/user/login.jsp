@@ -6,9 +6,9 @@
 		<form method="post">
 			<div>
 				<label>아이디 : </label>
-				<input type="text" name="username" />
+				<input type="text" name="username"placeholder="아이디 입력" />
 				<label>비밀번호 : </label>
-				<input type="password" name="password" />
+				<input type="password" name="password" placeholder="비밀번호 입력" />
 			</div>
 			<div>
 				<input type="submit" value="로그인" />

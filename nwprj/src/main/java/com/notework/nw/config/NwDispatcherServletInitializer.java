@@ -18,7 +18,7 @@ public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDisp
 	
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { NwSecurityConfig.class }; 
+		return new Class[] { 	NwMybatisConfig.class, NwSecurityConfig.class }; 
 		//new Class[] { NwSecurityWebApplicationInitializer.class };
 	}
 
@@ -27,7 +27,6 @@ public class NwDispatcherServletInitializer extends AbstractAnnotationConfigDisp
 		return new Class[] {
 				NwServletConfig.class,
 				NwMvcConfig.class,
-				NwMybatisConfig.class,
 				NwTilesConfig.class
 		};
 	}

@@ -15,7 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan(basePackages="com.notework.nw.config")
 public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -27,13 +26,12 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.
 			csrf().disable()
 				.authorizeRequests()
-					.antMatchers("/*", "/user/*", "/resources/**").permitAll()
+					.antMatchers("/user/**").anonymous()
 					.antMatchers("/member/**").hasRole("AUTHOR")
+					.antMatchers("/*", "/resources/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
 				.formLogin()
-					.usernameParameter("id")
-					.passwordParameter("password")
 					.loginPage("/user/login")
 					.loginProcessingUrl("/user/login")
 					.defaultSuccessUrl("/member/index")
@@ -51,12 +49,17 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception 
 	{
 		UserBuilder users = User.builder();
-
-		auth.
-		jdbcAuthentication()
+/*
+		auth.inMemoryAuthentication()
+		.withUser(users.username("phz").password("{noop}12345").roles("ADMIN"))
+		.withUser(users.username("geek").password("{noop}12345").roles("AUTHOR"));*/
+		
+		
+		auth
+			.jdbcAuthentication()
 			.dataSource(dataSource)
-			.usersByUsernameQuery("select id username, pwd password, 1 enabled from Member where id=?")
-			.authoritiesByUsernameQuery("select memberId username, roleId authority from MemberRole where memberId=?")
+			.usersByUsernameQuery("select id, pwd password, 1 enabled from Member where id=?")
+			.authoritiesByUsernameQuery("select memberId id, roleId authority from MemberRole where memberId=?")
 			.passwordEncoder(new BCryptPasswordEncoder());
 	}
 }
