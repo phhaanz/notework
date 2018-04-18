@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -20,6 +21,9 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private DataSource dataSource;
+	
+	@Autowired
+	private AuthenticationSuccessHandler successHandler;
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception 	{
@@ -34,7 +38,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin()
 					.loginPage("/user/login")
 					.loginProcessingUrl("/user/login")
-					.defaultSuccessUrl("/member/index")
+					.successHandler(successHandler)
 					.permitAll()
 					.and()
 				.logout()

@@ -3,18 +3,18 @@
 .main
 {
 	width: 100%;
-	min-height: 515px;
+	min-height: 465px;
 	background: #fff;
-	padding-top: 45px;
+	padding-top: 75px;
 }
 
 	.root-container
 	{
-		padding: 5px;
-		
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: inherit;
+		min-height: inherit;
 	}
-
-
 
 
 
@@ -22,3 +22,4 @@
 {
 	display: none;
 }
+

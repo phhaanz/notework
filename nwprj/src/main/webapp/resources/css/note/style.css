@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.main
+{
+	width: 100%;
+	min-height: 515px;
+	background: #fff;
+	padding-top: 45px;
+}
+
+	.root-container
+	{
+		padding: 5px;
+		
+	}
+
+
+
+
+
+.hidden
+{
+	display: none;
+}

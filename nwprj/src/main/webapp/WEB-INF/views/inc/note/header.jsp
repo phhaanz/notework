@@ -8,11 +8,8 @@
 	<nav class="main-menu">
 		<h1 class="hidden">헤더 메뉴</h1>	
 		<ul>
-			<li><a id="hamburger-button" href=""><img src="${root}/resources/images/ic_menu_white_24dp.png" alt="메인 메뉴"></a></li>
-			<li><a href="${root}/member/index"><img src="${root}/resources/images/ic_account_box_white_24dp.png" alt="회원 메뉴"></a></li>
+			<li><a id="hamburger-button" href=""><img src="${root}/resources/images/note/ic_menu_black_24dp.png" alt="메인 메뉴"></a></li>
+			<li><a href=""><img src="${root}/resources/images/note/ic_send_black_24dp.png" alt="노트 메뉴"></a></li>
 		</ul>
 	</nav>
-	<div class="current-context">
-			<span>Label-CurrentPage</span>
-	</div>
 </header>

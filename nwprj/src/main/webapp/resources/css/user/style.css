@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.main
+{
+	width: 100%;
+	min-height: 480px;
+	background: #fff;
+}
+
+	.current-context
+	{
+		width: 100%;
+		height: 50px;
+		color: #fff;
+		background-color: red;
+		font-weight: bold;
+		border-bottom: #000;
+	}
+	
+
+
+
+
+
+.hidden
+{
+	display: none;
+}

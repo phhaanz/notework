@@ -5,7 +5,7 @@
 	width: 100%;
 	height: 45px;
 	position: fixed;
-	background: #000;
+	background: #fff;
 }
 
 	.main-menu
@@ -35,22 +35,3 @@
 					width: 40px;
 					height: 40px;
 				}
-	
-	.current-context
-	{
-		width: 100%;
-		height: 30px;
-		display: flex;
-		background-color: #0097A7;
-		border-bottom: 1px #e9e9e9 solid;
-	}
-	
-		.current-context span
-		{
-			align-self: center;
-			padding-left: 10px;
-			font-size: 20px;
-			font-weight: bold;
-			color: #fff;
-		}
-	
