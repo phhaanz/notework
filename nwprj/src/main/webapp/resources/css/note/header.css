@@ -5,7 +5,8 @@
 	width: 100%;
 	height: 45px;
 	position: fixed;
-	background: #fff;
+	background-color: #000;
+	border-bottom: 1px #e9e9e9 solid;
 }
 
 	.main-menu
@@ -21,7 +22,7 @@
 		}
 	
 			.main-menu li,
-			.main-menu a
+			.main-menu span
 			{
 				width:45px;
 				height:45px;
@@ -30,8 +31,27 @@
 				align-items: center;
 			}
 			
-				.main-menu li a img
+				.main-menu li span img
 				{
 					width: 40px;
 					height: 40px;
 				}
+	.current-context
+	{
+		width: 100%;
+		height: 30px;
+		display: flex;
+		background-color: #0097A7;
+		border-bottom: 1px #e9e9e9 solid;
+	}
+	
+		.current-context span
+		{
+			align-self: center;
+			padding-left: 10px;
+			font-size: 20px;
+			font-weight: bold;
+			color: #fff;
+			line-height:30px;
+		}
+	

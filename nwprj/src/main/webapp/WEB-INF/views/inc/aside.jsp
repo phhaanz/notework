@@ -42,7 +42,7 @@ $(function() {
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="${root}/note/list">
 				<img src="${root}/resources/images/ic_content_paste_black_24dp.png">
 				<span>My Notes</span>
 			</a>

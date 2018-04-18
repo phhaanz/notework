@@ -30,7 +30,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.
 			csrf().disable()
 				.authorizeRequests()
-					.antMatchers("/user/**").anonymous()
+					.antMatchers("/user/**", "/note/**").anonymous()
 					.antMatchers("/member/**").hasRole("AUTHOR")
 					.antMatchers("/*", "/resources/**").permitAll()
 					.anyRequest().authenticated()
