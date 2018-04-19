@@ -2,16 +2,30 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <main class="main">
-	<section>
-		<ul>
-			<c:forEach var="note" items="${notes}">
+	<div>
+		<section class="note-list">
+			<h1 class="hidden">노트 목록</h1>
+			<ul>
+				<c:forEach var="note" items="${notes}">	
 				<li>
+					<div class="note-image">
+						<img src>이미지미리보기
+					</div>
+					<div>
+						<span>조회수</span><span>클립수</span><span>댓글수</span>
+					</div>
 					<div><a href="${note.id}">${note.title}</a></div>
-					<div>${note.content}</div>
-					<div>${note.writerId}</div>
-					<div>${note.regDate}</div>
+					<div>
+						<span>분류</span>
+						<span>${note.regDate}</span>
+					</div>
+					<div>
+						<a href="">태그1</a><a href="">태그2</a><a  href="">태그3</a>
+					</div>
 				</li>
-			</c:forEach>
-		</ul>
-	</section>
+				</c:forEach>
+				
+			</ul>
+		</section>
+	</div>
 </main>

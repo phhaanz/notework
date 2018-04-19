@@ -20,3 +20,39 @@
 {
 	display: none;
 }
+
+	.note-list
+	{
+	
+	}
+	
+		.note-list ul
+		{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+			.note-list ul li
+			{
+				border: 1px red solid;
+				display: block;
+				width: 47%;
+				height: 25%;
+				margin: 3px;
+			}
+			
+				.note-list .note-image
+				{
+					display: block;
+					width: 100%;
+					height: 50%;
+					margin-left: 2px;
+					margin-right: 2px;
+				}
+	.note-list div
+	{
+		width: 95%;
+		overflow: hidden;
+		border: 1px blue solid;
+	}
