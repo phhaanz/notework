@@ -45,7 +45,7 @@
 		
 	.aside ul
 	{
-		margin-top: 30px;
+	
 	}
 	
 		.aside ul li a
@@ -73,6 +73,7 @@
 			
 .aside-bg
 {
+	z-index: 99;
 	display: none;
 	position:fixed;
 	width: 100%;

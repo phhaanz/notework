@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>현재화면명 | 소메뉴명 | 대메뉴명 | HELLO</title><!-- // [개발] 웹접근성 지침 참고 -->
+<link rel="stylesheet" type="text/css" href="../../css/common.css" media="all">
+<link rel="stylesheet" type="text/css" href="../../css/content.css" media="all">
+<script src="../../js/jquery-1.11.1.min.js"></script>
+<script src="../../js/jquery.easing.1.3.min.js"></script>
+<script src="../../js/calendar.js"></script>
+<script src="../../js/ui-common.js"></script>
+<script>
+   $(document).ready(function(){
+      $('.suggest-tag dl').addClass('hide');
+      $('.suggest-tag > a').click(function(){
+          $(this).next('.suggest-tag dl').slideDown(300).addClass('active');
+          $(this).next('.suggest-tag dl').removeClass('hide');
+      });
+   });
+
+</script>
+</head>
+<body>
+<div class="overlay"></div>
+<header id="header">
+   _guide.html 참조
+   <script>$('#header').load('../_guide/inc-header.html');</script>
+</header>
+<article id="content">
+   <!-- 본문 영역 -->
+   <div class="content-header">
+      <h2 class="content-title">이유있는 제안</h2>
+      <a href="#" onclick="history.back(); return false;" class="btn-page-back"><span class="ico-24 ico-arr-prev">뒤로가기</span></a>
+   </div>
+   <div class="content-section">
+      <div class="bbs-view-head">
+         <h3 class="title">유튜브로 홈트 쉽게 하는 방법!</h3>
+      </div>
+      <div class="suggest-tag wide ">
+         <a href="#" class="btn-suggest-more">연관태그 더보기</a>
+         <dl class="relation-tag-bbs">
+            <dt><span class="tts">연관태그</span></dt>
+            <dd>
+               <ul class="tag-list">
+                  <li><a href="#">헬로TV모바일</a></li>
+                  <li><a href="#">무료 VOD</a></li>
+                  <li><a href="#">폰으로영화보기</a></li>
+                  <li><a href="#">헬로TV모바일</a></li>
+                  <li><a href="#">무료 VOD</a></li>
+                  <li><a href="#">폰으로영화보기</a></li>
+               </ul>
+            </dd>
+         </dl>
+      </div>
+      
+      <div class="bbs-view-body">
+         <!-- 게시물 본문 영역 -->
+         <!-- 게시판 DB 콘텐츠 영역 -->
+         <div class="suggest-top-visual bg-full-image">
+            <p class="subject">
+               헬로tv에 가입하셨다면, <br> 
+               반드시 활용해야 하는 그것! 
+            </p>      
+            <p class="desc">
+               휴대폰으로 보는 TV, 헬로tv 모바일 APP! <br>
+               실시간 방송과, 무료로 제공되는 다양한 VOD가 있으니<br>
+               이용안하면 손해겠죠?
+            </p>   
+         </div>   
+
+         <span class="suggest-hline"></span>
+         <p class="suggest-text">자, 그럼 APP다운로드 후,<br> TV와 연결하는 방법 먼저 알아볼까요?</p>
+
+         <div class="suggest-app-info">
+            <div class="img">
+               <img src="../../images/open/bg-m-suggest1.jpg" alt="">
+            </div>
+            <h4 class="suggest-title text-left"># 헬로tv모바일 APP</h4>
+            <p class="suggest-text color-darkgray text-left">(Feat. 휴대폰으로 보는 TV)</p>
+            <ul class="list bul-number">
+               <li>매월 최신 VOD  최대 30편 무료제공</li>
+               <li>실시간 방송 무료제공(최대60개채널)</li>
+               <li>4명까지 함께 이용가능</li>
+               <li>원격녹화 기능(UHD RED상품가입)</li>
+            </ul>
+         </div>
+            <h4 class="suggest-title"># 헬로tv모바일 연결하기</h4>
+            <ol class="suggest-menual-list">
+               <li>
+                  <p class="img">
+                     <img src="../../images/open/img-menual-suggestion1-1.jpg" alt="헬로tv앱 다운받기">
+                  </p>
+                  <strong class="subject">1. 헬로tv모바일 APP 다운받기</strong>
+                  <p class="desc">스토어에서 “헬로tv”를 검색하여 APP을 다운받으세요</p>
+               </li>
+               <li>
+                  <ol class="img">
+                     <li><img src="../../images/open/img-menual-suggestion1-2.jpg" alt="tv화면의 안내/설정>스마트폰연결"></li>
+                     <li><img src="../../images/open/img-menual-suggestion1-3.jpg" alt="헬로tv앱 등록하기"></li>
+                  </ol>
+                  <strong class="subject">2. 휴대폰 기기 등록하기</strong>
+                  <p class="desc">리모콘의 “메뉴”  &gt;  TV화면의 “안내/설정”  &gt;  “스마트폰 연결”  &gt;  “헬로tv APP 등록하기” 선택</p>
+               </li>
+               <li>
+                  <ul class="img">
+                     <li><img src="../../images/open/img-menual-suggestion1-4.jpg" alt="tv화면의 안내/설정>스마트폰연결"></li>
+                     <li><img src="../../images/open/img-menual-suggestion1-5.jpg" alt="헬로tv앱 등록하기"></li>
+                  </ul>
+                  <strong class="subject">3. 휴대폰-TV 연동하기</strong>
+                  <ul class="list bul-number">
+                     <li>“헬로tv APP 등록하기” 화면에서 내 휴대폰 번호 입력 (최대 4명까지 가능)</li>
+                     <li>내 휴대폰으로 전송되어 오는 “인증번호” 확인</li>
+                     <li>TV에 인증번호 입력하면 연동 끝! </li>
+                  </ul>
+               </li>
+               <li>
+                  <strong class="subject">4. 연동 확인하기</strong>
+                  <p class="desc">APP 하단에 현재 시청 중인 프로그램이 뜬다면 연결 완료! <br>(혹시 프로그램이 뜨지 않는다면, 앱을 종료하고 재실행해보세요)</p>
+               </li>
+            </ol>
+            <span class="suggest-hline"></span>
+            <p class="suggest-text">
+               자, 연결까지 모두 되셨나요? <br>
+               이제 다양한 콘텐츠를 즐기시면 되는데요,<br>
+               다음 “이용하기”편에서는 다양한 콘텐츠를 이용하는 방법과 <br>
+               RED 가입 고객을 위한  원격 녹화 방법을 <br>
+               더욱 쉽게 설명해드릴게요.</p>
+         
+         <!-- // 게시판 DB 콘텐츠 영역 -->
+         <!-- // 게시물 본문 영역 -->
+      </div>
+      <span class="line mt0 mb5"></span>
+      <h3 class="title2">추천상품</h3>
+      <ul class="product-list">
+         <li>
+            <div class="product-item-info">
+               <p class="badge badge-best">BEST</p>
+               <p class="product-name">
+                  <strong>UHD Red 프리미엄</strong>
+                  <strong>광랜 라이트</strong>
+                  <strong>집전화 정액요금제</strong>
+               </p>
+               <p class="product-label">
+                  <a href="#">217채널</a>
+                  <span>녹화가능</span>
+                  <span>실시간</span>
+                  <span>빠름빠름</span>
+               </p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">월 <strong>16,950</strong>원</p>
+                  <p class="price-info">제휴카드 할인 시, 월 <strong>11,500</strong>원</p>
+               </div>
+               <div class="product-comment"><p><span>UHD Red 프리미엄입니다!</span></p></div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">주문하기</a>
+                  <a href="#" class="btn btn-round btn-sm">상세보기</a>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="product-item-info">
+               <p class="badge badge-recommend">추천</p>
+               <p class="product-name">
+                  <strong>UHD Red 프리미엄</strong>
+               </p>
+               <p class="product-label">
+                  <a href="#">217채널</a>
+                  <span>녹화가능</span>
+                  <span>실시간</span>
+               </p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">월 <strong>16,950</strong>원</p>
+                  <p class="price-info">제휴카드 할인 시, 월 <strong>11,500</strong>원</p>
+               </div>
+               <div class="product-comment"><p><span>영광의 순간, 되돌려서 보고싶으신 분들께 추천드리는 UHD Red 프리미엄입니다!</span></p></div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">주문하기</a>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="product-item-info">
+               <p class="badge badge-best">BEST</p>
+               <p class="product-name">
+                  <strong>UHD Red 프리미엄</strong>
+                  <strong>광랜 라이트</strong>
+                  <strong>집전화 정액요금제</strong>
+               </p>
+               <p class="product-label">
+                  <a href="#">217채널</a>
+                  <span>녹화가능</span>
+                  <span>실시간</span>
+                  <span>빠름빠름</span>
+               </p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">월 <strong>16,950</strong>원</p>
+                  <p class="price-info">제휴카드 할인 시, 월 <strong>11,500</strong>원</p>
+               </div>
+               <div class="product-comment"><p><span>UHD Red 프리미엄입니다!</span></p></div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">주문하기</a>
+                  <a href="#" class="btn btn-round btn-sm">상세보기</a>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="product-item-info">
+               <p class="badge badge-sale">특가</p>
+               <p class="product-name">
+                  <strong>UHD Red 프리미엄</strong>
+                  <strong>광랜 라이트</strong>
+               </p>
+               <p class="product-label">
+                  <a href="#">217채널</a>
+                  <span>녹화가능</span>
+                  <span>실시간</span>
+               </p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">월 <strong>16,950</strong>원</p>
+                  <p class="price-info">제휴카드 할인 시, 월 <strong>11,500</strong>원</p>
+               </div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">주문하기</a>
+               </div>
+            </div>
+         </li>
+      </ul>
+      <ul class="product-list product-bg-gray mt20">
+         <li>
+            <div class="product-item-info">
+               <p class="product-name">
+                  <strong>캐치온</strong>
+               </p>
+               <p class="product-desc">가장 빠른 국내외 영화 및 해외드라마를 광고없이 24시간 Full HD 제공하는 실시간 프리미엄 영화 채널</p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">월 <strong>16,950</strong>원</p>
+               </div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">가입상담</a>
+                  <a href="#" class="btn btn-round btn-sm">상세보기</a>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="product-item-info">
+               <p class="product-name">
+                  <strong>안심지킴이</strong>
+               </p>
+               <p class="product-desc">가장 빠른 국내외 영화 및 해외드라마를 광고없이 24시간 Full HD 제공하는 실시간 프리미엄 영화 채널</p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">월 <strong>16,950</strong>원</p>
+               </div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">가입상담</a>
+                  <a href="#" class="btn btn-round btn-sm">상세보기</a>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="product-item-info">
+               <p class="product-name">
+                  <strong>엘도라도</strong>
+               </p>
+               <p class="product-desc">가장 빠른 국내외 영화 및 해외드라마를 광고없이 24시간 Full HD 제공하는 실시간 프리미엄 영화 채널</p>
+            </div>
+            <div class="product-item-footer">
+               <div class="product-price">
+                  <p class="price">무료</p>
+               </div>
+               <div class="btn-group">
+                  <a href="#" class="btn btn-round btn-sm btn-primary">가입상담</a>
+                  <a href="#" class="btn btn-round btn-sm">상세보기</a>
+               </div>
+            </div>
+         </li>
+      </ul>
+      <div class="relation-info-bottom">
+         <strong class="cont">유튜브로 홈트 쉽게 하는 방법!</strong>
+         <a href="#" class="btn-more">자세히보기</a>
+      </div>
+      <div class="btn-group">
+         <a href="#" class="btn btn-round btn-primary">목록</a>
+      </div>
+   </div>
+   <!-- // 본문 영역 -->
+</article>
+<footer id="footer">
+   _guide.html 참조
+   <script>$('#footer').load('../_guide/inc-footer.html');</script>
+</footer>
+</body>
+</html>
