@@ -42,13 +42,13 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
- 				width: 165px;
+ 				width: 160px;
 				margin: 5px; 
 			}
 				.note-list ul li a img,
 				.note-list ul li div
 				{
-					width: 165px;
+					width: 100%;
 				}
 				
 				.note-list ul li a img

@@ -3,25 +3,102 @@
 .main
 {
 	width: 100%;
-	min-height: 480px;
+	min-height: 400px;
 	background: #fff;
 }
 
-	.current-context
+	.main .root-container
 	{
-		width: 100%;
-		height: 50px;
-		color: #fff;
-		background-color: red;
-		font-weight: bold;
-		border-bottom: #000;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		width: inherit;
+		min-height: inherit;
 	}
 	
-
-
-
-
-
+	main .root-container .login-form
+	{
+		width: 100%;
+		min-height: 100%;
+		font-weight: bold;
+	}
+	
+		.login-form form
+		{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: inherit;
+			min-height: inherit;
+		}
+	
+			.login-form > form > div:first-child
+			{
+				color: red;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 50px;
+				padding: 15px 0px;
+				border-bottom: 1px #979797 dashed;
+			}
+			
+			.login-form form ul 
+			{
+				display: flex;
+				flex-direction: column;
+				border-bottom: 1px #979797 dashed;
+			}
+			
+			.login-form ul li
+			{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 35px;
+				margin-bottom: 10px;
+			}
+			
+			.login-form ul li:first-child
+			{
+				margin-top: 30px;
+			}
+			
+				.login-form ul li input
+				{
+					width: 85%;
+					height: 100%;
+				}
+				
+				.login-form ul li:nth-of-type(3) input
+				{
+					border: none;
+					background-color : #0097a7;
+					color: #fff;
+					font-size: 17px;
+					font-weight: bold;
+				}
+					
+				.login-form ul li:last-child div 
+				{
+					display: flex;
+					width: 85%;
+				}
+				
+					.login-form ul li:last-child div img
+					{
+						width: 30px;
+						height: 30px;
+					}
+					
+					.login-form ul li:last-child div span,
+					#remeber-me
+					{
+						line-height: 30px;
+						width: 85%;
+						text-align: left;
+					}
 .hidden
 {
 	display: none;
