@@ -22,7 +22,7 @@
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
 						<span>10</span>
 					</div>
-				<div><a href="${note.id}">${note.title}</a></div>
+				<div><a href="${note.id}">${note.title}</a><img src="${root}/resources/images/note/ic_more_horiz_black_24dp.png"></div>
 				<div>
 						<a href="">#자바</a><a href="">#더미</a><a  href="">#css</a>
 				</div>
