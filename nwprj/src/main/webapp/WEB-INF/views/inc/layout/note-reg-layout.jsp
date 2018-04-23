@@ -13,9 +13,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<link rel="stylesheet" href="${root}/resources/css/reset.css" type="text/css">
-		<link rel="stylesheet" href="${root}/resources/css/header.css" type="text/css">
-		<link rel="stylesheet" href="${root}/resources/css/aside.css" type="text/css">
-		<link rel="stylesheet" href="${root}/resources/css/footer.css" type="text/css">
+		<link rel="stylesheet" href="${root}/resources/css/note/header.css" type="text/css">
 		<link rel="stylesheet" href="${root}/resources/css/note/style.css" type="text/css">
 		
 		<title>노트 레이아웃이다.</title>
@@ -24,15 +22,8 @@
 	<body>
 		<!-- header -->
 		<tiles:insertAttribute name="header" />
-		
-		<!-- aside -->
-		<tiles:insertAttribute name="aside" />
-		
+
 		<!-- main -->
 		<tiles:insertAttribute name="main" />
-		
-		<!-- footer -->
-		<tiles:insertAttribute name="footer" />
-		
 	</body>
 </html>

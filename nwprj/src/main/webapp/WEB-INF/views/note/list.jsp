@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 
-<main id="top" class="main">
+<main id="top" class="main padding-top-75">
 	<div class="root-container">
-		<section class="note-list">
+		<section class="note-list padding-top-10 gray">
 			<h1 class="hidden">노트 목록</h1>
 			<ul>
 				<c:forEach var="note" items="${notes}">	
