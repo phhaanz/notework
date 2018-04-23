@@ -6,12 +6,9 @@
 <header class="header">
 	<h1 class="hidden">헤더</h1>
 	<nav class="main-menu">
-		<h1 class="hidden">헤더 메뉴</h1>
+		<h1 class="hidden">노트</h1>
 		<ul>
-			<li><span id="hamburger-button"><img src="${root}/resources/images/ic_menu_white_24dp.png" alt="메인 메뉴"></span></li>
+			<li><span id="back-button"><img src="${root}/resources/images/note/ic_chevron_left_white_24dp.png" alt="뒤로가기 버튼"></span></li>
 		</ul>
 	</nav>
-	<div class="current-context">
-		<span>Label-CurrentPage</span>
-	</div>
 </header>

@@ -6,33 +6,53 @@
 
 	<!-- Template -->
 
-	<definition name="Template" template="/WEB-INF/views/inc/layout.jsp">    
+ 	<definition name="Template" template="/WEB-INF/views/inc/layout.jsp">    
 		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
 		<put-attribute name="aside" value="/WEB-INF/views/inc/aside.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
 	</definition>
 	
-	<definition name="NoteTemplate" template="/WEB-INF/views/inc/note/note-layout.jsp">    
-		<put-attribute name="header" value="/WEB-INF/views/inc/note/header.jsp" />
+	<definition name="ListTemplate" template="/WEB-INF/views/inc/note/list-layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
 		<put-attribute name="aside" value="/WEB-INF/views/inc/aside.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/views/inc/note/footer.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" /> 
 	</definition>
-
-
-	<!-- Directories Pattern -->
-
+	
+	<definition name="DetailTemplate" template="/WEB-INF/views/inc/note/detail-layout.jsp">    
+		<put-attribute name="header" value="/WEB-INF/views/inc/note/detail-header.jsp" />
+	</definition>
+	
+	<!-- Target url -->
+	<definition name="index" extends="Template">    
+		<put-attribute name="main" value="/WEB-INF/views/index.jsp" />
+	</definition>
+	
+	<definition name="note.list" extends="ListTemplate">
+		<put-attribute name="main" value="/WEB-INF/views/note/list.jsp" />
+	</definition>
+	
+	<definition name="member.note.list" extends="ListTemplate">
+		<put-attribute name="main" value="/WEB-INF/views/note/list.jsp" />
+	</definition>
+	
+	<definition name="note.detail" extends="DetailTemplate">    
+		<put-attribute name="main" value="/WEB-INF/views/note/detail.jsp" />
+	</definition>
+	
+	<definition name="member.note.detail" extends="DetailTemplate">
+		<put-attribute name="main" value="/WEB-INF/views/member/note/detail.jsp" />
+	</definition>
+	
+<!-- 	<definition name="member.note.detail" extends="RegTemplate">
+		<put-attribute name="main" value="/WEB-INF/views/member/note/detail.jsp" />
+	</definition> -->
+	
+	<!-- Directory pattern -->
+	
 	<definition name="user.*"  template="/WEB-INF/views/inc/user/user-layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/inc/user/header.jsp" />  
 		<put-attribute name="main" value="/WEB-INF/views/user/{1}.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/inc/user/footer.jsp" />
-	</definition>
-	
-	<definition name="note.*" extends="NoteTemplate">    
-		<put-attribute name="main" value="/WEB-INF/views/note/{1}.jsp" />
-	</definition>
-	
-	<definition name="member.note.*" extends="NoteTemplate">
-		<put-attribute name="main" value="/WEB-INF/views/member/note/{1}.jsp" />
 	</definition>
 	
 	<definition name="member.*.*" extends="Template">    
@@ -42,9 +62,9 @@
 	<definition name="member.*"  extends="Template">    
 		<put-attribute name="main" value="/WEB-INF/views/member/{1}.jsp" />
 	</definition>
-
-	<definition name="index" extends="Template">    
-		<put-attribute name="main" value="/WEB-INF/views/index.jsp" />
+	
+	<definition name="*.*"  extends="Template">    
+		<put-attribute name="main" value="/WEB-INF/views/{1}/{2}.jsp" />
 	</definition>
   
 </tiles-definitions>

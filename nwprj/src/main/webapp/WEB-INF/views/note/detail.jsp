@@ -31,13 +31,8 @@
 					</li>
 					
 					<li>
-						<span><img src="${root}/resources/images/note/ic_star_black_24dp.png"></span><span>hit</span>
+						<a href=""><img src="${root}/resources/images/note/ic_star_black_24dp.png"></a><span>hit</span>
 						<a href=""><img src="${root}/resources/images/note/ic_insert_comment_black_24dp.png"></a><span>comment</span>
-					</li>
-						
-					<li>	
-						<a href=""></a>
-						<a href=""> </a>
 					</li>
 				</ul>
 			</div>
