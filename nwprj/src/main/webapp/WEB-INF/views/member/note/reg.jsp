@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="root" value="${pageContext.request.contextPath}"/>
+
 <main class="main padding-top-90 reg">
+
 	<h1 class="hidden">노트 등록</h1>
 	<div class="root-container">
 		<section class="note-reg-form">
@@ -9,21 +14,52 @@
 				<div>
 					<input type="text" name="title" placeholder="제목을 입력해주십시오."/>
 				</div>
-				<div>
+				<div class="inline-content">
 					<textarea name="content" >
 					</textarea>
 				</div>
-				<div>
-					라디오버튼 (공개여부)
+				<div class="publish-state">
+					<span>공개상태</span>
+					<input id="publish-true" class="hidden" type="radio" name="publish" value="true">
+					<label for="publish-true">공개</label>
+					<input id="publish-false" class="hidden" type="radio" name="publish" value="false">
+					<label for="publish-false">비공개</label>
 				</div>
 				<div>
-					태그추가 팝업 호출
+					<span>태그추가</span>
+					<span><img src="${root}/resources/images/member/note/ic_keyboard_arrow_down_black_24dp.png"></span>
 				</div>
-				<div>
-					<input type="file" name="image" />
+				<div class="hidden">
+					<input multiple="multiple" type="file" name="image" contenteditable="true" />
 				</div>
-				<div>
-					첨부파일 리스트
+				<div class="attached-image-list">
+					<span>첨부파일</span>
+					<ul>
+						<li>
+							<span>파일명1</span>
+							<div>
+								<img src="${root}/resources/images/member/note/ic_close_black_24dp.png">
+							</div>
+						</li>
+						<li>
+							<span>파일명2</span>
+							<div>
+								<img src="${root}/resources/images/member/note/ic_close_black_24dp.png">
+							</div>
+						</li>
+						<li>
+							<span>파일명31231312312132112312312313123asdasdasdas</span>
+							<div>
+								<img src="${root}/resources/images/member/note/ic_close_black_24dp.png">
+							</div>
+						</li>
+						<li>
+							<span>파일명4</span>
+							<div>
+								<img src="${root}/resources/images/member/note/ic_close_black_24dp.png">
+							</div>
+						</li>
+					</ul>
 				</div>
 			</form>
 		</section>
