@@ -5,10 +5,50 @@
 
 <header class="header">
 	<h1 class="hidden">헤더</h1>
-	<nav class="main-menu">
-		<h1 class="hidden">노트</h1>
+	<nav class="reg-menu">
+		<h1 class="reg-title">노트 작성</h1>
 		<ul>
-			<li><span id="back-button"><img src="${root}/resources/images/note/ic_chevron_left_white_24dp.png" alt="뒤로가기 버튼"></span></li>
+			<li>
+				<a id="cancel-button" href="">
+					<img src="${root}/resources/images/member/note/ic_close_white_24dp.png" alt="작성 취소">
+				</a>
+			</li>
+			<li>
+				<a id="reg-button" href="">
+					<img src="${root}/resources/images/member/note/ic_send_white_24dp.png" alt="등록">
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="write-style-toolbar">
+		<ul>
+			<li>
+				<span>
+					<img src="${root}/resources/images/member/note/ic_photo_black_24dp.png">
+				</span>
+			</li>
+			<li>
+				<span>
+					<img src="${root}/resources/images/member/note/ic_title_black_24dp.png">
+				</span>
+			</li>
+			<li>
+				<span>
+					<img src="${root}/resources/images/member/note/ic_format_color_text_black_24dp.png">
+				</span>
+			</li>
+			<li>
+				<span>
+					<img src="${root}/resources/images/member/note/ic_format_size_black_24dp.png">
+				</span>
+			</li>
+			<li>
+				<span>
+					<img src="${root}/resources/images/member/note/ic_format_align_left_black_24dp.png">
+				</span>
+			</li>
+			
+			
 		</ul>
 	</nav>
 </header>

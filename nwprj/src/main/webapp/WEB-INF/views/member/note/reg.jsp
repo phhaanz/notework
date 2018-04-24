@@ -1,40 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<main>
-	<section>
-		<h1>노트 등록 폼</h1>
-		<form method="post" enctype="multipart/form-data">
-			<table>
-				<tr>
-					<th>제목</th>
-				</tr>
-				
-				<tr>
-					<td><input type="text" value="" name="title" size="39"/></td>
-				</tr>
-				
-				<tr>
-					<th>첨부</th>
-				</tr>
-				<tr>
-					<td><input type="file" name="file" /></td>
-				</tr>
-				
-				<tr>
-					<th>내용</th>
-				</tr>
-				
-				<tr>
-					<td>
-						<textarea rows="10" cols="40" name="content"></textarea>
-					</td>
-				</tr>
-			</table>
-			<div>
-				<input type="submit" value="등록" />
-			</div>
-		</form>
-	</section>
+<main class="main padding-top-90 reg">
+	<h1 class="hidden">노트 등록</h1>
+	<div class="root-container">
+		<section class="note-reg-form">
+			<h1 class="hidden">노트 등록 폼</h1>
+			<form method="post" enctype="multipart/form-data">
+				<div>
+					<input type="text" name="title" placeholder="제목을 입력해주십시오."/>
+				</div>
+				<div>
+					<textarea name="content" >
+					</textarea>
+				</div>
+				<div>
+					라디오버튼 (공개여부)
+				</div>
+				<div>
+					태그추가 팝업 호출
+				</div>
+				<div>
+					<input type="file" name="image" />
+				</div>
+				<div>
+					첨부파일 리스트
+				</div>
+			</form>
+		</section>
+	</div>
 </main>
 
 <script>

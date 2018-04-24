@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="${root}/resources/css/note/header.css" type="text/css">
 		<link rel="stylesheet" href="${root}/resources/css/note/style.css" type="text/css">
 		
-		<title>노트 레이아웃이다.</title>
+		<title>노트 작성</title>
 	</head>
 	
 	<body>
