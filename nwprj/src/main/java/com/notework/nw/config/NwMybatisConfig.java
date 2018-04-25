@@ -29,8 +29,6 @@ public class NwMybatisConfig {
 		dataSource.setUrl("jdbc:mysql://vaio.notepubs.com/notepubsdb?serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8");
 		dataSource.setUsername("notepubs");
 		dataSource.setPassword("cclass");
-		dataSource.setInitialSize(20);
-		dataSource.setMaxActive(30);
 
 		return dataSource;
 	}
