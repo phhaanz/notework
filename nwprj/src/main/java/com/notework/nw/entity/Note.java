@@ -4,99 +4,86 @@ import java.util.Date;
 
 public class Note {
 	
-	private long id;
+	private int id;
 	private String title;
 	private String content;
 	private String writerId;
-	private Date regDate;
 	private int hit;
-	private int order;
-	private long chapterId;
+	private Date regDate;
+	private Date accDate;
+	private boolean publish;
 	
 	public Note() {
 
 	}
 	
-	public Note(String title, String content, String writerId) {
+	public Note(String title, String content, String writerId, boolean publish) {
 		this.title = title;
 		this.content = content;
 		this.writerId = writerId;
+		this.publish = publish;
 	}
 	
-	public Note(long id, String title, String content, String writerId, Date regDate, int hit, int order,
-			long chapterId) {
+	public Note(int id, String title, String content, String writerId, int hit, Date regDate, Date accDate,
+			boolean publish) {
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.writerId = writerId;
-		this.regDate = regDate;
 		this.hit = hit;
-		this.order = order;
-		this.chapterId = chapterId;
+		this.regDate = regDate;
+		this.accDate = accDate;
+		this.publish = publish;
 	}
-	
-	public long getId() {
+
+
+
+	public int getId() {
 		return id;
 	}
-	
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	
 	public String getTitle() {
 		return title;
 	}
-	
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
 	public String getContent() {
 		return content;
 	}
-	
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
 	public String getWriterId() {
 		return writerId;
 	}
-	
 	public void setWriterId(String writerId) {
 		this.writerId = writerId;
 	}
-	
-	public Date getRegDate() {
-		return regDate;
-	}
-	
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
-	}
-	
 	public int getHit() {
 		return hit;
 	}
-	
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	
-	public int getOrder() {
-		return order;
+	public Date getRegDate() {
+		return regDate;
 	}
-	
-	public void setOrder(int order) {
-		this.order = order;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
-	
-	public long getChapterId() {
-		return chapterId;
+	public Date getAccDate() {
+		return accDate;
 	}
-	
-	public void setChapterId(long chapterId) {
-		this.chapterId = chapterId;
+	public void setAccDate(Date accDate) {
+		this.accDate = accDate;
 	}
-	
+	public boolean isPublish() {
+		return publish;
+	}
+	public void setPublish(boolean publish) {
+		this.publish = publish;
+	}
 }

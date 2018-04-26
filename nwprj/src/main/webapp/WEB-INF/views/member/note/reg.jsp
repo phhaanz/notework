@@ -20,7 +20,7 @@
 				</div>
 				<div class="publish-state">
 					<span>공개상태</span>
-					<input id="publish-true" class="hidden" type="radio" name="publish" value="true">
+					<input id="publish-true" class="hidden" type="radio" name="publish" value="true" checked="checked">
 					<label for="publish-true">공개</label>
 					<input id="publish-false" class="hidden" type="radio" name="publish" value="false">
 					<label for="publish-false">비공개</label>
@@ -30,7 +30,7 @@
 					<span><img src="${root}/resources/images/member/note/ic_keyboard_arrow_down_black_24dp.png"></span>
 				</div>
 				<div class="hidden">
-					<input multiple="multiple" type="file" name="image" contenteditable="true" />
+					<input multiple="multiple" type="file"/>
 				</div>
 				<div class="attached-image-list">
 					<span>첨부파일</span>
@@ -61,6 +61,7 @@
 						</li>
 					</ul>
 				</div>
+				<input type="submit" value="임시 등록 버튼">
 			</form>
 		</section>
 	</div>

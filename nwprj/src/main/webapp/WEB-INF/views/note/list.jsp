@@ -16,7 +16,7 @@
 					<div>
 						
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
-						<span>11</span>
+						<span>${note.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
 						<span>25</span>
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">

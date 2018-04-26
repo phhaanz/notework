@@ -31,7 +31,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 			csrf().disable()
 				.authorizeRequests()
 					.antMatchers("/user/**", "/note/**").anonymous()
-					.antMatchers("/member/**").hasRole("AUTHOR")
+					.antMatchers("/member/**").hasRole("MEMBER")
 					.antMatchers("/*", "/resources/**").permitAll()
 					.anyRequest().authenticated()
 					.and()
@@ -50,8 +50,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		UserBuilder users = User.builder();
-
+		
 		auth
 			.jdbcAuthentication()
 			.dataSource(dataSource)

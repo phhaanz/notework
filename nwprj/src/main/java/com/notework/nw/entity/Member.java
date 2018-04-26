@@ -6,28 +6,28 @@ public class Member {
 	private String password;
 	private String name;
 	private String email;
-	private String photo;
+	private String introduce;
 
 	public Member() {
 
 	}
 
-	public Member(String id, String password, String name, String email, String photo) {
+	public Member(String id, String password, String name, String email, String introduce) {
 		this.id = id;
 		this.password = password;
 		this.name = name;
 		this.email = email;
-		this.photo = photo;
+		this.introduce = introduce;
 	}
 
 	public Member(String password) {
 		this.password = password;
 	}
 
-	public Member(String name, String email, String photo) {
+	public Member(String name, String email, String introduce) {
 		this.name = name;
 		this.email = email;
-		this.photo = photo;
+		this.introduce = introduce;
 	}
 
 	public String getId() {
@@ -62,11 +62,11 @@ public class Member {
 		this.email = email;
 	}
 
-	public String getPhoto() {
-		return photo;
+	public String getIntroduce() {
+		return introduce;
 	}
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
 	}
 }
