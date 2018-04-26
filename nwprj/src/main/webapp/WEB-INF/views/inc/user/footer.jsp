@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />
-<footer class="footer">
+
+<footer class="footer user-footer">
 	<h1 class="hidden">푸터</h1>
 	<nav class="footer-menu">
 		<h1 class="hidden">푸터 메뉴</h1>

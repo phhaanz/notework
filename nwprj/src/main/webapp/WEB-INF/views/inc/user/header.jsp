@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />
 
-<header class="header">
+<header class="user-header">
 	<h1 class="hidden">헤더</h1>
 	<div>
 		<h1 class="hidden">헤더 홈 로고</h1>	

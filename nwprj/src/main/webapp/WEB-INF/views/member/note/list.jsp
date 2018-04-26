@@ -23,6 +23,7 @@
 						<span>10</span>
 					</div>
 				<div><a href="${note.id}">${note.title}</a></div>
+				<div>by 작성자</div>
 				<div>
 						<a href="">#자바</a><a href="">#더미</a><a  href="">#css</a>
 				</div>

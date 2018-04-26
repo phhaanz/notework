@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
 		<link rel="stylesheet" href="${root}/resources/css/reset.css" type="text/css">
-		<link rel="stylesheet" href="${root}/resources/css/note/header.css" type="text/css">
+		<link rel="stylesheet" href="${root}/resources/css/header.css" type="text/css">
 		<link rel="stylesheet" href="${root}/resources/css/note/style.css" type="text/css">
 		
 		<title>노트 작성</title>

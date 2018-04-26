@@ -9,10 +9,9 @@ $(function() {
 	var asideBg = $(".aside-bg");
 	var closeButton = $(".aside > div > a");
 	
-	hamButton.click(function(evt1) {
+	hamButton.click(function() {
 		asideMenu.addClass("show");
 		asideBg.addClass("show");
-		evt1.preventDefault();
 	});
 	
 	asideBg.click(closeAside);
@@ -70,6 +69,9 @@ $(function() {
 				<img src="${root}/resources/images/ic_search_black_24dp.png">
 				<span>Search</span>
 			</a>
+		</li>
+		<li>
+			<a href="${root}/user/logout">임시 로그아웃버튼</a>
 		</li>
 	</ul>
 </nav>

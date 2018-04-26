@@ -54,7 +54,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth
 			.jdbcAuthentication()
 			.dataSource(dataSource)
-			.usersByUsernameQuery("select id, pwd password, 1 enabled from Member where id=?")
+			.usersByUsernameQuery("select id, password, 1 enabled from Member where id=?")
 			.authoritiesByUsernameQuery("select memberId id, roleId authority from MemberRole where memberId=?")
 			.passwordEncoder(new BCryptPasswordEncoder());
 	}

@@ -18,7 +18,7 @@
 				</div>
 	
 				<div>
-					<span>글쓴이0011${note.writerId}</span>
+					<span>${note.writerId}</span>
 					<span>Lv</span>
 				</div>
 				

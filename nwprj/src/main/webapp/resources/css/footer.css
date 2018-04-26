@@ -2,17 +2,13 @@
 
 .footer
 {
-	background: #000;
 	width: 100%;
-	height: 80px;
-	color: #fff;
 	font-size: 13px;
 	font-weight: bold;
-	color: #fff;
 }
 	.footer .footer-menu
 	{
-		padding-top: 5px;
+		padding-top: 15px;
 	}
 		.footer .footer-menu ul
 		{
@@ -22,16 +18,35 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-		
-		.footer .footer-menu a
-		{
-			color: #fff;
-		}
-		
-		
+	
 	.footer div
 	{	
 		margin-top: 15px;
 		text-align: center;
 	}
-	
+
+/*---------------------------common-footer--------------------*/
+.common-footer
+{
+	height: 80px;
+	color: #fff;
+	background: #000;
+}
+
+	.common-footer .footer-menu a
+	{
+		color: #fff;
+	}
+
+/*---------------------------user-footer--------------------*/
+.user-footer
+{
+	height: 110px;
+	color: #000;
+	background: #e9e9e9;
+}
+
+	.user-footer .footer-menu a
+	{
+		color: #000;
+	}

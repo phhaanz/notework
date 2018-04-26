@@ -61,38 +61,44 @@ public class NoteController {
 	@PostMapping("reg")
 	public String reg(Note note, MultipartFile file, HttpServletRequest request)
 	{
+		String writerId = request.getUserPrincipal().getName();
+		note.setWriterId(writerId);
+		
 		int result = service.insertNote(note);
 		
-		try {
-			ServletContext ctx = request.getServletContext();
-			String path = ctx.getRealPath("/resources/upload/");
-			String id = "himan";
+		/*if(!(file.isEmpty()))
+		{
+			try {
+				ServletContext ctx = request.getServletContext();
+				String path = ctx.getRealPath("/resources/upload/");
+				String id = "himan";
+				
+				File f = new File(path+id);
+				
+				if(!f.exists())
+					f.mkdirs();
+				
+				InputStream is = file.getInputStream();
+				String fname = file.getOriginalFilename();
+				
+				FileOutputStream os = new FileOutputStream(path+id+File.separator+fname);
+				
+				byte[] buf = new byte[1024];
+				
+				int size=0;
+				
+				while((size=is.read(buf, 0, 1024)) != -1)
+					os.write(buf, 0, size);
+				
+				os.close();
+				is.close();
+			} 
+			catch (IOException e) {
+				//에러페이지 따로 지정해주는게 무조건 좋음
+				e.printStackTrace();
+			}
+		}*/
 			
-			File f = new File(path+id);
-			
-			if(!f.exists())
-				f.mkdirs();
-			
-			InputStream is = file.getInputStream();
-			String fname = file.getOriginalFilename();
-			
-			FileOutputStream os = new FileOutputStream(path+id+File.separator+fname);
-			
-			byte[] buf = new byte[1024];
-			
-			int size=0;
-			
-			while((size=is.read(buf, 0, 1024)) != -1)
-				os.write(buf, 0, size);
-			
-			os.close();
-			is.close();
-		} 
-		catch (IOException e) {
-			//에러페이지 따로 지정해주는게 무조건 좋음
-			e.printStackTrace();
-		}
-		
 		return "redirect:list";
 	}
 	
