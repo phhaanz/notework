@@ -10,7 +10,7 @@
 		<ul>
 			<li><a href="">아이디찾기</a></li>
 			<li><a href="">비밀번호찾기</a></li>
-			<li><a href="${ctx}/user/join">회원가입</a></li>
+			<li><a href="${root}/user/join">회원가입</a></li>
 		</ul>
 	</nav>
 	<div>

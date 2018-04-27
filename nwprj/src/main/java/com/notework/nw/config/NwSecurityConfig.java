@@ -29,7 +29,8 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception 	{
 		http.
 			csrf().disable()
-				.authorizeRequests()
+				.authorizeRequests().anyRequest().permitAll();
+/*					.authorizeRequests()
 					.antMatchers("/user/**", "/note/**").anonymous()
 					.antMatchers("/member/**").hasRole("MEMBER")
 					.antMatchers("/*", "/resources/**").permitAll()
@@ -45,7 +46,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 					.logoutUrl("/user/logout")
 					.logoutSuccessUrl("/index")
 					.invalidateHttpSession(true);
-
+*/
 	}
 
 	@Override

@@ -52,7 +52,7 @@ public class UserController {
 		
 		int result = service.insertMember(member);
 		
-		return "redirect:index";
+		return "redirect:../index";
 	}
 
 }

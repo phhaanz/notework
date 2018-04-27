@@ -41,13 +41,13 @@ $(function() {
 			</a>
 		</li>
 		<li>
-			<a href="${root}/note/list">
+			<a href="${root}/member/note/list">
 				<img src="${root}/resources/images/ic_content_paste_black_24dp.png">
 				<span>My Notes</span>
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="${root}/member/tag/index">
 				<img src="${root}/resources/images/ic_local_offer_black_24dp.png">
 				<span>My Tags</span>
 			</a>

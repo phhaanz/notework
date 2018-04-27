@@ -2,8 +2,9 @@
 
 .main
 {
+	box-sizing: border-box;
 	width: 100%;
-	min-height: 400px;
+	min-height: 355px;
 	background: #fff;
 }
 
