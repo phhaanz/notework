@@ -23,7 +23,7 @@
 	display: none;
 }
 
-/*----------------------------- tag/index------------------------------*/
+/*-----------------------------/tag/------------------------------*/
 
 .tag-list
 {
@@ -31,21 +31,25 @@
 }
 
 .tag-list,
-.tag-none
+.tag-none,
+.tag-search
 {
 	width: 100%;
 }
 
 	.tag-none h1,
-	.tag-list h1
+	.tag-list h1,
+	.tag-search h1
 	{
-		color: #979797;
+		color: #000;
 		font-size: 16px; 
 		position: relative;
 	}
 	
 	.tag-list h1,
-	.tag-list ul
+	.tag-list ul,
+	.tag-search h1,
+	.tag-search form
 	{
 		display: flex;
 		justify-content: flex-start;
@@ -54,14 +58,16 @@
 		margin: 0px auto;
 	}
 
-		.tag-list h1
+		.tag-list h1,
+		.tag-search h1
 		{
 			margin-top: 5px;
 			height: 30px;
 			background-color: #e9e9e9;
 			border: 1px #979797 solid;
 		}
-			.tag-list h1 span
+			.tag-list h1 span,
+			.tag-search h1 span
 			{
 				margin-left: 5px;
 			}
@@ -124,6 +130,32 @@
 			font-size: 12px;
 		}
 
+.tag-search
+{
+	height: 100px;
+	justify-content: center;
+}
+
+	.tag-search form
+	{
+		padding-top: 15px;
+		justify-content: center;
+	}
+	
+	.tag-search form input[type='text']
+	{
+		width: 70%;
+		height: 30px;
+	}
+	
+	.tag-search form input[type='submit']
+	{
+		background-color: #0097a7;
+		color: #fff;
+		font-weight: bold;
+		width: 80px;
+	}
+	
 	
 	
 	

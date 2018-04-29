@@ -11,7 +11,6 @@
 		<section class="tag-list tag-favorite">
 			<h1>
 				<span>#인기 있는 태그</span>
-				<a href="list">더보기</a>
 			</h1>
 			<ul>
 				<li>
