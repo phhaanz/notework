@@ -157,5 +157,35 @@
 	}
 	
 	
+/*--------------------------------- preset------------------------------------- */
+
+.tag-preset-list
+{
 	
+}	
+
+	.tag-preset-list > ul
+	{
+		width: 97.5%;
+		min-height: inherit;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-content: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	
+		.tag-preset-list > ul > li
+		{
+			width: 100%;
+		}
+		
+		.tag-preset-list > ul > li > span:first-child
+		{
+		
+		}
+		.tag-preset-list li
+		{
+			border: 1px #000 solid;
+		}

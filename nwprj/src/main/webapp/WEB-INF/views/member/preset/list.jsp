@@ -8,18 +8,58 @@
 			<ul>
 				<li>
 					<span>프리셋 이름</span>
-					<span>프리셋 설명란</span>
-					<a>태그1</a>	<a>태그2</a> <a>태그 3</a>
+					<span class="slide-btn">슬라이드 버튼</span>
+					<div>
+						<p>설명을 넣어주십셔</p>
+					</div>
+					<ul>
+						<li>
+							<a>태그1</a>
+						</li>
+						<li>
+							<a>태그2</a> 
+						</li>
+						<li>
+							<a>태그3</a>
+						</li>
+					</ul>
 				</li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>
+					<span>프리셋 이름</span>
+					<span class="slide-btn">슬라이드 버튼</span>
+					<div>
+						<p>설명을 넣어주십셔</p>
+					</div>
+					<ul>
+						<li>
+							<a>태그1</a>
+						</li>
+						<li>
+							<a>태그2</a> 
+						</li>
+						<li>
+							<a>태그3</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span>프리셋 이름</span>
+					<span class="slide-btn">슬라이드 버튼</span>
+					<div>
+						<p>설명을 넣어주십셔</p>
+					</div>
+					<ul>
+						<li>
+							<a>태그1</a>
+						</li>
+						<li>
+							<a>태그2</a> 
+						</li>
+						<li>
+							<a>태그3</a>
+						</li>
+					</ul>
+				</li>
 				<li></li>
 			</ul>
 		</section>
