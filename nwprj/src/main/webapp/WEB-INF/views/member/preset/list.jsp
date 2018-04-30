@@ -7,60 +7,56 @@
 			<h1 class="hidden">태그 프리셋 목록</h1>
 			<ul>
 				<li>
-					<span>프리셋 이름</span>
-					<span class="slide-btn">슬라이드 버튼</span>
-					<div>
-						<p>설명을 넣어주십셔</p>
-					</div>
+					<a href="">프리셋 이름</a>
 					<ul>
 						<li>
-							<a>태그1</a>
+							<a href="">#태그1</a>
 						</li>
 						<li>
-							<a>태그2</a> 
+							<a href="">#태그2</a> 
 						</li>
 						<li>
-							<a>태그3</a>
+							<a href="">#태그3</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<span>프리셋 이름</span>
-					<span class="slide-btn">슬라이드 버튼</span>
-					<div>
-						<p>설명을 넣어주십셔</p>
-					</div>
+					<a href="">프리셋 이름</a>
 					<ul>
 						<li>
-							<a>태그1</a>
+							<a href="">#태그1</a>
 						</li>
 						<li>
-							<a>태그2</a> 
+							<a href="">#태그2</a> 
 						</li>
 						<li>
-							<a>태그3</a>
+							<a href="">#태그3</a>
+						</li>
+						<li> 
+							<a href="">#태그3</a>
+						</li>
+						<li>
+							<a href="">#태그3</a>
+						</li>
+						<li>
+							<a href="">#태그3</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<span>프리셋 이름</span>
-					<span class="slide-btn">슬라이드 버튼</span>
-					<div>
-						<p>설명을 넣어주십셔</p>
-					</div>
+					<a href="">프리셋 이름</a>
 					<ul>
 						<li>
-							<a>태그1</a>
+							<a href="">#태그1</a>
 						</li>
 						<li>
-							<a>태그2</a> 
+							<a href="">#태그2</a> 
 						</li>
 						<li>
-							<a>태그3</a>
+							<a href="">#태그3</a>
 						</li>
 					</ul>
 				</li>
-				<li></li>
 			</ul>
 		</section>
 	</div>

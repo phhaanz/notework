@@ -104,3 +104,70 @@
 {
 	display: none;
 }
+
+/*------------------------------------------- join--------------------------------- */
+.join-form
+{
+	width: 100%;
+	height: inherit;
+}
+
+	.join-form h1
+	{ 
+		width: 85%;
+		margin: 10px auto;
+		font-size: 16px;
+		padding: 5px 0px;
+		border-bottom: 2px #0097a7 solid;
+	}
+
+	.join-form form table
+	{	
+		width: 100%;
+	}
+	
+	.join-form form table tr:nth-child(3),
+	.join-form form table tr:nth-child(5),
+	.join-form form table tr:nth-child(6)
+	{
+		display: block;
+		margin-bottom: 25px;
+	
+	}
+	
+	.join-form form table td
+	{
+		display: flex;
+		justify-content: center;
+	}
+
+		.join-form form table input,
+		.join-form form table textarea
+		{
+			width: 85%;
+			padding: 5px;
+			margin-top: -5px;
+		}
+		
+		.join-form form table input
+		{
+			height: 35px;
+		}
+		
+		.join-form form table textarea
+		{
+			box-sizing: border-box;
+			height: 70px;
+		}
+		
+		.join-form form table input[type='submit']
+		{
+			height: 35px;
+			background-color: #0097a7;
+			color: #fff;
+			font-size: 17px;
+			font-weight: bold;
+			border: none;
+		}
+	
+	
