@@ -26,7 +26,7 @@ public class NwMybatisConfig {
 	public BasicDataSource dataSouce() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://211.238.142.67:3306/noteworkdb?serverTimezone=UTC&;autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
+		dataSource.setUrl("jdbc:mysql://211.238.142.76:3306/noteworkdb?serverTimezone=UTC&;autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8");
 		dataSource.setUsername("developer");
 		dataSource.setPassword("developer");
 

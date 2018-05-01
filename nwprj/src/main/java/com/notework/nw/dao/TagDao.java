@@ -6,7 +6,7 @@ import com.notework.nw.entity.Tag;
 
 public interface TagDao {
 
-	List<Tag> getList(Integer page);
+	List<Tag> getList();
 	
 	Tag get(Integer id);
 
