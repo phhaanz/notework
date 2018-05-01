@@ -3,9 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 
-<main id="top" class="main padding-top-75">
+<section class="visual">
+	<span class="currentPath">currentPage</span>
+</section>
+<main id="top" class="main padding-top-45">
 	<div class="root-container">
-		<section class="note-list padding-top-10 gray">
+		<section class="note-list">
 			<h1 class="hidden">노트 목록</h1>
 			<ul>
 				<c:forEach var="note" items="${notes}">	
@@ -29,9 +32,10 @@
 				</li>
 				</c:forEach>
 			</ul>
-			<div class="top-anchor">
-				<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_black_24dp.png" alt="최상위로"></a>
-			</div>
 		</section>
 	</div>
 </main>
+<section class="top-anchor">
+	<h1 class="hidden">최상단으로</h1>
+	<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_black_24dp.png" alt="최상위로"></a>
+</section>

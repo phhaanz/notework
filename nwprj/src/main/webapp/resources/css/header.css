@@ -74,25 +74,27 @@
 				justify-content: space-between;
 			}
 
-	.current-context
+	.visual
 	{
-		width: 100%;
-		height: 30px;
-		display: flex;
-		background-color: #0097a7;
-		border-bottom: 1px #000 solid;
 		position: relative;
-		top: -45px;
+		width: 100%;
+		max-width: 900px;
+		margin: 0px auto;
+		display: flex;
+		align-items: center;
+		top: 45px;
+		height: 50px;
+		background: url('../images/visual.png') no-repeat center;
+		background-size: cover;
+		border-bottom: 1px #979797 solid;
 	}
 	
-		.current-context span
+		.visual .currentPath
 		{
-			align-self: center;
-			padding-left: 10px;
-			font-size: 20px;
-			font-weight: bold;
+			padding-left: 5%;
+			font: bold 25px Arial, sans-serif;
 			color: #fff;
-			line-height:30px;
+			text-shadow: -1px 0 #333333, 1px -1px 0 #333333, -1px 1px 0 #333333, 1px 1px 0 #333333, 0 -2px 0 #333333, 0 2px 0 #333333, -2px 0 0 #333333, 2px 0 0 #333333;
 		}
 
 		

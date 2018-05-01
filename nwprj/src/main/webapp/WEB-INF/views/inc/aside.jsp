@@ -53,7 +53,7 @@ $(function() {
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="${root}/member/preset/list">
 				<img src="${root}/resources/images/ic_flag_black_24dp.png">
 				<span>My PreSet</span>
 			</a>

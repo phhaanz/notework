@@ -30,9 +30,9 @@
 				</li>
 				</c:forEach>
 			</ul>
-			<div class="top-anchor">
-				<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_black_24dp.png" alt="최상위로"></a>
-			</div>
 		</section>
+	</div>
+	<div class="top-anchor">
+		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_black_24dp.png" alt="최상위로"></a>
 	</div>
 </main>

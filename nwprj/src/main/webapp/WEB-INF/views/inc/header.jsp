@@ -20,7 +20,4 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="current-context">
-			<span>Label-CurrentPage</span>
-	</div>
 </header>

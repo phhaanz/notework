@@ -7,7 +7,7 @@
 <main class="main padding-top-45">
 	<h1 class="hidden"> 노트 내용</h1>
 	<div class="root-container">
-		<article class="note-detail padding-tb-30">
+		<article class="note-detail">
 			<div class="article-header">
 				<div><a href="">#태그1아아65345</a><a href="">#태그1아아65345</a><a href="">#태그1아아65345</a> <a href="">#태그12312312312</a> <a href="">#태그12312313323</a></div>
 				
