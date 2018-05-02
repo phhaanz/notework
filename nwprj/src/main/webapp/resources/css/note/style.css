@@ -82,7 +82,7 @@
 			.note-list ul li
 			{
 				box-sizing: border-box;
-				border: 1px#d9cdc1 solid;
+				border: 1px #d9cdc1 solid;
 				background-color: #fff;
 				display: flex;
 				flex-direction: column;
@@ -178,7 +178,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-top: 0.5px#d9cdc1 solid;
+		border-top: 0.5px #d9cdc1 solid;
 		background-color: #e9e9e9;
 		width: 100%;
 		height: 40px;
@@ -202,7 +202,7 @@
 			min-height: 120px;
 			flex-wrap: wrap;
 			padding-bottom: 20px;
-			border-bottom: 1px#d9cdc1 solid;
+			border-bottom: 1px #d9cdc1 dashed;
 		}
 		
 			.note-detail .article-header > div
@@ -237,7 +237,7 @@
 				flex-wrap: wrap;
 				font-size: 25px;
 				font-weight: bold;
-				border-bottom: 2px#b49b83 solid;
+				border-bottom: 2px #b49b83 solid;
 				margin-bottom: 10px;
 			}
 			
@@ -250,7 +250,7 @@
 				height: 60px;
 				margin-right: 15px;
 				border-radius: 30px;
-				border: 1px#d9cdc1 solid;
+				border: 1px #d9cdc1 solid;
 				overflow: hidden;
 			}
 			
@@ -284,7 +284,7 @@
 			
 			.note-detail .article-header > div:nth-child(5) span
 			{
-				color:#d9cdc1;
+				color: #d9cdc1;
 				font-size: 14px;
 				display: flex;
 				align-items: center;
@@ -295,7 +295,7 @@
 				width: 1px;
 				margin: 10px  10px 8px 10px;
 				height: 12px;
-				background-color:#d9cdc1;
+				background-color: #d9cdc1;
 			}
 			
 		.note-detail .article-main
@@ -377,7 +377,7 @@
 			margin-left: auto;
 			margin-right: auto;	
 			padding: 10px 0px;
-			border-bottom: 1px #e9e9e9 dashed;
+			border-bottom: 1px #d9cdc1 dashed;
 			
 		}
 		
@@ -418,10 +418,22 @@
 				height: 30px;
 				line-height: 30px;
 			}
-
+			
+			.note-reg-form .publish-state
+			{
+				display: flex;
+				justify-content: space-between;
+			}
+			.note-reg-form .publish-state > div
+			{
+				position: relative;
+				width: 75%;
+				display: flex;
+			}
+			
 			.note-reg-form .publish-state label
 			{
-				width: 37.5%;
+				width: 50%;
 				height: 30px;
 				display: flex;
 				position: relative;
@@ -437,33 +449,81 @@
 				display: block;
 				position: absolute;
 				content: '';
-				border: 1px#d9cdc1 solid;
+				border: 1px #d9cdc1 solid;
 				box-sizing: border-box;
 			}
-		.note-reg-form .publish-state+div
+		.note-reg-form .tag-add-list
 		{
-			position: relative;
+			display: flex;
+			flex-direction: column;
+		}	
+			
+		.note-reg-form .tag-add-list > div:first-child
+		{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
 		}
 		
-			.note-reg-form .publish-state+div > span:last-child
+			.tag-add-list > div:first-child > input[type='text']
 			{
-				position: absolute;
-				left: calc(55px + 75%);
+				width: calc(75% - 30px);
+				margin-left: auto;
+			}
+			
+				.tag-add-list > div:first-child > a
+				{
+					display: inline-block;
+					height: 30px;
+					width: 30px;
+					background: url('../../images/member/note/ic_add_box_black_24dp.png') no-repeat center;
+				}
+		
+		.note-reg-form .tag-add-list > div:last-child
+		{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			padding-top: 10px;
+			
+		}
+			
+
+		.tag-add-list > div:last-child > ul
+		{
+			width: 75%;
+			display: flex;
+			justify-content: flex-start;
+			margin-left: auto;
+			flex-wrap: wrap;
+		}
+			.tag-add-list > div:last-child > ul > li 
+			{
+				margin-left: 5px;
+				margin-bottom: 5px;
 			}
 		
-			.note-reg-form .publish-state+div span > img
+			.tag-add-list > div:last-child > ul > li > a
 			{
 				height: 30px;
-				width: 30px;	
+				min-width: 20px;
+				color: #b49b83;
+				font-weight: bold;
+				text-align: center;
+				display: inline-block;
+				padding: 2px 5px;
+				box-sizing: border-box;
 			}
+
 		
-		.note-reg-form form .attached-image-list ul
+		
+		.note-reg-form .attached-image-list ul
 		{
 			align-self: center;
 			box-sizing: border-box;
 			width: 75%;
 			min-height: inherit;
-			border: 1px#d9cdc1 solid;
+			border: 1px #d9cdc1 solid;
 		}
 			.attached-image-list ul li
 			{
@@ -475,7 +535,7 @@
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				color:#d9cdc1;
+				color: #d9cdc1;
 				font-size: 15px;
 			}
 			
@@ -495,7 +555,21 @@
 					{
 						width: 20px;
 						height: 20px;
-						border: 1px#d9cdc1 solid;
+						border: 1px #d9cdc1 solid;
 						background-color: rgba(225,225,225,0.7)
 					}
+					
+#tag-auto-complete
+{
+	box-sizing: border-box;
+	border: 1px #d9cdc1 solid;
+	width: calc(75% - 50px);
+	min-height: 50px;
+}
+
+	 #tag-auto-complete > li
+	{
+		height: 25px;
+		padding-left: 5px;
+	}
 			

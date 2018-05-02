@@ -37,7 +37,7 @@
 {
 	width: 95%;
 	margin: 0px auto;
-	border-bottom: 1px #d9cdc1 solid;
+	border-bottom: 1px #d9cdc1 dashed;
 }
 
 	.tag-none h1,
@@ -177,7 +177,7 @@
 		{
 			width: 100%;
 			margin-top: 10px;
-			border-bottom: 1px #d9cdc1 solid;
+			border-bottom: 1px #d9cdc1 dashed;
 		}
 		
 		.tag-preset-list > ul > li > a:first-child

@@ -29,14 +29,14 @@
 .common-footer
 {
 	height: 80px;
-	color: #fff;
+	color: #b49b83;
 	background: #fff;
-	border-top: 2px #B49B83 solid; 
+	border-top: 2px #b49b83 solid; 
 }
 
 	.common-footer .footer-menu a
 	{
-		color: #B49B83;
+		color: #b49b83;
 	}
 
 /*---------------------------user-footer--------------------*/

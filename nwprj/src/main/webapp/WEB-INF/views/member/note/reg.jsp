@@ -20,14 +20,29 @@
 				</div>
 				<div class="publish-state">
 					<span>공개상태</span>
-					<input id="publish-true" class="hidden" type="radio" name="publish" value="true" checked="checked">
-					<label for="publish-true">공개</label>
-					<input id="publish-false" class="hidden" type="radio" name="publish" value="false">
-					<label for="publish-false">비공개</label>
+					<div>
+						<input id="publish-true" class="hidden" type="radio" name="publish" value="true" checked="checked">
+						<label for="publish-true">공개</label>
+						<input id="publish-false" class="hidden" type="radio" name="publish" value="false">
+						<label for="publish-false">비공개</label>
+					</div>
 				</div>
-				<div>
-					<span>태그추가</span>
-					<span><img src="${root}/resources/images/member/note/ic_keyboard_arrow_down_black_24dp.png"></span>
+				<div class="tag-add-list">
+					<div>
+						<span>태그추가</span>
+						<input type="text" placeholder="태그명 입력"><a href=""></a>
+<!-- 						<ul id="tag-auto-complete">
+							<li>추천 태그1</li>
+							<li>추천 태그2</li>
+						</ul> -->
+					</div>
+					<div>
+						<ul>
+							<li><a href="">#태그1</a></li>
+							<li><a href="">#태그2</a></li>
+							<li><a href="">#태그3</a></li>
+						</ul>
+					</div>
 				</div>
 				<div class="hidden">
 					<input multiple="multiple" type="file"/>
