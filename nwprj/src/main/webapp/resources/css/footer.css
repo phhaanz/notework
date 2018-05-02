@@ -30,12 +30,13 @@
 {
 	height: 80px;
 	color: #fff;
-	background: #000;
+	background: #fff;
+	border-top: 2px #B49B83 solid; 
 }
 
 	.common-footer .footer-menu a
 	{
-		color: #fff;
+		color: #B49B83;
 	}
 
 /*---------------------------user-footer--------------------*/
@@ -43,7 +44,7 @@
 {
 	height: 110px;
 	color: #000;
-	background: #e9e9e9;
+	background: #d9cdc1;
 }
 
 	.user-footer .footer-menu a

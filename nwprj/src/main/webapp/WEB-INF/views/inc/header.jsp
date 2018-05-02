@@ -10,12 +10,12 @@
 		<ul class="icon-bar">
 			<li>
 				<span id="hamburger-button">
-					<img src="${root}/resources/images/ic_menu_white_24dp.png" alt="메인 메뉴">
+					<img src="${root}/resources/images/ic_menu_24dp_2x.png" alt="메인 메뉴">
 				</span>
 			</li>
 			<li>
 				<a href="${root}/member/index">
-					<img src="${root}/resources/images/ic_account_box_white_24dp.png" alt="회원 메뉴">
+					<img src="${root}/resources/images/ic_account_circle_24dp_2x.png" alt="회원 메뉴">
 				</a>
 			</li>
 		</ul>

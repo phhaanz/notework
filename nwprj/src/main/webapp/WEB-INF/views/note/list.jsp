@@ -17,7 +17,6 @@
 						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
 					</a>
 					<div>
-						
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
 						<span>${note.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
@@ -25,7 +24,7 @@
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
 						<span>10</span>
 					</div>
-				<div><a href="${note.id}">${note.title}</a><img src="${root}/resources/images/note/ic_more_horiz_black_24dp.png"></div>
+				<div><a href="${note.id}">${note.title}</a><img src="${root}/resources/images/note/ic_more_vert_black_24dp_re.png"></div>
 				<div>
 						<a href="">#자바</a><a href="">#더미</a><a  href="">#css</a>
 				</div>

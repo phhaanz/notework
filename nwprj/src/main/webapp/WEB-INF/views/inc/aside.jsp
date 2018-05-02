@@ -28,9 +28,8 @@ $(function() {
 <nav class="aside">
 	<h1 class="hidden">사이드 바</h1>
 	<div>
-		<span>NOTEWORK</span>
 		<a href="">
-			<img src="${root}/resources/images/ic_close_white_24dp.png">
+			<img src="${root}/resources/images/ic_clear_24dp_2x.png">
 		</a>
 	</div>
 	<ul>

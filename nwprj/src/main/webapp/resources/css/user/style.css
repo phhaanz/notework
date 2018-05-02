@@ -40,14 +40,14 @@
 				width: 100%;
 				height: 50px;
 				padding: 15px 0px;
-				border-bottom: 1px #979797 dashed;
+				border-bottom: 1px #d9cdc1 dashed;
 			}
 			
 			.login-form form ul 
 			{
 				display: flex;
 				flex-direction: column;
-				border-bottom: 1px #979797 dashed;
+				border-bottom: 1px #d9cdc1 dashed;
 			}
 			
 			.login-form ul li
@@ -74,7 +74,7 @@
 				.login-form ul li:nth-of-type(3) input
 				{
 					border: none;
-					background-color : #0097a7;
+					background-color : #b49b83;
 					color: #fff;
 					font-size: 17px;
 					font-weight: bold;
@@ -117,7 +117,7 @@
 		margin: 10px auto;
 		font-size: 16px;
 		padding: 5px 0px;
-		border-bottom: 2px #0097a7 solid;
+		border-bottom: 2px #b49b83 solid;
 	}
 
 	.join-form form table
@@ -162,7 +162,7 @@
 		.join-form form table input[type='submit']
 		{
 			height: 35px;
-			background-color: #0097a7;
+			background-color: #b49b83;
 			color: #fff;
 			font-size: 17px;
 			font-weight: bold;

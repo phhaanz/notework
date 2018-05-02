@@ -33,5 +33,10 @@ input
 	margin: 0px;
 	padding: 5px;
 	box-sizing: border-box;
-	border: 1px #979797 solid;'
+	border: 1px #d9cdc1 solid;
+}
+
+textarea
+{
+	border: 1px #d9cdc1 solid;
 }
