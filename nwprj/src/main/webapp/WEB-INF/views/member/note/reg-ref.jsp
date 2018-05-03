@@ -42,6 +42,7 @@
 							<li><a href="">#태그2</a></li>
 							<li><a href="">#태그3</a></li>
 						</ul>
+						<input id="note-tags" type="hidden" name="tags" />
 					</div>
 				</div>
 				<div class="hidden">

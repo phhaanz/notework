@@ -392,7 +392,7 @@
 		
 		
 		.note-reg-form form > div:first-child input,
-		.note-reg-form form > div textarea
+		.note-reg-form form #edit-content-viewer
 		{
 			border: none !important; 
 			width: 100%;
@@ -405,7 +405,7 @@
 				height: 30px !important;
 			}
 			
-			.note-reg-form form > div textarea
+			.note-reg-form form #edit-content-viewer
 			{
 				box-sizing: border-box;
 				min-height: 300px;
@@ -413,6 +413,12 @@
 				resize: none;
 				overflow: hidden;
 			}
+			
+			.note-reg-form form #edit-content-viewer img
+			{
+				max-width: 100%;
+			}
+			
 			
 			.note-reg-form div > span:first-child
 			{
