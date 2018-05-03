@@ -178,12 +178,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-top: 0.5px #d9cdc1 solid;
-		background-color: #e9e9e9;
+		background-color: #d9cdc1;
 		width: 100%;
 		height: 40px;
 	}
-	
+		
+		.top-anchor > a > img
+		{
+			height: 30px;
+			width: 30px;
+		}	
 
 /*------------------------------------------------ detail --------------------------------------------*/
 	.note-detail
@@ -362,7 +366,7 @@
 					{
 						margin-right: 10px;
 					}
-					
+
 /*------------------------------------------- reg -------------------------------------------*/
 
 	.main .note-reg-form
@@ -396,7 +400,7 @@
 			margin-right: auto;
 		}
 			
-			.note-reg-form form div input
+			.note-reg-form > form > div > input
 			{
 				height: 30px !important;
 			}
@@ -442,6 +446,12 @@
 				align-items: center;
 			}
 			
+			.note-reg-form .publish-state label.checked
+			{
+				background-color: #b49b83;
+				color: #fff;
+			}
+			
 			.note-reg-form .publish-state label::before 
 			{
 				height: 30px;
@@ -451,6 +461,7 @@
 				content: '';
 				border: 1px #d9cdc1 solid;
 				box-sizing: border-box;
+				cursor: pointer;
 			}
 		.note-reg-form .tag-add-list
 		{
@@ -503,17 +514,23 @@
 				margin-bottom: 5px;
 			}
 		
-			.tag-add-list > div:last-child > ul > li > a
+			.tag-add-list > div:last-child > ul > li > span
 			{
-				height: 30px;
 				min-width: 20px;
+				text-align: center;
+				padding: 2px 5px;
+				display: inline-block;
+				border: none;
+				box-sizing: border-box;
 				color: #b49b83;
 				font-weight: bold;
-				text-align: center;
-				display: inline-block;
-				padding: 2px 5px;
-				box-sizing: border-box;
+				text-decoration: underline;
 			}
+			
+				.tag-add-list > div:last-child > ul > li > span:hover
+				{
+					cursor: pointer;
+				}
 
 		
 		

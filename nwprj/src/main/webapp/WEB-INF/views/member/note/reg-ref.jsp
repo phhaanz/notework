@@ -21,9 +21,9 @@
 				<div class="publish-state">
 					<span>공개상태</span>
 					<div>
-						<input id="publish-true" class="hidden" type="radio" name="publish" value="true">
+						<input id="publish-true" type="radio" name="publish" value="true">
 						<label for="publish-true">공개</label>
-						<input id="publish-false" class="hidden" type="radio" name="publish" value="false">
+						<input id="publish-false" type="radio" name="publish" value="false">
 						<label for="publish-false">비공개</label>
 					</div>
 				</div>
@@ -37,15 +37,13 @@
 						</ul> -->
 					</div>
 					<div>
-						<ul>	
+						<ul>
+							<li><a href="">#태그1</a></li>
+							<li><a href="">#태그2</a></li>
+							<li><a href="">#태그3</a></li>
 						</ul>
 					</div>
 				</div>
-				
-				<template id="tag-li-clone">
-					<li><input name="tags" type="text" readonly ></li>
-				</template>
-				
 				<div class="hidden">
 					<input multiple="multiple" type="file"/>
 				</div>
@@ -87,65 +85,7 @@
 
 
 <script>
-//공개/비공개 전환
-$(function(){
-	//기본 공개
-	var trueLabel = $("label[for='publish-true']");
-	var falseLabel = $("label[for='publish-false']");
-	
-	trueLabel.addClass("checked");
-	$("#publish-true").prop('checked',true);
-	
-	trueLabel.click(function(){
-		if(trueLabel.hasClass("checked"))
-			return;
-		falseLabel.removeClass("checked");
-		trueLabel.addClass("checked");
-		
-		$("#publish-true").prop('checked',true);
-		$("#publish-false").prop('checked',false);
-	});
-	falseLabel.click(function(){
-		if(falseLabel.hasClass("checked"))
-			return;
-		trueLabel.removeClass("checked");
-		falseLabel.addClass("checked");
-		
-		$("#publish-false").prop('checked',true);
-		$("#publish-true").prop('checked',false);
-	});
-});
 
-//태그 추가
-$(function(){
-	var tagInput = $("#tag-input");
-	var tagRegBtn = $("#tag-reg-btn");
-	var tagListBox = $(".tag-add-list > div:nth-child(2) > ul");
-	var cloneList = $("#tag-li-clone");
-	var maxTagCnt = 0;
-	
-	tagRegBtn.click(function(evt){
-		evt.preventDefault();
-		
-		if(maxTagCnt >= 5)
-		{
-			alert('tagOverFlow');
-			return;
-		}
-		else if(tagInput.val() == null || tagInput.val() == '')
-		{
-			alert('태그입력해라');
-			return;
-		}
-		
-		var tag = "#"+tagInput.val();
-		var cloneLi = $("<li />");
-		var cloneInput = $("<span>").text(tag);
-		
-		cloneLi.append(cloneInput).appendTo(tagListBox);
-		maxTagCnt++;
-	});
-});
 
 </script>
 

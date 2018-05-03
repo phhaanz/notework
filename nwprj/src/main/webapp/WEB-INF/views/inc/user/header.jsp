@@ -8,7 +8,7 @@
 	<div>
 		<h1 class="hidden">헤더 홈 로고</h1>	
 		<a href="${root}/index">
-			<img src="${root}/resources/images/logo_notework_1x.png" />
+			<img src="${root}/resources/images/logo_notework.png" />
 		</a>
 	</div>
 </header>
