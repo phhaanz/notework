@@ -38,4 +38,12 @@ public class MyBatisNoteDao implements NoteDao {
 		return result;
 	}
 
+	@Override
+	public int updateHit(Integer id) {
+		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
+		int result = noteDao.updateHit(id);
+		
+		return result;
+	}
+
 }

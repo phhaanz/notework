@@ -11,5 +11,7 @@ public interface NoteDao {
 	Note get(Integer id);
 
 	int insert(Note note);
+
+	int updateHit(Integer id);
 	
 }

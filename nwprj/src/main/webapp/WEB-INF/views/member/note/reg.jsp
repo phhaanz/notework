@@ -46,9 +46,9 @@
 					</div>
 				</div>		
 				<div class="hidden">
-					<input type="file" name="images"/>
+					<input type="file" multiple="multiple" name="images"/>
 				</div>
-				<div class="attached-image-list">
+				<%-- <div class="attached-image-list">
 					<span>첨부파일</span>
 					<ul>
 						<li>
@@ -76,7 +76,7 @@
 							</div>
 						</li>
 					</ul>
-				</div>
+				</div> --%>
 				<input class="hidden" type="submit" />
 			</form>
 		</section>
@@ -166,6 +166,8 @@ $(function(){
 $(function(){
 	var contentViewer = $("#edit-content-viewer");
 	var textBoldBtn = $("#text-bold-btn");
+	var textItalicBtn = $("#text-italic-btn");
+	var textUnderlineBtn = $("text-underline-btn");
 	var photoUploadBtn = $("#photo-upload-btn");
 	var imageFileBtn = $("input:file");
 	var bold;	
@@ -175,8 +177,7 @@ $(function(){
 	});
 	
 	imageFileBtn.change(function() {
-		
-	
+
 		var reader = new FileReader();
 		
 		reader.onload = function(evt){
@@ -186,27 +187,32 @@ $(function(){
 			image.attr("src", src); 
 			
 			image.appendTo(contentViewer);
+			contentViewer.focus();
 		};
-		
 		reader.readAsDataURL($(this)[0].files[0]);
-	
+		
 	});
 	
-	
+	contentViewer.focus(function(){
+
+	});
 	
 	
 	textBoldBtn.click(function(){
 		bold = true;
+		$("<b />").html('d').appendTo(contentViewer);
 		contentViewer.focus();
-		var boldBlock= $("<b />");
-		boldBlock.appendTo(contentViewer);
-		
-		contentViewer.keyup(function(data){
-			if(bold==true)
-				alert(data.charCode);
-		});
 	});
-
+	
+	textUnderlineBtn.click(function(){
+		$("<u />").html('d').appendTo(contentViewer);
+		contentViewer.focus();
+	});
+	
+	textItalicBtn.click(function(){
+		$("<i />").html('d').appendTo(contentViewer);
+		contentViewer.focus();
+	});
 });
 
 
@@ -218,11 +224,15 @@ $(function(){
 	var submitBtn = $("input:submit");
 	var tagRegBtn = $("#tag-reg-btn");
 	var fileListBox = $(".attached-image-list > ul");
-	
+	var contentDiv = $("#edit-content-viewer");
+	var contentText = $("textarea[name='content']");
 	//등록버튼 트리거
 	regBtn.click(function(e){
 		var tagListBox = $(".tag-add-list > div:nth-child(2) > ul");
 		var noteTags = $("#note-tags");
+		
+		contentText.val(contentDiv.html());
+		
 		e.preventDefault();
 		noteTags.val(tagListBox.text());
 		submitBtn.trigger('click');

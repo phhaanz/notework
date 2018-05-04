@@ -34,7 +34,7 @@
 			<div class="article-footer">
 				<ul>
 					<li>
-						<span><img src="${root}/resources/images/note/ic_chevron_left_black_24dp.png"></span>
+						<a href="list"><img src="${root}/resources/images/note/ic_chevron_left_black_24dp.png"></a>
 					</li>
 					
 					<li>
@@ -48,8 +48,5 @@
 </main>
 
 <script>
-$(".article-footer ul > li:first-child span").click(function(){
-	history.back();
-});
 
 </script>

@@ -32,6 +32,16 @@
 					<img src="${root}/resources/images/member/note/ic_title_black_24dp.png">
 				</span>
 			</li>
+			<li id="text-italic-btn">
+				<span>
+					<img src="${root}/resources/images/member/note/ic_format_italic_black_24dp.png">
+				</span>
+			</li>
+			<li id="text-underline-btn">
+				<span>
+					<img src="${root}/resources/images/member/note/ic_format_underlined_black_24dp.png">
+				</span>
+			</li>
 			<li id="text-color-btn">
 				<span>
 					<img src="${root}/resources/images/member/note/ic_format_color_text_black_24dp.png">

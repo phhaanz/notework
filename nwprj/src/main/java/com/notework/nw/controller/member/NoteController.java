@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +41,7 @@ public class NoteController {
 	
 	@RequestMapping("{id}")
 	public String detail(@PathVariable("id")Integer id, Model model) {
+		int result = service.updateNoteHit(id);
 		Note note = service.getNote(id);
 		model.addAttribute("note", note);
 		
@@ -54,50 +56,54 @@ public class NoteController {
 	
 	@GetMapping("reg")
 	public String reg() {
-		
+
 		return "member.note.reg";
 	}
 
 	@PostMapping("reg")
-	public String reg(Note note, MultipartFile file, HttpServletRequest request)
+	public String reg(@RequestParam("images") MultipartFile[] files, Note note, HttpServletRequest request)
 	{
 		String writerId = request.getUserPrincipal().getName();
 		note.setWriterId(writerId);
 		
+		System.out.println(note.getContent());
+		
 		int result = service.insertNote(note);
 		
-		/*if(!(file.isEmpty()))
+		if(!(files.length == 0))
 		{
 			try {
 				ServletContext ctx = request.getServletContext();
 				String path = ctx.getRealPath("/resources/upload/");
-				String id = "himan";
 				
-				File f = new File(path+id);
+				File f = new File(path+writerId);
 				
 				if(!f.exists())
 					f.mkdirs();
 				
-				InputStream is = file.getInputStream();
-				String fname = file.getOriginalFilename();
-				
-				FileOutputStream os = new FileOutputStream(path+id+File.separator+fname);
-				
-				byte[] buf = new byte[1024];
-				
-				int size=0;
-				
-				while((size=is.read(buf, 0, 1024)) != -1)
-					os.write(buf, 0, size);
-				
-				os.close();
-				is.close();
+				for(int i=0; i< files.length; i++)
+				{
+					InputStream is = files[i].getInputStream();
+					String fname = files[i].getOriginalFilename();
+					
+					FileOutputStream os = new FileOutputStream(path+writerId+File.separator+fname);
+					
+					byte[] buf = new byte[1024];
+					
+					int size=0;
+					
+					while((size=is.read(buf, 0, 1024)) != -1)
+						os.write(buf, 0, size);
+					
+					os.close();
+					is.close();
+				}
 			} 
 			catch (IOException e) {
 				//에러페이지 따로 지정해주는게 무조건 좋음
 				e.printStackTrace();
 			}
-		}*/
+		}
 			
 		return "redirect:list";
 	}

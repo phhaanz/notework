@@ -5,7 +5,7 @@
 <mapper namespace="com.notework.nw.dao.MemberRoleDao">
 
 	<select id="get" resultType="com.notework.nw.entity.MemberRole">
-		select * from MemberRole where memberId=#{memberId} and roleId=#{roleId} 
+		select * from MemberRole where memberId=#{memberId} and roleId=#{roleId}
 	</select>
 	
 	<insert id="insert" parameterType="com.notework.nw.entity.MemberRole">

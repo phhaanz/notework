@@ -5,8 +5,8 @@
 <mapper namespace="com.notework.nw.dao.NoteDao">
 		
 	<select id="getList" resultType="com.notework.nw.entity.Note">
-		select * from Note
-		limit ${(_parameter-1)*15}, 15
+		select * from Note order by regDate DESC
+		limit ${(_parameter-1)*15}, 15 
 	</select>
 		
 	<select id="get" resultType="com.notework.nw.entity.Note">
@@ -17,5 +17,9 @@
 		insert into Note(title, content, writerId, publish)
 		values(#{title}, #{content}, #{writerId}, #{publish})
 	</insert>
+	
+	<update id="updateHit" parameterType="com.notework.nw.entity.Note">
+		update Note set hit=hit+1 where id=#{id}
+	</update>
 	
 </mapper>

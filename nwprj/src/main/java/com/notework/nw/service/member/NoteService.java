@@ -32,5 +32,12 @@ public class NoteService {
 	
 		return result;
 	}
+
+	public int updateNoteHit(Integer id) {
+		
+		int upResult = noteDao.updateHit(id);
+		
+		return 0;
+	}
 	
 }
