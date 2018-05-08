@@ -11,25 +11,25 @@
 			<div class="article-header">
 				<div><a href="">#태그1아아65345</a><a href="">#태그1아아65345</a><a href="">#태그1아아65345</a> <a href="">#태그12312312312</a> <a href="">#태그12312313323</a></div>
 				
-				<div>${note.title}</div>
+				<div>${noteView.title}</div>
 				
 				<div>
 					<img src="${root}/resources/images/dummy/profile.jpeg">
 				</div>
 	
 				<div>
-					<span>${note.writerId}</span>
+					<span>${noteView.writerId}(${noteView.writerName})</span>
 					<span>Lv</span>
 				</div>
 				
 				<div>
-					<span>Date : <fmt:formatDate value="${note.regDate}" pattern="yyyy.MM.dd HH:mm:ss" /></span>
+					<span>Date : <fmt:formatDate value="${noteView.regDate}" pattern="yyyy.MM.dd HH:mm:ss" /></span>
 					<span class="devide-line"></span>
-					<span>Hit : ${note.hit}</span>
+					<span>Hit : ${noteView.hit}</span>
 				</div>
 			</div>
 			<div class="article-main">
-				${note.content}
+				${noteView.content}
 			</div>
 			<div class="article-footer">
 				<ul>

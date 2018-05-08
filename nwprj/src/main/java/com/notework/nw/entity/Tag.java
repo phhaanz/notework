@@ -1,32 +1,19 @@
 package com.notework.nw.entity;
 
 public class Tag {
-
-	private int id;
-	private String name;
+	private String id;
 	
 	public Tag() {
 		
 	}
-	public Tag(String name) {
-		this.name = name;
-	}
-	public Tag(int id, String name) {
+	public Tag(String id) {
 		this.id = id;
-		this.name = name;
 	}
-	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
 	}
 	
 }

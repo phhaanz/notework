@@ -4,16 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.notework.nw.dao.NoteDao">
 		
-	<select id="getList" resultType="com.notework.nw.entity.Note">
-		select * from Note order by regDate DESC
-		limit ${(_parameter-1)*15}, 15 
+	<select id="getListById" resultType="com.notework.nw.entity.view.NoteView">
+		select distinct id, title, content, hit, regDate, writerId from NoteView where writerId=#{writerId} order by regDate DESC
 	</select>
 		
-	<select id="get" resultType="com.notework.nw.entity.Note">
+	<select id="get" resultType="com.notework.nw.entity.view.NoteView">
 		select * from Note where id=#{id}
 	</select>
 	
-	<insert id="insert" parameterType="com.notework.nw.entity.Note">
+	<insert id="insert" parameterType="com.notework.nw.entity.Note" useGeneratedKeys="true" keyProperty="id">
 		insert into Note(title, content, writerId, publish)
 		values(#{title}, #{content}, #{writerId}, #{publish})
 	</insert>

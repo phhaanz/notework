@@ -8,12 +8,17 @@
 		select * from Tag
 	</select>
 	
+	<select id="getListByNoteId" parameterType="int" resultType="com.notework.nw.entity.Tag">
+		select * from TagNoteView where noteId=#{noteId}
+	</select>
+	
 	<select id="get" resultType="com.notework.nw.entity.Tag">
 		select * from Tag where id=#{id}
 	</select>
 	
 	<insert id="insert" parameterType="com.notework.nw.entity.Tag">
-		insert into Tag(id, name) values(#{id}, #{name})
+		insert into Tag(id) select #{id} from dual
+		where not exists(select id from Tag where id=#{id});
 	</insert>
 	
 	<delete id="delete" parameterType="com.notework.nw.entity.Tag">

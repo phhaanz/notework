@@ -19,22 +19,30 @@ public class MyBatisTagDao implements TagDao {
 	public List<Tag> getList() {
 		TagDao tagDao = sqlsession.getMapper(TagDao.class);
 		List<Tag> tagList = tagDao.getList();
-		
+
+		return tagList;
+	}
+	
+	@Override
+	public List<Tag> getListByNoteId(int noteId) {
+		TagDao tagDao = sqlsession.getMapper(TagDao.class);
+		List<Tag> tagList = tagDao.getListByNoteId(noteId);
 		
 		return tagList;
 	}
-
+	
 	@Override
-	public Tag get(Integer id) {
+	public Tag get(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int insert(Tag tag) {
-		// TODO Auto-generated method stub
+		TagDao tagDao = sqlsession.getMapper(TagDao.class);
+		int result = tagDao.insert(tag);
 		return 0;
 	}
-	
+
 
 }

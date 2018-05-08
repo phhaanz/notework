@@ -26,7 +26,9 @@
 					</div>
 				<div><a href="${note.id}">${note.title}</a><img src="${root}/resources/images/note/ic_more_vert_black_24dp_re.png"></div>
 				<div>
-						<a href="">#자바</a><a href="">#더미</a><a  href="">#css</a>
+					<c:forEach var="tag" items="${note}">
+						<a href="">${tag.id}</a>
+					</c:forEach>
 				</div>
 				</li>
 				</c:forEach>
@@ -36,5 +38,5 @@
 </main>
 <section class="top-anchor">
 	<h1 class="hidden">최상단으로</h1>
-	<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
+	<a href="#top"><img src="${root}/resources/images/note/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 </section>

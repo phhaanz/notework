@@ -9,7 +9,6 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,11 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.notework.nw.entity.Note;
+import com.notework.nw.entity.view.NoteView;
 import com.notework.nw.service.member.NoteService;
 
 @Controller("memberNoteController")
@@ -32,9 +31,12 @@ public class NoteController {
 	private NoteService service;
 	
 	@RequestMapping("list")
-	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model) {
-		List<Note> notes = service.getNoteList(page);
-		model.addAttribute("notes", notes);
+	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model, HttpServletRequest request) {
+		
+		String writerId = request.getUserPrincipal().getName();
+		List<NoteView> noteViews = service.getNoteListById(writerId, page);
+
+		model.addAttribute("noteViews", noteViews);
 
 		return "member.note.list";
 	}
@@ -42,8 +44,8 @@ public class NoteController {
 	@RequestMapping("{id}")
 	public String detail(@PathVariable("id")Integer id, Model model) {
 		int result = service.updateNoteHit(id);
-		Note note = service.getNote(id);
-		model.addAttribute("note", note);
+		NoteView noteView = service.getNote(id);
+		model.addAttribute("noteView", noteView);
 		
 		return "member.note.detail";
 	}
@@ -61,14 +63,12 @@ public class NoteController {
 	}
 
 	@PostMapping("reg")
-	public String reg(@RequestParam("images") MultipartFile[] files, Note note, HttpServletRequest request)
+	public String reg(@RequestParam("images") MultipartFile[] files, HttpServletRequest request, Note note, String tags)
 	{
 		String writerId = request.getUserPrincipal().getName();
 		note.setWriterId(writerId);
-		
-		System.out.println(note.getContent());
-		
-		int result = service.insertNote(note);
+
+		int result = service.insertNote(note, tags);
 		
 		if(!(files.length == 0))
 		{

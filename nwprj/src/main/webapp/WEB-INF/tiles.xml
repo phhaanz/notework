@@ -42,7 +42,7 @@
 	</definition>
 	
 	<definition name="member.note.list" extends="ListTemplate">
-		<put-attribute name="main" value="/WEB-INF/views/note/list.jsp" />
+		<put-attribute name="main" value="/WEB-INF/views/member/note/list.jsp" />
 	</definition>
 	
 	<definition name="note.detail" extends="DetailTemplate">    

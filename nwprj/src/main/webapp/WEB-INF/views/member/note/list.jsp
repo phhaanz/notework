@@ -8,24 +8,24 @@
 		<section class="note-list">
 			<h1 class="hidden">노트 목록</h1>
 			<ul>
-				<c:forEach var="note" items="${notes}">	
+				<c:forEach var="n" items="${noteViews}">
 				<li>
-					<a href="${note.id}">
+					<a href="${n.id}">
 						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
 					</a>
 					<div>
-						
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
-						<span>11</span>
+						<span>${n.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
 						<span>25</span>
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
 						<span>10</span>
 					</div>
-				<div><a href="${note.id}">${note.title}</a></div>
-				<div>by 작성자</div>
+				<div><a href="${n.id}">${n.title}</a></div>
 				<div>
-						<a href="">#자바</a><a href="">#더미</a><a  href="">#css</a>
+					<c:forEach var="tag" items="${n}">
+						<a href="">${tag.id}</a>
+					</c:forEach>
 				</div>
 				</li>
 				</c:forEach>

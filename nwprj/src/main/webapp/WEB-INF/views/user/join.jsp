@@ -9,27 +9,27 @@
 				<table>
 					<tr>
 						<td>
-							<input type="text" name="id" placeholder="아이디">
+							<input type="text" name="id" placeholder="아이디" required />
 						</td>	
 					</tr>
 					<tr>
 						<td>
-							<input type="password" name="password" placeholder="비밀번호">
+							<input type="password" name="password" placeholder="비밀번호" required />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type="password" placeholder="비밀번호확인" />
+							<input type="password" placeholder="비밀번호확인" required />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="name" placeholder="닉네임">
+							<input type="text" name="name" placeholder="닉네임" required />
 						</td>
 					</tr>
 					<tr>
 						<td>	
-							<input type="text" name="email" placeholder="이메일">
+							<input type="text" name="email" placeholder="이메일" />
 						</td>
 					</tr>
 					<tr>

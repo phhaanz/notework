@@ -8,7 +8,9 @@ public interface TagDao {
 
 	List<Tag> getList();
 	
-	Tag get(Integer id);
+	List<Tag> getListByNoteId(int noteId);
+	
+	Tag get(String id);
 
-	int insert(Tag tag); 
+	int insert(Tag tag);
 }
