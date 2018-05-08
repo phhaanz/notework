@@ -9,7 +9,7 @@
 	</select>
 		
 	<select id="get" resultType="com.notework.nw.entity.view.NoteView">
-		select * from Note where id=#{id}
+		select * from NoteView where id=#{id}
 	</select>
 	
 	<insert id="insert" parameterType="com.notework.nw.entity.Note" useGeneratedKeys="true" keyProperty="id">

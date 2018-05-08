@@ -4,20 +4,24 @@ public class Preset {
 
 	private int id;
 	private String name;
-	private String linkUrl;
+	private String memberId;
+	private String description;
 	
 	public Preset() {
 		
 	}
-	public Preset(String name, String linkUrl) {
+	public Preset(String name, String memberId, String description) {
 		this.name = name;
-		this.linkUrl = linkUrl;
+		this.memberId = memberId;
+		this.description = description;
 	}
-	public Preset(int id, String name, String linkUrl) {
+	public Preset(int id, String name, String memberId, String description) {
 		this.id = id;
 		this.name = name;
-		this.linkUrl = linkUrl;
+		this.memberId = memberId;
+		this.description = description;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -30,10 +34,17 @@ public class Preset {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getLinkUrl() {
-		return linkUrl;
+	public String getMemberId() {
+		return memberId;
 	}
-	public void setLinkUrl(String linkUrl) {
-		this.linkUrl = linkUrl;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 }

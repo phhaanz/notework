@@ -38,5 +38,5 @@
 </main>
 <section class="top-anchor">
 	<h1 class="hidden">최상단으로</h1>
-	<a href="#top"><img src="${root}/resources/images/note/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
+	<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 </section>

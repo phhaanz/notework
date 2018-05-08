@@ -9,9 +9,23 @@
 	</select>
 	
 	<select id="getListByNoteId" parameterType="int" resultType="com.notework.nw.entity.Tag">
-		select * from TagNoteView where noteId=#{noteId}
+		select tagId as id from TagNoteView where noteId=#{noteId}
 	</select>
 	
+	<select id="getListByWriterId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
+		select tagId as id from TagNoteView 
+		where writerId=#{writerId} and tagId is not null order by tagId asc
+	</select>
+	
+	<select id="getListByTagId" resultType="com.notework.nw.entity.view.TagView">
+		select tagId as id from TagNoteView 
+		where writerId=#{writerId} and tagId like concat('%', #{tagId} ,'%') order by tagId asc
+	</select>
+	
+	<select id="getFavListByWriterId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
+		select tagId as id, count(noteId) as noteCnt from TagNoteView 
+		where writerId=#{writerId} and tagId is not null group by tagId order by count(noteId) desc, tagId asc
+	</select>
 	<select id="get" resultType="com.notework.nw.entity.Tag">
 		select * from Tag where id=#{id}
 	</select>

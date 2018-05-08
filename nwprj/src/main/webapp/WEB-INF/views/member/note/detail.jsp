@@ -9,7 +9,16 @@
 	<div class="root-container">
 		<article class="note-detail">
 			<div class="article-header">
-				<div><a href="">#태그1아아65345</a><a href="">#태그1아아65345</a><a href="">#태그1아아65345</a> <a href="">#태그12312312312</a> <a href="">#태그12312313323</a></div>
+				<div>
+					<c:if test="${empty noteView.tagList}">
+						<span>(태그 없음)</span>
+					</c:if>
+					<c:if test="${!empty noteView.tagList }">
+						<c:forEach var="tag" items="${noteView.tagList}">
+							<a href="">#${tag.id}</a>
+						</c:forEach>
+					</c:if>
+				</div>
 				
 				<div>${noteView.title}</div>
 				
@@ -18,7 +27,7 @@
 				</div>
 	
 				<div>
-					<span>${noteView.writerId}(${noteView.writerName})</span>
+					<span>${noteView.writerName}(${noteView.writerId})</span>
 					<span>Lv</span>
 				</div>
 				

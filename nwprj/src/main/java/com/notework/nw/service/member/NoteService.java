@@ -23,6 +23,9 @@ public class NoteService {
 	@Autowired
 	private TagDao tagDao;
 	
+	@Autowired
+	private TagNoteDao tagNoteDao;
+	
 	@Transactional
 	public List<NoteView> getNoteListById(String writerId, Integer page) {
 		List<NoteView> noteViews = noteDao.getListById(writerId);
@@ -30,8 +33,11 @@ public class NoteService {
 		for(NoteView nv : noteViews)
 		{
 			List<Tag> tags = tagDao.getListByNoteId(nv.getId()); 
-			if(tags !=null)
+			
+			if(tags.get(0) !=null)
+			{
 				nv.setTagList(tags);
+			}
 		}
 		
 		return noteViews;
@@ -41,6 +47,13 @@ public class NoteService {
 	public NoteView getNote(Integer id) {
 		NoteView noteView = noteDao.get(id);
 		
+		List<Tag> tags = tagDao.getListByNoteId(id); 
+			
+		if(tags.get(0) !=null)
+		{
+			noteView.setTagList(tags);
+		}
+
 		return noteView;
 	}
 
@@ -61,7 +74,7 @@ public class NoteService {
 			tagDao.insert(tag);
 			
 			TagNote tagNote = new TagNote(noteId, tag.getId());
-		/*	tagNoteDao.insert(tagNote);*/
+			int result = tagNoteDao.insert(tagNote);
 		}
 	
 		return 0;

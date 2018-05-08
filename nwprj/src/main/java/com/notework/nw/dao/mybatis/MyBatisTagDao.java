@@ -2,12 +2,14 @@ package com.notework.nw.dao.mybatis;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.notework.nw.dao.TagDao;
 import com.notework.nw.entity.Tag;
+import com.notework.nw.entity.view.TagView;
 
 @Repository
 public class MyBatisTagDao implements TagDao {
@@ -32,6 +34,30 @@ public class MyBatisTagDao implements TagDao {
 	}
 	
 	@Override
+	public List<TagView> getListByWriterId(String writerId) {
+		TagDao tagDao = sqlsession.getMapper(TagDao.class);
+		List<TagView> tagViewList = tagDao.getListByWriterId(writerId);
+		
+		return tagViewList;
+	}
+	@Override
+	public List<TagView> getListByTagId(@Param("writerId") String writerId, @Param("tagId") String tagId) {
+		TagDao tagDao = sqlsession.getMapper(TagDao.class);
+		List<TagView> tagViewList = tagDao.getListByTagId(writerId, tagId);
+		
+		return tagViewList;
+	}
+	
+	@Override
+	public List<TagView> getFavListByWriterId(String writerId) {
+		TagDao tagDao = sqlsession.getMapper(TagDao.class);
+		List<TagView> favTagViewList = tagDao.getFavListByWriterId(writerId);
+		
+		return favTagViewList;
+	}
+	
+	
+	@Override
 	public Tag get(String id) {
 		// TODO Auto-generated method stub
 		return null;
@@ -43,6 +69,7 @@ public class MyBatisTagDao implements TagDao {
 		int result = tagDao.insert(tag);
 		return 0;
 	}
+
 
 
 }

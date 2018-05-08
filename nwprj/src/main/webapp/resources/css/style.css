@@ -24,12 +24,35 @@
 	display: none;
 }
 
+.list-empty
+{
+	width: 100%;
+	text-align: center;
+}
+
+	.list-empty > span
+	{
+		margin-top: 55px;
+		display: inline-block;
+		color: #b49b83;
+		font-size: 14px;
+	}
 /*-----------------------------/tag/------------------------------*/
 
 .tag-list
 {
-	min-height: 185px;
+	min-height: 180px;
 }
+
+	.tag-list .list-empty
+	{
+		height: 180px;
+	}
+	
+	.tag-all .list-empty
+	{
+		height: 340px;
+	}
 
 .tag-list,
 .tag-none,
@@ -220,6 +243,54 @@
 				font-size: 14px;
 				line-height: 20px;
 			}
+/*--------------------------------- search------------------------------------- */
+
+	.search-input
+	{
+		width: 95%;
+		height: 180px;
+		margin: 0px auto;
+	}
+	
+		.search-input h1
+		{
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			width: 100%;
+			margin-top: 5px;
+			height: 30px;
+			border-bottom: 2px #b49b83 solid;
+			color: #000;
+			font-size: 16px; 
+			line-height: 30px;
+		}
+
+			.search-input h1 > img
+			{
+				width: 18px;
+				height: 18px;	
+			}
+					
+			.search-input form
+			{
+				padding-top: 70px;
+				display: flex;
+				justify-content: center;
+			}
 			
-			
+				.search-input form input[type='text']
+				{
+					width: calc(100% - 80px);
+					height: 30px;
+				}
+				
+				.search-input form input[type='submit']
+				{
+					box-sizing: border-box;
+					background-color: #b49b83;
+					color: #fff;
+					font-weight: bold;
+					width: 80px;
+				}
 			

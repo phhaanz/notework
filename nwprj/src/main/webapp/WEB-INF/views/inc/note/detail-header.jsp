@@ -4,7 +4,7 @@
 <c:set var="root" value="${pageContext.request.contextPath}" />
 
 <header class="header note-detail-header">
-	<h1 class="title">누구님의 노트</h1>
+	<h1 class="title">${noteView.writerName} 님의 노트</h1>
 	<nav class="hor-menu note-detail-menu">
 		<h1 class="hidden">노트 메뉴</h1>
 		<ul class="icon-bar">

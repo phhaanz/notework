@@ -3,10 +3,19 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 
-<main id="top" class="main">
+<section class="visual">
+	<span class="currentPath">currentPage</span>
+</section>
+<main id="top" class="main padding-top-45">
 	<div class="root-container">
 		<section class="note-list">
 			<h1 class="hidden">노트 목록</h1>
+			<c:if test="${empty noteViews}">
+			<div class="list-empty">
+				<span>등록한 노트가 없습니다.</span>
+			</div>
+			</c:if>
+			<c:if test="${!empty noteViews}">
 			<ul>
 				<c:forEach var="n" items="${noteViews}">
 				<li>
@@ -23,16 +32,22 @@
 					</div>
 				<div><a href="${n.id}">${n.title}</a></div>
 				<div>
-					<c:forEach var="tag" items="${n}">
-						<a href="">${tag.id}</a>
+					<c:if test="${empty n.tagList}">
+					<span>(태그 없음)</span>
+					</c:if>
+					<c:if test="${!empty n.tagList }">
+					<c:forEach var="tag" items="${n.tagList}">
+						<a href="">#${tag.id}</a>
 					</c:forEach>
+					</c:if>
 				</div>
 				</li>
 				</c:forEach>
 			</ul>
+			</c:if>
 		</section>
 	</div>
 	<div class="top-anchor">
-		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_black_24dp.png" alt="최상위로"></a>
+		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 	</div>
 </main>
