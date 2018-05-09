@@ -4,6 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.notework.nw.dao.PresetDao">
 	
+	<select id="getList" parameterType="String">
+		select * from PresetView where memberId=#{memberId}
+	</select>
 	<insert id="insert" parameterType="com.notework.nw.entity.Preset" useGeneratedKeys="true" keyColumn="id">
 		insert into Preset(name, description, memberId) values(#{name}, #{description}, #{memberId})
 	</insert>

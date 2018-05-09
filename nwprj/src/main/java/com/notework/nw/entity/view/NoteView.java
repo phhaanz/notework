@@ -12,10 +12,9 @@ public class NoteView extends Note {
 	private String writerName;
 	
 	public NoteView(int id, String title, String content, String writerId, int hit, Date regDate, Date accDate,
-			boolean publish, String writerName, List<Tag> tagList) {
+			boolean publish, String writerName) {
 		super(id, title, content, writerId, hit, regDate, accDate, publish);
 		this.writerName = writerName;
-		this.tagList = tagList;
 	}
 	public NoteView() {
 		// TODO Auto-generated constructor stub

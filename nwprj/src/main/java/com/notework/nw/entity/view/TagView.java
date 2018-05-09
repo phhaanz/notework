@@ -11,7 +11,7 @@ public class TagView extends Tag {
 		this.noteCnt = noteCnt;
 	}
 	public TagView() {
-		
+
 	}
 	public int getNoteCnt() {
 		return noteCnt;

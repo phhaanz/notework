@@ -248,7 +248,7 @@
 	.search-input
 	{
 		width: 95%;
-		height: 180px;
+		min-height: 130px;
 		margin: 0px auto;
 	}
 	
@@ -274,11 +274,19 @@
 					
 			.search-input form
 			{
-				padding-top: 70px;
 				display: flex;
 				justify-content: center;
 			}
 			
+			.search-title form
+			{
+				padding-top: 40px;
+			}
+			
+			.search-tag form
+			{
+				padding: 20px 0px;
+			}
 				.search-input form input[type='text']
 				{
 					width: calc(100% - 80px);
@@ -293,4 +301,71 @@
 					font-weight: bold;
 					width: 80px;
 				}
+
+				
+		.search-tag .tag-add-list
+		{
+		}	
+		
+		.search-tag .tag-add-list > div:first-child
+		{
+			padding: 40px 0px;
+			display: flex;
+			align-items: center;
+			border-bottom: 1px #d9cdc1 dashed;
+		}
+		
+			.search-tag .tag-add-list > div:first-child > input[type='text']
+			{
+				width: calc(100% - 30px);
+				height: 30px;
+				margin-left: auto;
+			}
 			
+				.search-tag .tag-add-list > div:first-child > a
+				{
+					display: inline-block;
+					height: 30px;
+					width: 30px;
+					background: url('../images/member/note/ic_add_box_black_24dp.png') no-repeat center;
+				}
+		
+		.search-tag .tag-add-list > div:last-child
+		{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			padding-top: 10px;
+		}
+			
+		.search-tag .tag-add-list > div:last-child > ul
+		{
+			width: 100%;
+			height: 70px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+			.search-tag .tag-add-list > div:last-child > ul > li 
+			{
+				margin-left: 5px;
+				margin-bottom: 5px;
+			}
+		
+			.search-tag .tag-add-list > div:last-child > ul > li > span
+			{
+				min-width: 20px;
+				text-align: center;
+				padding: 2px 5px;
+				display: inline-block;
+				border: none;
+				box-sizing: border-box;
+				color: #b49b83;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+			
+				.search-tag .tag-add-list > div:last-child > ul > li > span:hover
+				{
+					cursor: pointer;
+				}

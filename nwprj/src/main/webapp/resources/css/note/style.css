@@ -449,7 +449,6 @@
 				max-width: 100%;
 			}
 			
-			
 			.note-reg-form div > span:first-child
 			{
 				width: 70px;
@@ -512,13 +511,13 @@
 			justify-content: space-between;
 		}
 		
-			.tag-add-list > div:first-child > input[type='text']
+			.note-reg-form .tag-add-list > div:first-child > input[type='text']
 			{
 				width: calc(75% - 30px);
 				margin-left: auto;
 			}
 			
-				.tag-add-list > div:first-child > a
+				.note-reg-form .tag-add-list > div:first-child > a
 				{
 					display: inline-block;
 					height: 30px;
@@ -535,8 +534,7 @@
 			
 		}
 			
-
-		.tag-add-list > div:last-child > ul
+		.note-reg-form .tag-add-list > div:last-child > ul
 		{
 			width: 75%;
 			display: flex;
@@ -544,13 +542,13 @@
 			margin-left: auto;
 			flex-wrap: wrap;
 		}
-			.tag-add-list > div:last-child > ul > li 
+			.note-reg-form .tag-add-list > div:last-child > ul > li 
 			{
 				margin-left: 5px;
 				margin-bottom: 5px;
 			}
 		
-			.tag-add-list > div:last-child > ul > li > span
+			.note-reg-form .tag-add-list > div:last-child > ul > li > span
 			{
 				min-width: 20px;
 				text-align: center;
@@ -563,7 +561,7 @@
 				text-decoration: underline;
 			}
 			
-				.tag-add-list > div:last-child > ul > li > span:hover
+				.note-reg-form .tag-add-list > div:last-child > ul > li > span:hover
 				{
 					cursor: pointer;
 				}
