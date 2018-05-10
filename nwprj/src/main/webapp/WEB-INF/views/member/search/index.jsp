@@ -10,7 +10,7 @@
 				<img src="${root}/resources/images/search/ic_search_black_24dp.png">
 				<span>제목으로 검색</span>
 			</h1>
-			<form action="result" method="get">
+			<form action="list-by-title">
 				<input type="text" name="title" placeholder="노트 제목 입력">
 				<input type="submit" value="검색">
 			</form>
@@ -35,7 +35,7 @@
 					<input id="note-tags" type="hidden" name="tags" />
 				</div>
 			</div>
-			<form action="result" method="get">
+			<form action="list-by-tag" method="get">
 				<input type="submit" value="검색">
 			</form>
 		</section>	

@@ -11,17 +11,15 @@ public interface TagDao {
 
 	List<Tag> getList();
 	
-	List<Tag> getListByNoteId(int noteId);
+	List<Tag> getListByNoteId(Integer noteId);
 	
-	List<TagView> getListByWriterId(String writerId);
+	List<TagView> getListByMemberId(String memberId);
 
-	List<TagView> getListByTagId(@Param("writerId") String writerId, @Param("tagId") String tagId);
+	List<TagView> getListById(@Param("memberId") String memberId, @Param("id") String id);
 	
-	List<TagView> getFavListByWriterId(String writerId);
+	List<TagView> getFavListByMemberId(String memberId);
 	
 	Tag get(String id);
 
 	int insert(Tag tag);
-
-
 }

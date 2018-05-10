@@ -24,9 +24,9 @@ public class MyBatisNoteDao implements NoteDao {
 	}
 	
 	@Override
-	public List<NoteView> getListById(String writerId) {
+	public List<NoteView> getListByWriterId(String writerId) {
 		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
-		List<NoteView> result = noteDao.getListById(writerId);
+		List<NoteView> result = noteDao.getListByWriterId(writerId);
 		
 		return result;
 	}
@@ -54,6 +54,14 @@ public class MyBatisNoteDao implements NoteDao {
 		int result = noteDao.updateHit(id);
 		
 		return result;
+	}
+
+	@Override
+	public List<NoteView> getListByTitle(String title, String writerId) {
+		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
+		List<NoteView> resultList = noteDao.getListByTitle(title, writerId);
+		
+		return resultList;
 	}
 
 }

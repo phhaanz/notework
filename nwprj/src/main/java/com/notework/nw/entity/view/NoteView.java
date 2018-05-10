@@ -11,6 +11,7 @@ public class NoteView extends Note {
 	private List<Tag> tagList;
 	private String writerName;
 	
+	
 	public NoteView(int id, String title, String content, String writerId, int hit, Date regDate, Date accDate,
 			boolean publish, String writerName) {
 		super(id, title, content, writerId, hit, regDate, accDate, publish);

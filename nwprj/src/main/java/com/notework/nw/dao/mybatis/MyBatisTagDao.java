@@ -26,7 +26,7 @@ public class MyBatisTagDao implements TagDao {
 	}
 	
 	@Override
-	public List<Tag> getListByNoteId(int noteId) {
+	public List<Tag> getListByNoteId(Integer noteId) {
 		TagDao tagDao = sqlsession.getMapper(TagDao.class);
 		List<Tag> tagList = tagDao.getListByNoteId(noteId);
 		
@@ -34,24 +34,24 @@ public class MyBatisTagDao implements TagDao {
 	}
 	
 	@Override
-	public List<TagView> getListByWriterId(String writerId) {
+	public List<TagView> getListByMemberId(String memberId) {
 		TagDao tagDao = sqlsession.getMapper(TagDao.class);
-		List<TagView> tagViewList = tagDao.getListByWriterId(writerId);
+		List<TagView> tagViewList = tagDao.getListByMemberId(memberId);
 		
 		return tagViewList;
 	}
 	@Override
-	public List<TagView> getListByTagId(@Param("writerId") String writerId, @Param("tagId") String tagId) {
+	public List<TagView> getListById(@Param("memberId") String memberId, @Param("id") String id) {
 		TagDao tagDao = sqlsession.getMapper(TagDao.class);
-		List<TagView> tagViewList = tagDao.getListByTagId(writerId, tagId);
+		List<TagView> tagViewList = tagDao.getListById(memberId, id);
 		
 		return tagViewList;
 	}
 	
 	@Override
-	public List<TagView> getFavListByWriterId(String writerId) {
+	public List<TagView> getFavListByMemberId(String memberId) {
 		TagDao tagDao = sqlsession.getMapper(TagDao.class);
-		List<TagView> favTagViewList = tagDao.getFavListByWriterId(writerId);
+		List<TagView> favTagViewList = tagDao.getFavListByMemberId(memberId);
 		
 		return favTagViewList;
 	}

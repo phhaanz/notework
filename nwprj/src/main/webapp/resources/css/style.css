@@ -37,6 +37,142 @@
 		color: #b49b83;
 		font-size: 14px;
 	}
+/*--------------------------------- note-list------------------------------------- */
+.note-list
+	{
+	}
+	
+		.note-list .list-empty
+		{
+			height: 380px;
+		}
+	
+		.note-list ul
+		{
+			display: flex;
+			justify-content: space-arround;
+			align-content: flex-start;
+			flex-wrap: wrap;
+			font-weight: bold;
+		}
+		
+			.note-list ul li
+			{
+				box-sizing: border-box;
+				border: 1px #d9cdc1 solid;
+				background-color: #fff;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+ 				width: 160px;
+				margin: 10px auto;
+			}
+				.note-list ul li a img,
+				.note-list ul li div
+				{
+					width: 100%;
+				}
+				
+				.note-list ul li a img
+				{
+					display: flex;
+					align-self: center;
+				}
+				
+				.note-list ul li div
+				{
+					display: flex;
+					height: 25px;
+					align-items: center;
+				}	
+				
+				.note-list ul li a img
+				{
+					height: 90px;
+				}
+				
+				.note-list ul li a+div
+				{	
+					background-color: /* rgba(188, 155, 131, 0.5); */#B49B83;
+					display: flex;
+					justify-content: flex-end;
+					height: 25px;
+					color: #fff;
+					font-weight: bold;
+					font-size: 13px;
+					line-height: 15px;
+				}
+				
+					.note-list ul li a+div img
+					{
+						width: 15px;
+						height: 15px;
+						margin-left: 5px;
+					}
+					
+					.note-list ul li a+div span
+					{
+						margin-bottom: 3px;
+					}
+					
+					.note-list ul li a+div span:last-child
+					{
+						margin-right: 3px;
+					}
+				
+				.note-list ul li div:nth-of-type(2)
+				{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+				}
+				
+					.note-list ul li div:nth-of-type(2) > a
+					{	
+						margin-left: 5px;
+						overflow: hidden;
+						text-overflow: ellipsis;	
+						white-space: nowrap;
+					}
+					
+				.note-list ul li div:last-child
+				{
+					white-space: nowrap;
+					overflow: hidden;
+				}
+				
+					.note-list ul li div:last-child a
+					{
+						padding: 0px 3px;
+						margin: 0px 2px;
+						color: #B49B83;
+						font-size: 13px;
+					}
+					
+					.note-list ul li div:last-child > span
+					{
+						margin: 0px auto;
+						color: #d9cdc1;
+						font-size: 13px;
+					}
+					
+	.top-anchor,
+	.top-anchor > a
+	{	
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #d9cdc1;
+		width: 100%;
+		height: 40px;
+	}
+		
+		.top-anchor > a > img
+		{
+			height: 30px;
+			width: 30px;
+		}	
+
 /*-----------------------------/tag/------------------------------*/
 
 .tag-list

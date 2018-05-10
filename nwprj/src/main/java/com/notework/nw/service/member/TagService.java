@@ -16,27 +16,27 @@ public class TagService {
 	private TagDao tagDao;
 	
 	@Transactional
-	public List<TagView> getTagListByWriterId(String writerId)
+	public List<TagView> getTagListByMemberId(String memberId)
 	{
-		List<TagView> tagViewList = tagDao.getListByWriterId(writerId);
+		List<TagView> tagList = tagDao.getListByMemberId(memberId);
 		
-		return tagViewList;
+		return tagList;
 	}
 	
 	@Transactional
-	public List<TagView> getTagFavListByWriterId(String writerId)
+	public List<TagView> getTagFavListByMemberId(String memberId)
 	{
-		List<TagView> favTagViewList = tagDao.getFavListByWriterId(writerId);
+		List<TagView> favTagList = tagDao.getFavListByMemberId(memberId);
 		
-		return favTagViewList;
+		return favTagList;
 	}
 
 	@Transactional
-	public List<TagView> getTagListByTagId(String writerId, String tagId) 
+	public List<TagView> getTagListById(String memberId, String id) 
 	{
-		List<TagView> tagViewList = tagDao.getListByTagId(writerId, tagId);
+		List<TagView> tagList = tagDao.getListById(memberId, id);
 		
-		return tagViewList;
+		return tagList;
 	}
 	
 }

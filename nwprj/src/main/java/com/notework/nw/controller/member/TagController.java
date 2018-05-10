@@ -23,10 +23,11 @@ public class TagController {
 	
 	@GetMapping("index")
 	public String index(HttpServletRequest request, Model model) {
-		String writerId = request.getUserPrincipal().getName();
 		
-		List<TagView> tagList = service.getTagListByWriterId(writerId);
-		List<TagView> favTagList = service.getTagFavListByWriterId(writerId);
+		String memberId = request.getUserPrincipal().getName();
+		
+		List<TagView> tagList = service.getTagListByMemberId(memberId);
+		List<TagView> favTagList = service.getTagFavListByMemberId(memberId);
 		
 		model.addAttribute("tagList", tagList);
 		model.addAttribute("favTagList", favTagList);
@@ -35,15 +36,15 @@ public class TagController {
 	}
 
 	@GetMapping("list")
-	public String list(@RequestParam(value="t", defaultValue="") String tagId, HttpServletRequest request, Model model) {
-		String writerId = request.getUserPrincipal().getName();
+	public String list(@RequestParam(value="t", defaultValue="") String id, HttpServletRequest request, Model model) {
+		String memberId = request.getUserPrincipal().getName();
 		
 		List<TagView> tagList = null;
 		
-		if(tagId==null || tagId.equals(""))
-			tagList = service.getTagListByWriterId(writerId);
+		if(id==null || id.equals(""))
+			tagList = service.getTagListByMemberId(memberId);
 		else
-			tagList = service.getTagListByTagId(writerId, tagId);
+			tagList = service.getTagListById(memberId, id);
 		
 		model.addAttribute("tagList", tagList);
 		

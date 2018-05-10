@@ -1,6 +1,6 @@
 package com.notework.nw.entity;
 
-public class TagNote {
+public class NoteTag {
 	private int noteId;
 	private String tagId;
 	
@@ -16,10 +16,10 @@ public class TagNote {
 	public void setTagId(String tagId) {
 		this.tagId = tagId;
 	}
-	public TagNote() {
+	public NoteTag() {
 		
 	}
-	public TagNote(int noteId, String tagId) {
+	public NoteTag(int noteId, String tagId) {
 		this.noteId = noteId;
 		this.tagId = tagId;
 	}

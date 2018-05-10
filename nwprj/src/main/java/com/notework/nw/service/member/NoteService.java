@@ -8,10 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.notework.nw.dao.NoteDao;
 import com.notework.nw.dao.TagDao;
-import com.notework.nw.dao.TagNoteDao;
+import com.notework.nw.dao.NoteTagDao;
 import com.notework.nw.entity.Note;
 import com.notework.nw.entity.Tag;
-import com.notework.nw.entity.TagNote;
+import com.notework.nw.entity.NoteTag;
 import com.notework.nw.entity.view.NoteView;
 
 @Service("memberNoteService")
@@ -24,20 +24,17 @@ public class NoteService {
 	private TagDao tagDao;
 	
 	@Autowired
-	private TagNoteDao tagNoteDao;
+	private NoteTagDao tagNoteDao;
 	
 	@Transactional
-	public List<NoteView> getNoteListById(String writerId, Integer page) {
-		List<NoteView> noteViews = noteDao.getListById(writerId);
+	public List<NoteView> getNoteListByWriterId(String writerId, Integer page) {
+		List<NoteView> noteViews = noteDao.getListByWriterId(writerId);
 		
 		for(NoteView nv : noteViews)
 		{
 			List<Tag> tags = tagDao.getListByNoteId(nv.getId()); 
-			
-			if(tags.get(0) !=null)
-			{
-				nv.setTagList(tags);
-			}
+
+			nv.setTagList(tags);
 		}
 		
 		return noteViews;
@@ -47,13 +44,10 @@ public class NoteService {
 	public NoteView getNote(Integer id) {
 		NoteView noteView = noteDao.get(id);
 		
-		List<Tag> tags = tagDao.getListByNoteId(id); 
+		List<Tag> tagList = tagDao.getListByNoteId(id); 
 			
-		if(tags.get(0) !=null)
-		{
-			noteView.setTagList(tags);
-		}
-
+		noteView.setTagList(tagList);
+		
 		return noteView;
 	}
 
@@ -73,8 +67,8 @@ public class NoteService {
 			Tag tag = new Tag(tagArray[i]);
 			tagDao.insert(tag);
 			
-			TagNote tagNote = new TagNote(noteId, tag.getId());
-			int result = tagNoteDao.insert(tagNote);
+			NoteTag noteTag = new NoteTag(noteId, tag.getId());
+			int result = tagNoteDao.insert(noteTag);
 		}
 	
 		return 0;

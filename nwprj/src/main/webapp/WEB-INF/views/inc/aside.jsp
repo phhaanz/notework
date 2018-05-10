@@ -64,7 +64,7 @@ $(function() {
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="${root}/member/search/index">
 				<img src="${root}/resources/images/ic_search_black_24dp.png">
 				<span>Search</span>
 			</a>

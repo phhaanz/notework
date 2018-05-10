@@ -4,28 +4,30 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.notework.nw.dao.TagDao">
 
-	<select id="getList" resultType="com.notework.nw.entity.Tag">
-		select * from Tag
+	
+	<select id="getListByNoteId" parameterType="Integer" resultType="com.notework.nw.entity.Tag">
+		select id from TagView where noteId=#{noteId}
 	</select>
 	
-	<select id="getListByNoteId" parameterType="int" resultType="com.notework.nw.entity.Tag">
-		select tagId as id from TagNoteView where noteId=#{noteId}
+	<select id="getListByMemberId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
+		select id from TagView 
+		where memberId=#{memberId} and id is not null order by id asc
 	</select>
 	
-	<select id="getListByWriterId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
-		select tagId as id from TagNoteView 
-		where writerId=#{writerId} and tagId is not null order by tagId asc
+	<select id="getListById" resultType="com.notework.nw.entity.view.TagView">
+		select id from TagView 
+		where memberId=#{memberId} and id like concat('%', #{id} ,'%') order by id asc
+	</select>
+
+	<select id="getFavListByMemberId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
+		select id, count(noteId) as noteCnt from TagView 
+		where memberId=#{memberId} and id is not null group by id order by count(noteId) desc, id asc
 	</select>
 	
-	<select id="getListByTagId" resultType="com.notework.nw.entity.view.TagView">
-		select tagId as id from TagNoteView 
-		where writerId=#{writerId} and tagId like concat('%', #{tagId} ,'%') order by tagId asc
+	<select id="getList" resultType="com.notework.nw.entity.view.TagView">
+		select * from TagView
 	</select>
 	
-	<select id="getFavListByWriterId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
-		select tagId as id, count(noteId) as noteCnt from TagNoteView 
-		where writerId=#{writerId} and tagId is not null group by tagId order by count(noteId) desc, tagId asc
-	</select>
 	<select id="get" resultType="com.notework.nw.entity.Tag">
 		select * from Tag where id=#{id}
 	</select>

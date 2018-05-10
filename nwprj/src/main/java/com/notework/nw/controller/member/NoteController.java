@@ -34,7 +34,7 @@ public class NoteController {
 	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model, HttpServletRequest request) {
 		
 		String writerId = request.getUserPrincipal().getName();
-		List<NoteView> noteViews = service.getNoteListById(writerId, page);
+		List<NoteView> noteViews = service.getNoteListByWriterId(writerId, page);
 
 		model.addAttribute("noteViews", noteViews);
 
