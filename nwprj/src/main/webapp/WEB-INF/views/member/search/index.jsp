@@ -30,12 +30,11 @@
 					</ul>  -->
 				</div>
 				<div>
-					<ul>	
-					</ul>
-					<input id="note-tags" type="hidden" name="tags" />
+					<ul>	</ul>
 				</div>
 			</div>
-			<form action="list-by-tag" method="get">
+			<form action="list-by-tags" method="get">
+				<input id="note-tags" type="hidden" name="tags" />
 				<input type="submit" value="검색">
 			</form>
 		</section>	
@@ -85,6 +84,24 @@ $(function(){
 			
 			maxTagCnt--;
 		});
+	});
+	
+	$("input:submit").click(function(e){
+		if(maxTagCnt == 0)
+		{
+			e.preventDefault();
+			alert('태그는 한개 이상 입력하셔야 합니다');
+		}
+	});
+});
+
+//태그값 전송할 때 파라미터로 넘기기 & 이벤트 트리거
+$(function(){
+	//태그목록 옮겨담기
+	$("input:submit").click(function(e){
+		var tagListBox = $(".tag-add-list > div:nth-child(2) > ul");
+		
+		$("#note-tags").val(tagListBox.text());
 	});
 });
 </script>

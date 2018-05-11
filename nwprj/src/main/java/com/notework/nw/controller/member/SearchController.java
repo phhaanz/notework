@@ -37,7 +37,7 @@ public class SearchController {
 	}
 	
 	@GetMapping("list-by-tags")
-	public String listByTags(@RequestParam Map<String, Object> tags, Principal principal, Model model) {
+	public String listByTags(@RequestParam("tags") String tags, Principal principal, Model model) {
 		
 		String writerId = principal.getName();
 		List<NoteView> noteList = service.getNoteListByTags(tags, writerId);

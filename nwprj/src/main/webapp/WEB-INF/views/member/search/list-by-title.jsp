@@ -19,7 +19,7 @@
 			<ul>
 				<c:forEach var="n" items="${noteList}">
 				<li>
-					<a href="${n.id}">
+					<a href="${root}/member/note/${n.id}">
 						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
 					</a>
 					<div>
@@ -30,7 +30,7 @@
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
 						<span>10</span>
 					</div>
-				<div><a href="${n.id}">${n.title}</a></div>
+				<div><a href="${root}/member/note/${n.id}">${n.title}</a></div>
 				<div>
 					<c:if test="${empty n.tagList}">
 					<span>(태그 없음)</span>

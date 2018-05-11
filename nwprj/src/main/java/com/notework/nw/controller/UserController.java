@@ -23,6 +23,13 @@ public class UserController {
 		return "user.login";
 	}
 	
+	@PostMapping("login")
+	public String loginAuth()	{
+		
+		
+		return "user.login";
+	}
+	
 	@GetMapping("agree")
 	public String agree() 	{
 		

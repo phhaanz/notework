@@ -5,17 +5,40 @@
 <mapper namespace="com.notework.nw.dao.NoteDao">
 		
 	<select id="getListByWriterId" parameterType="String" resultType="com.notework.nw.entity.view.NoteView">
-		select id, title, content, hit, regDate, writerId from NoteView where writerId=#{writerId} order by regDate DESC
+		select id, title, hit, regDate, writerId from NoteView where writerId=#{writerId} order by regDate DESC
 	</select>
 	
 	<select id="getListByTitle" parameterType="String" resultType="com.notework.nw.entity.view.NoteView">
-		select id, title, content, hit, regDate, writerId from NoteView where writerId=#{writerId} and title like concat('%', #{title}, '%') order by regDate DESC
+		select id, title, hit, regDate, writerId from NoteView where writerId=#{writerId} and title like concat('%', #{title}, '%') order by regDate DESC
 	</select>
-<!-- 	
-	<select id="getListByTags" parameterType="String" resultType="com.notework.nw.entity.view.NoteView">
-		select id, title, content, hit, regDate, writerId from NoteView 
+	
+	<select id="getListByTags" parameterType="Map" resultType="com.notework.nw.entity.view.NoteView">
+		select id, title, hit, regDate, writerId from
+		<choose>
+			<when test="size == 1">
+				NoteSearchT1View
+			</when>
+			<when test="size == 2">
+				NoteSearchT2View
+			</when>
+			<when test="size == 3">
+				NoteSearchT3View
+			</when>
+			<when test="size == 4">
+				NoteSearchT4View
+			</when>
+			<when test="size == 5">
+				NoteSearchT5View
+			</when>
+		</choose> 
+		 where writerId=#{writerId}
+		<if test="tag1 != null"> and t1=#{tag1}</if>
+		 <if test="tag2 != null"> and t2=#{tag2}</if>
+		 <if test="tag3 != null"> and t3=#{tag3}</if>
+		 <if test="tag4 != null"> and t4=#{tag4}</if>
+		 <if test="tag5 != null"> and t5=#{tag5}</if> 
 	</select>
--->
+
 	<select id="get" resultType="com.notework.nw.entity.view.NoteView">
 		select * from NoteView where id=#{id}
 	</select>

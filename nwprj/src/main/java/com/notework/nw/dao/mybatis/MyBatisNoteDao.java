@@ -1,6 +1,7 @@
 package com.notework.nw.dao.mybatis;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,14 @@ public class MyBatisNoteDao implements NoteDao {
 	public List<NoteView> getListByTitle(String title, String writerId) {
 		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
 		List<NoteView> resultList = noteDao.getListByTitle(title, writerId);
+		
+		return resultList;
+	}
+
+	@Override
+	public List<NoteView> getListByTags(Map<String, Object> tagMap) {
+		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
+		List<NoteView> resultList = noteDao.getListByTags(tagMap);
 		
 		return resultList;
 	}

@@ -58,7 +58,6 @@ public class NoteService {
 
 		String[] tagArray = tags.split("#");
 		
-		System.out.println(noteId);
 		for(int i=0; i<tagArray.length; i++)
 		{
 			if(i == 0)
