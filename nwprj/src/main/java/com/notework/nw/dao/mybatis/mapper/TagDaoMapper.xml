@@ -6,11 +6,11 @@
 
 	
 	<select id="getListByNoteId" parameterType="Integer" resultType="com.notework.nw.entity.Tag">
-		select id from TagView where noteId=#{noteId}
+		select distinct id from TagView where noteId=#{noteId}
 	</select>
 	
 	<select id="getListByMemberId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
-		select id from TagView 
+		select distinct id from TagView 
 		where memberId=#{memberId} and id is not null order by id asc
 	</select>
 	

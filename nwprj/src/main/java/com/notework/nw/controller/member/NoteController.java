@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.ServletContext;
@@ -17,9 +18,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.notework.nw.entity.Comment;
 import com.notework.nw.entity.Note;
+import com.notework.nw.entity.view.CommentView;
 import com.notework.nw.entity.view.NoteView;
 import com.notework.nw.service.member.NoteService;
 
@@ -30,7 +34,7 @@ public class NoteController {
 	@Autowired
 	private NoteService service;
 	
-	@RequestMapping("list")
+	@GetMapping("list")
 	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model, HttpServletRequest request) {
 		
 		String writerId = request.getUserPrincipal().getName();
@@ -41,7 +45,7 @@ public class NoteController {
 		return "member.note.list";
 	}
 	
-	@RequestMapping("{id}")
+	@GetMapping("{id}")
 	public String detail(@PathVariable("id")Integer id, Model model) {
 		int result = service.updateNoteHit(id);
 		NoteView noteView = service.getNote(id);
@@ -50,7 +54,42 @@ public class NoteController {
 		return "member.note.detail";
 	}
 	
-	@RequestMapping("edit")
+	@GetMapping("{id}/comment")
+	public String noteComment(@PathVariable("id")Integer noteId, Model model) {
+		
+		List<CommentView> commentList = service.getCommentList(noteId);
+		
+		model.addAttribute("commentList", commentList);
+		
+		return "member.note.comment";
+	}
+	
+	@PostMapping("{id}/comment")
+	@ResponseBody
+	public String noteComment(@PathVariable("id")Integer noteId, Comment comment, Principal principal) {
+		
+		String writerId = principal.getName();
+		comment.setWriterId(writerId);
+		comment.setNoteId(noteId);
+		int result = service.insertComment(comment);
+		
+		return "";
+	}
+	
+	@GetMapping("{id}/clip")
+	@ResponseBody
+	public String clip(@PathVariable("id")Integer noteId, Principal principal)
+	{
+		String memberId = principal.getName();
+		int result = service.insertClip(noteId, memberId);
+		
+		System.out.println(result);
+		
+		return String.valueOf(result);
+	}
+	
+	
+	@GetMapping("edit")
 	public String edit(Note note) {
 		
 		return "member.note.edit";

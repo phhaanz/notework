@@ -31,12 +31,12 @@
 				NoteSearchT5View
 			</when>
 		</choose> 
-		 where writerId=#{writerId}
+			where writerId=#{writerId}
 		<if test="tag1 != null"> and t1=#{tag1}</if>
-		 <if test="tag2 != null"> and t2=#{tag2}</if>
-		 <if test="tag3 != null"> and t3=#{tag3}</if>
-		 <if test="tag4 != null"> and t4=#{tag4}</if>
-		 <if test="tag5 != null"> and t5=#{tag5}</if> 
+		<if test="tag2 != null"> and t2=#{tag2}</if>
+		<if test="tag3 != null"> and t3=#{tag3}</if>
+		<if test="tag4 != null"> and t4=#{tag4}</if>
+		<if test="tag5 != null"> and t5=#{tag5}</if> 
 	</select>
 
 	<select id="get" resultType="com.notework.nw.entity.view.NoteView">

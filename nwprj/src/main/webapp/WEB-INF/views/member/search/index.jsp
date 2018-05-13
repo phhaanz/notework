@@ -73,20 +73,21 @@ $(function(){
 		tagInput.val('');
 		
 		//버블링. 태그 직접누르면 삭제
-		tagListBox.click(function(e){	
-		
-			if(e.target === e.currentTarget)
-				return;	
-			
-			var target = $(e.target);
-			
-			target.parent().remove();
-			
-			maxTagCnt--;
-		});
 	});
 	
-	$("input:submit").click(function(e){
+	tagListBox.click(function(e){	
+		
+		if(e.target === e.currentTarget)
+			return;	
+		
+		var target = $(e.target);
+		
+		target.parent().remove();
+		
+		maxTagCnt--;
+	});
+	
+	$(".search-tag input[value='검색']").click(function(e){
 		if(maxTagCnt == 0)
 		{
 			e.preventDefault();
@@ -98,7 +99,7 @@ $(function(){
 //태그값 전송할 때 파라미터로 넘기기 & 이벤트 트리거
 $(function(){
 	//태그목록 옮겨담기
-	$("input:submit").click(function(e){
+	$(".search-tag input[value='검색']").click(function(e){
 		var tagListBox = $(".tag-add-list > div:nth-child(2) > ul");
 		
 		$("#note-tags").val(tagListBox.text());

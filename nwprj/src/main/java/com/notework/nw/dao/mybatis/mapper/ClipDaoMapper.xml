@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.notework.nw.dao.ClipDao">
+	<select id="get" resultType="com.notework.nw.entity.Clip">
+		select noteId, memberId from Clip where noteId=#{noteId} and memberId=#{memberId}
+	</select>	
+	<insert id="insert" parameterType="com.notework.nw.entity.Clip">
+		insert into Clip(noteId, memberId) values(#{noteId}, #{memberId})
+	</insert>
+	
+	<delete id="delete">
+		delete from Clip where noteId=#{noteId} and memberId=#{memberId}
+	</delete>
+</mapper>

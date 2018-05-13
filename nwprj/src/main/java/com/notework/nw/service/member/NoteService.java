@@ -6,12 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.notework.nw.dao.ClipDao;
 import com.notework.nw.dao.NoteDao;
 import com.notework.nw.dao.TagDao;
+import com.notework.nw.dao.CommentDao;
 import com.notework.nw.dao.NoteTagDao;
+import com.notework.nw.entity.Clip;
+import com.notework.nw.entity.Comment;
 import com.notework.nw.entity.Note;
 import com.notework.nw.entity.Tag;
 import com.notework.nw.entity.NoteTag;
+import com.notework.nw.entity.view.CommentView;
 import com.notework.nw.entity.view.NoteView;
 
 @Service("memberNoteService")
@@ -25,6 +30,12 @@ public class NoteService {
 	
 	@Autowired
 	private NoteTagDao tagNoteDao;
+	
+	@Autowired
+	private ClipDao clipDao;
+	
+	@Autowired
+	private CommentDao commentDao;
 	
 	@Transactional
 	public List<NoteView> getNoteListByWriterId(String writerId, Integer page) {
@@ -79,6 +90,38 @@ public class NoteService {
 		int upResult = noteDao.updateHit(id);
 		
 		return 0;
+	}
+
+	@Transactional
+	public int insertClip(Integer noteId, String memberId) {
+		
+		int result = 0;
+		Clip clip = clipDao.get(noteId, memberId);
+				
+		if(clip == null) {
+			clip = new Clip(noteId, memberId);
+			result = clipDao.insert(clip);
+		}
+		else
+			clipDao.delete(noteId, memberId);
+		
+		return result;
+	}
+
+	@Transactional
+	public List<CommentView> getCommentList(Integer noteId) {
+		
+		List<CommentView> commentList = commentDao.getList(noteId);
+		
+		return commentList;
+	}
+
+	@Transactional
+	public int insertComment(Comment comment) {
+		
+		int result = commentDao.insert(comment);
+		
+		return result;
 	}
 	
 }

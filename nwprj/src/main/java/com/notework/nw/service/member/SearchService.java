@@ -26,6 +26,12 @@ public class SearchService {
 		
 		List<NoteView> noteList = noteDao.getListByTitle(title, writerId);
 		
+		for(NoteView n : noteList)
+		{
+			List<Tag> tagList = tagDao.getListByNoteId(n.getId());
+			n.setTagList(tagList);
+		}
+		
 		return noteList;
 	}
 	

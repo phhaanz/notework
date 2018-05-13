@@ -47,8 +47,8 @@
 					</li>
 					
 					<li>
-						<a href=""><img src="${root}/resources/images/note/ic_star_black_24dp.png"></a><span>clip</span>
-						<a href=""><img src="${root}/resources/images/note/ic_insert_comment_black_24dp.png"></a><span>comment</span>
+						<a id="note-clip-btn" href=""><img src="${root}/resources/images/note/ic_star_black_24dp.png"></a><span>clip</span>
+						<a href="${noteView.id}/comment"><img src="${root}/resources/images/note/ic_insert_comment_black_24dp.png"></a><span>comment</span>
 					</li>
 				</ul>
 			</div>
@@ -57,5 +57,17 @@
 </main>
 
 <script>
+$(function(){
+	var clipBtn = $("#note-clip-btn");
+	
+	clipBtn.click(function(e){
+		e.preventDefault();
+		$.get("${noteView.id}/clip", function(result){
 
+		});
+		
+		
+		
+	});
+});
 </script>
