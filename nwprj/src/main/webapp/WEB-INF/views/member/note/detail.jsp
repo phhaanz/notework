@@ -47,8 +47,8 @@
 					</li>
 					
 					<li>
-						<a id="note-clip-btn" href=""><img src="${root}/resources/images/note/ic_star_black_24dp.png"></a><span>clip</span>
-						<a href="${noteView.id}/comment"><img src="${root}/resources/images/note/ic_insert_comment_black_24dp.png"></a><span>comment</span>
+						<a id="note-clip-btn" href=""><img src="${root}/resources/images/note/ic_star_black_24dp.png"></a><span>${noteView.clipCnt}</span>
+						<a href="${noteView.id}/comment"><img src="${root}/resources/images/note/ic_insert_comment_black_24dp.png"></a><span>${noteView.commentCnt}</span>
 					</li>
 				</ul>
 			</div>

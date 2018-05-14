@@ -73,4 +73,12 @@ public class MyBatisNoteDao implements NoteDao {
 		return resultList;
 	}
 
+	@Override
+	public List<NoteView> getListByClip(String memberId) {
+		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
+		List<NoteView> resultList = noteDao.getListByClip(memberId);
+		
+		return resultList;
+	}
+
 }

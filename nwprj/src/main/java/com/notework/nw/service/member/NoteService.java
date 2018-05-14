@@ -123,5 +123,13 @@ public class NoteService {
 		
 		return result;
 	}
+
+	@Transactional
+	public List<NoteView> getNoteListByClip(String memberId) {
+		
+		List<NoteView> noteViews  = noteDao.getListByClip(memberId);
+		
+		return noteViews;
+	}
 	
 }

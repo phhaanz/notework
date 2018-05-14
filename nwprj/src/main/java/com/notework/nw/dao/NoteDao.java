@@ -22,6 +22,7 @@ public interface NoteDao {
 
 	List<NoteView> getListByTitle(@Param("title") String title, @Param("writerId") String writerId);
 
-	//오버로드
 	List<NoteView> getListByTags(Map<String, Object> tagMap);
+
+	List<NoteView> getListByClip(String memberId);
 }

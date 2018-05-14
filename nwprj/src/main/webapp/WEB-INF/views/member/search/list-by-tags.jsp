@@ -26,9 +26,9 @@
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
 						<span>${n.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
-						<span>25</span>
+						<span>${n.clipCnt}</span>
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
-						<span>10</span>
+						<span>${n.commentCnt}</span>
 					</div>
 				<div><a href="${root}/member/note/${n.id}">${n.title}</a></div>
 				<div>
