@@ -15,8 +15,10 @@ public class MyBatisMemberDao implements MemberDao {
 	
 	@Override
 	public Member get(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		MemberDao memberDao = sqlsession.getMapper(MemberDao.class);
+		Member result = memberDao.get(id);
+		
+		return result;
 	}
 
 	@Override

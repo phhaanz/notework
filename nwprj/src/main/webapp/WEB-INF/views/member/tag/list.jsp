@@ -29,7 +29,7 @@
 			<ul>
 				<c:forEach var="tag" items="${tagList}">
 				<li>
-					<a href="">#${tag.id}</a>
+					<a href="${root}/member/search/list-by-tags?tags=%23${tag.id}">#${tag.id}</a>
 				</li>
 				</c:forEach>
 			</ul>

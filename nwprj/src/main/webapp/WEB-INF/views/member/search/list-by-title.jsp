@@ -37,7 +37,7 @@
 					</c:if>
 					<c:if test="${!empty n.tagList }">
 					<c:forEach var="tag" items="${n.tagList}">
-						<a href="">#${tag.id}</a>
+						<a href="${root}/member/search/list-by-tags?tags=%23${tag.id}">#${tag.id}</a>
 					</c:forEach>
 					</c:if>
 				</div>

@@ -545,3 +545,114 @@
 							.comment-list > ul > li > table tr:last-child td {
 								margin-right: 5px;
 							}
+/* --------------------------------------member-info---------------------------------------- */
+
+.info-edit
+{
+	width: 100%;
+	height: inherit;
+}
+
+	.info-edit h1 { 
+		width: 85%;
+		margin: 0px auto;
+		font-size: 16px;
+		padding: 5px 0px;
+		border-bottom: 2px #b49b83 solid;
+	}
+
+	.info-edit form {	
+		width: 85%;
+		margin: 0px auto;
+	}
+		.info-edit table {
+			width: 100%;
+		}
+			.info-edit table tr:first-child {
+				display: block;
+				padding-top: 15px;
+			}
+			
+			.info-edit table tr:nth-child(5),
+			.info-edit table tr:nth-child(8)  {
+				display: block;
+				padding-bottom: 15px;
+				border-bottom: 1px #d9cdc1 dashed;
+			}
+			.info-edit table tr td{
+				display: flex;
+			}
+			.info-edit table tr td:first-child {
+				flex-direction: column;
+			}
+				.info-edit table tr td .viewer {
+					height: 120px;
+					width: 120px;
+					border-radius: 75px;
+					border: 1px #b49b83 solid;
+					margin: 0px auto;
+					background: url('../images/member/info/member_profile_placeholder.png') no-repeat center;
+					background-size: cover;
+					overflow: hidden;
+				}
+					.info-edit table tr td .viewer img	{
+						height: 120px;
+						width: 120px;
+					}
+				
+					.info-edit table tr td .viewer+label {
+						display: inline-block;
+						width: 50px;
+						height: 30px;
+						text-indent: -9999px;
+						background: #b49b83 url('../images/member/info/baseline_add_a_photo_white_18dp.png') no-repeat center;
+						border-radius: 5px;
+					}
+					
+				.info-edit table tr td:first-child label {
+					align-self: flex-start;
+					font-size: 13px;
+					font-weight: bold;
+					color: #b49b83;
+				}
+
+					.info-edit form table input,
+					.info-edit form table textarea {
+						width: 100%;
+						padding: 5px;
+						min-height: 35px;
+					}
+					
+					.info-edit form table textarea
+					{
+						box-sizing: border-box;
+						min-height: 70px;
+					}
+					
+					.info-edit form table #id {
+						font-weight: bold;
+						background-color: #d9cdc1;
+					}
+					
+					.info-edit form table input[type='submit'],
+					.info-edit form table a
+					{
+						margin: 5px 0px;
+						box-sizing: border-box;
+						background-color: #b49b83;
+						color: #fff;
+						font-size: 17px;
+						font-weight: bold;
+						border: none;
+						width: 100%;
+						text-align: center;
+					}
+					
+					.info-edit form table tr:last-child a {
+						border: 1px #b49b83 solid;
+						height: 35px;
+						background-color: #fff;
+						color: #b49b83;
+						line-height: 30px;
+					}
+											
