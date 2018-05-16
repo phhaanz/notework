@@ -6,10 +6,15 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.notework.nw.dao.NoteDao;
+import com.notework.nw.dao.PresetDao;
+import com.notework.nw.dao.PresetTagDao;
 import com.notework.nw.dao.TagDao;
 import com.notework.nw.entity.NoteTag;
+import com.notework.nw.entity.Preset;
+import com.notework.nw.entity.PresetTag;
 import com.notework.nw.entity.Tag;
 import com.notework.nw.entity.view.NoteView;
 
@@ -21,6 +26,12 @@ public class SearchService {
 	
 	@Autowired
 	private TagDao tagDao;
+
+	@Autowired
+	private PresetDao presetDao;
+	
+	@Autowired
+	private PresetTagDao presetTagDao;
 	
 	public List<NoteView> getNoteListByTitle(String title, String writerId) {
 		
@@ -61,6 +72,33 @@ public class SearchService {
 		}
 	
 		return noteList;
+	}
+	
+	@Transactional
+	public int insertPreset(Preset preset) {
+		
+		String[] tags = preset.getLinkAddress().split("#");
+		
+		for(int i=0; i<tags.length-1; i++) {
+			 if(tags[i]==null || tags[i].equals(""))
+				continue;
+			
+			for(int j=i+1; j<tags.length; j++) {
+				if(tags[i].equals(tags[j]))
+					tags[j] = null;
+			}
+		}
+		
+		int presetId = presetDao.insert(preset);
+		int ptResult = 0;
+		for(String t : tags)	{
+			if(t==null)
+				continue;
+			tagDao.insert(new Tag(t));
+			ptResult = presetTagDao.insert(new PresetTag(presetId, t));
+		}
+		
+		return ptResult;
 	}
 
 }

@@ -51,3 +51,20 @@
 		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 	</div>
 </main>
+<section class="reg-button preset-reg-button">
+	<h1 class="hidden">프리셋 등록 버튼</h1>
+	<a href="">프리셋 등록</a>
+</section>
+<section class="modal-window">
+	<h1 class="hidden">프리셋 등록 폼</h1>
+	<form action="list-by-tags/reg" method="post">
+		<div>
+			<label>등록할 이름을 선택해 주십시오.</label>
+			<input type="text" name="name" />
+		</div>	
+		<div>	
+			<input type="button" value="취소" />
+			<input type="submit" value="등록" />
+		</div>
+	</form>	
+</section>

@@ -11,7 +11,7 @@
 	<select id="getListByTitle" parameterType="String" resultType="com.notework.nw.entity.view.NoteView">
 		select id, title, writerId, writerName, hit, regDate, commentCnt, clipCnt from NoteView where writerId=#{writerId} and title like concat('%', #{title}, '%') order by regDate DESC
 	</select>
-	
+
 	<select id="getListByTags" parameterType="Map" resultType="com.notework.nw.entity.view.NoteView">
 		select id, title, writerId, writerName, hit, regDate, commentCnt, clipCnt from
 		<choose>
