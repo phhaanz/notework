@@ -9,9 +9,18 @@ public class PresetView extends Preset {
 
 	private List<Tag> tagList;
 
-	public PresetView(int id, String name, String memberId, String description) {
-		super(id, name, memberId, description);
+	public PresetView() {
+		
 	}
+	
+	public PresetView(String name, String memberId, String linkAddress) {
+		super(name, memberId, linkAddress);
+	}
+	
+	public PresetView(int id, String name, String memberId, String linkAddress) {
+		super(id, name, memberId, linkAddress);
+	}
+	
 	public List<Tag> getTagList() {
 		return tagList;
 	}

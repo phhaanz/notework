@@ -81,4 +81,12 @@ public class MyBatisNoteDao implements NoteDao {
 		return resultList;
 	}
 
+	@Override
+	public List<NoteView> getListByPresetId(Integer id) {
+		NoteDao noteDao = sqlsession.getMapper(NoteDao.class);
+		List<NoteView> resultList = noteDao.getListByPresetId(id);
+		
+		return resultList;
+	}
+
 }

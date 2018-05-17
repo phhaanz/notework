@@ -25,4 +25,6 @@ public interface NoteDao {
 	List<NoteView> getListByTags(Map<String, Object> tagMap);
 
 	List<NoteView> getListByClip(String memberId);
+
+	List<NoteView> getListByPresetId(Integer id);
 }

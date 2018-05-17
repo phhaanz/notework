@@ -4,10 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.notework.nw.dao.PresetDao">
 	
-	<select id="getList" parameterType="String">
+	<select id="getList" parameterType="String" resultType="com.notework.nw.entity.view.PresetView">
 		select id, name, linkAddress from PresetView where memberId=#{memberId}
 	</select>
-	<insert id="insert" parameterType="com.notework.nw.entity.Preset" useGeneratedKeys="true" keyColumn="id">
+	<insert id="insert" parameterType="com.notework.nw.entity.Preset" useGeneratedKeys="true" keyProperty="id">
 		insert into Preset(name, linkAddress, memberId) values(#{name}, #{linkAddress}, #{memberId})
 	</insert>
 

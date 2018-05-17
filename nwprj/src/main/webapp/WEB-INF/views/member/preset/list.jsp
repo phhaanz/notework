@@ -8,57 +8,18 @@
 		<section class="tag-preset-list">
 			<h1 class="hidden">태그 프리셋 목록</h1>
 			<ul>
+				<c:forEach var="p" items="${presetList}">
 				<li>
-					<a href=""><img src="${root}/resources/images/ic_flag_black_24dp.png">프리셋 이름</a>
+					<a href="${p.linkAddress}"><img src="${root}/resources/images/ic_flag_black_24dp.png">${p.name}</a>
 					<ul>
+						<c:forEach var="tag" items="${p.tagList}">
 						<li>
-							<a href="">#태그1</a>
+							<a>#${tag.id}</a>
 						</li>
-						<li>
-							<a href="">#태그2</a> 
-						</li>
-						<li>
-							<a href="">#태그3</a>
-						</li>
+						</c:forEach>
 					</ul>
 				</li>
-				<li>
-					<a href=""><img src="${root}/resources/images/ic_flag_black_24dp.png">프리셋 이름</a>
-					<ul>
-						<li>
-							<a href="">#태그1</a>
-						</li>
-						<li>
-							<a href="">#태그2</a> 
-						</li>
-						<li>
-							<a href="">#태그3</a>
-						</li>
-						<li> 
-							<a href="">#태그3</a>
-						</li>
-						<li>
-							<a href="">#태그3</a>
-						</li>
-						<li>
-							<a href="">#태그3</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href=""><img src="${root}/resources/images/ic_flag_black_24dp.png">프리셋 이름</a>
-					<ul>
-						<li>
-							<a href="">#태그1</a>
-						</li>
-						<li>
-							<a href="">#태그2</a> 
-						</li>
-						<li>
-							<a href="">#태그3</a>
-						</li>
-					</ul>
-				</li>
+				</c:forEach>
 			</ul>
 		</section>
 	</div>

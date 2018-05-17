@@ -22,6 +22,7 @@ public class MyBatisPresetDao implements PresetDao {
 		presetDao.insert(preset);
 		int presetId = preset.getId();
 		
+		System.out.println(presetId);
 		return presetId;
 	}
 

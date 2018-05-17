@@ -2,7 +2,6 @@ package com.notework.nw.controller.member;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,18 +47,19 @@ public class SearchController {
 		String writerId = principal.getName();
 		List<NoteView> noteList = service.getNoteListByTags(tags, writerId);
 		
+		tags.replace("%23", "#");
 		model.addAttribute("noteList", noteList);
+		model.addAttribute("tags", tags);
 		
 		return "member.search.list-by-tags";
 	}
 	
 	@PostMapping("list-by-tags/reg")
 	@ResponseBody
-	public String regPreset(@RequestParam("tags") String tags, Preset preset , Principal principal, HttpServletRequest request) {
+	public String regPreset(String tags, Preset preset , Principal principal, HttpServletRequest request) {
 		
 		preset.setLinkAddress(tags);
 		preset.setMemberId(principal.getName());
-		preset.setLinkAddress("");
 		
 		int result = service.insertPreset(preset);
 		

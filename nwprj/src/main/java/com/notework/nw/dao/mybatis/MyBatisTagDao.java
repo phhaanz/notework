@@ -34,6 +34,14 @@ public class MyBatisTagDao implements TagDao {
 	}
 	
 	@Override
+	public List<Tag> getListByPresetId(Integer presetId) {
+		TagDao tagDao = sqlsession.getMapper(TagDao.class);
+		List<Tag> tagList = tagDao.getListByPresetId(presetId);
+		
+		return tagList;
+	}
+	
+	@Override
 	public List<TagView> getListByMemberId(String memberId) {
 		TagDao tagDao = sqlsession.getMapper(TagDao.class);
 		List<TagView> tagViewList = tagDao.getListByMemberId(memberId);

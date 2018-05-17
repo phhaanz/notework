@@ -9,10 +9,16 @@
 		select distinct id from TagView where noteId=#{noteId}
 	</select>
 	
+	<select id="getListByPresetId" parameterType="Integer" resultType="com.notework.nw.entity.Tag">
+		select tagId from PresetView where id=#{presetId}
+	</select>
+	
 	<select id="getListByMemberId" parameterType="String" resultType="com.notework.nw.entity.view.TagView">
+	
 		select distinct id from TagView 
 		where memberId=#{memberId} and id is not null order by id asc
 	</select>
+	
 	
 	<select id="getListById" resultType="com.notework.nw.entity.view.TagView">
 		select id from TagView 

@@ -61,10 +61,21 @@
 		<div>
 			<label>등록할 이름을 선택해 주십시오.</label>
 			<input type="text" name="name" />
+			<input type="hidden" name="tags" value="${tags}" />
 		</div>	
 		<div>	
 			<input type="button" value="취소" />
 			<input type="submit" value="등록" />
 		</div>
-	</form>	
+	</form>
 </section>
+<script>
+$(function(){
+	var modal = $(".modal-window");
+	var form = $(".modal-window form");
+	var submitBtn = $(".modal-window form input[value='등록']");
+	var cancelBtn = $(".modal-window form input[value='취소']");
+
+});
+
+</script>

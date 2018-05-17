@@ -78,25 +78,31 @@ public class SearchService {
 	public int insertPreset(Preset preset) {
 		
 		String[] tags = preset.getLinkAddress().split("#");
-		
+		String newTags = "";
+		//중복 쳐내기
 		for(int i=0; i<tags.length-1; i++) {
-			 if(tags[i]==null || tags[i].equals(""))
+			 if(i==0 || tags[i]==null || tags[i].equals(""))
 				continue;
-			
+			 else
+				 newTags += ("#"+tags[i]);
+			 
 			for(int j=i+1; j<tags.length; j++) {
 				if(tags[i].equals(tags[j]))
 					tags[j] = null;
 			}
 		}
+		//중복 쳐낸 새로운 태그 삽입
+		preset.setLinkAddress(newTags);
 		
 		int presetId = presetDao.insert(preset);
 		int ptResult = 0;
 		for(String t : tags)	{
-			if(t==null)
+			if(t==null || t.equals(""))
 				continue;
 			tagDao.insert(new Tag(t));
 			ptResult = presetTagDao.insert(new PresetTag(presetId, t));
 		}
+		
 		
 		return ptResult;
 	}

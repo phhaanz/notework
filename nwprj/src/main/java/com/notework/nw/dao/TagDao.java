@@ -13,6 +13,8 @@ public interface TagDao {
 	
 	List<Tag> getListByNoteId(Integer noteId);
 	
+	List<Tag> getListByPresetId(Integer id);
+	
 	List<TagView> getListByMemberId(String memberId);
 
 	List<TagView> getListById(@Param("memberId") String memberId, @Param("id") String id);
@@ -22,4 +24,5 @@ public interface TagDao {
 	Tag get(String id);
 
 	int insert(Tag tag);
+
 }
