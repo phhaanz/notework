@@ -84,7 +84,7 @@ public class SearchService {
 			 if(i==0 || tags[i]==null || tags[i].equals(""))
 				continue;
 			 else
-				 newTags += ("#"+tags[i]);
+				 newTags += ("%23"+tags[i]);
 			 
 			for(int j=i+1; j<tags.length; j++) {
 				if(tags[i].equals(tags[j]))

@@ -9,6 +9,8 @@ public interface PresetDao {
 
 	List<PresetView> getList(String memberId);
 	
+	PresetView get(Integer id);
+	
 	int insert(Preset preset);
 
 }

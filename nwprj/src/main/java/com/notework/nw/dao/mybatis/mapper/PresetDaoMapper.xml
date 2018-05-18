@@ -5,8 +5,13 @@
 <mapper namespace="com.notework.nw.dao.PresetDao">
 	
 	<select id="getList" parameterType="String" resultType="com.notework.nw.entity.view.PresetView">
-		select id, name, linkAddress from PresetView where memberId=#{memberId}
+		select distinct id, name, linkAddress from PresetView where memberId=#{memberId}
 	</select>
+	
+	<select id="get" parameterType="Integer" resultType="com.notework.nw.entity.view.PresetView">
+		select distinct id, name, memberId, linkAddress from PresetView
+	</select>
+	
 	<insert id="insert" parameterType="com.notework.nw.entity.Preset" useGeneratedKeys="true" keyProperty="id">
 		insert into Preset(name, linkAddress, memberId) values(#{name}, #{linkAddress}, #{memberId})
 	</insert>

@@ -15,16 +15,6 @@ public class MyBatisPresetDao implements PresetDao {
 
 	@Autowired
 	private SqlSession sqlsession;
-	
-	@Override
-	public int insert(Preset preset) {
-		PresetDao presetDao = sqlsession.getMapper(PresetDao.class);
-		presetDao.insert(preset);
-		int presetId = preset.getId();
-		
-		System.out.println(presetId);
-		return presetId;
-	}
 
 	@Override
 	public List<PresetView> getList(String memberId) {
@@ -33,5 +23,21 @@ public class MyBatisPresetDao implements PresetDao {
 		
 		return presetViewList;
 	}
-
+	
+	@Override
+	public PresetView get(Integer id) {
+		PresetDao presetDao = sqlsession.getMapper(PresetDao.class);
+		PresetView result = presetDao.get(id);
+		
+		return result;
+	}
+	
+	@Override
+	public int insert(Preset preset) {
+		PresetDao presetDao = sqlsession.getMapper(PresetDao.class);
+		presetDao.insert(preset);
+		int presetId = preset.getId();
+		
+		return presetId;
+	}
 }

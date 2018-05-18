@@ -10,7 +10,7 @@
 			<ul>
 				<c:forEach var="p" items="${presetList}">
 				<li>
-					<a href="${p.linkAddress}"><img src="${root}/resources/images/ic_flag_black_24dp.png">${p.name}</a>
+					<a href="${p.id}"><img src="${root}/resources/images/ic_flag_black_24dp.png">${p.name}</a>
 					<ul>
 						<c:forEach var="tag" items="${p.tagList}">
 						<li>

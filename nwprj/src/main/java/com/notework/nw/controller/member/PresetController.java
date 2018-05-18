@@ -34,6 +34,7 @@ public class PresetController {
 	public String noteList(@PathVariable("id") Integer id, Principal principal, Model model) {
 		String memberId = principal.getName();
 		List<NoteView> noteList = service.getPresetNoteList(id);
+		
 		model.addAttribute("noteList", noteList);
 		
 		return "member.preset.detail";

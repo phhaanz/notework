@@ -7,14 +7,14 @@
 	<div class="root-container">
 		<section class="note-list">
 			<h1 class="hidden">프리셋 노트 목록</h1>
-			<c:if test="${empty noteViews}">
+			<c:if test="${empty noteList}">
 			<div class="list-empty">
 				<span>등록한 노트가 없습니다.</span>
 			</div>
 			</c:if>
-			<c:if test="${!empty noteViews}">
+			<c:if test="${!empty noteList}">
 			<ul>
-				<c:forEach var="n" items="${noteViews}">
+				<c:forEach var="n" items="${noteList}">
 				<li>
 					<a href="${n.id}">
 						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
