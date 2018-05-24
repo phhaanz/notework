@@ -16,4 +16,16 @@
 	<delete id="delete" parameterType="com.notework.nw.entity.Member">
 		delete from Member where id=#{id}
 	</delete>
+	
+	<update id="update" parameterType="com.notework.nw.entity.Member">
+		update Member 
+			<trim prefix="set" suffixOverrides=",">
+				<if test="password != null">password=#{password},</if>
+				<if test="name != null">name=#{name},</if>
+				<if test="email != null">email=#{email},</if>
+				<if test="introduce != null">introduce=#{introduce},</if>
+			</trim>
+		where id=#{id}
+	</update>
+	
 </mapper>

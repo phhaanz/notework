@@ -1,16 +1,31 @@
 @charset "UTF-8";
 
+
 .main {
+	padding-top: 45px;
 	width: 100%;
 	max-width: 900px;
-	min-height: 420px;
+	min-height: 450px;
 	background: #fff;
-	padding-top: 45px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+.main.no-padding{
+	padding-top: 0px;
+	min-height: 350px;
+}
+
+.padding-top-45{
+	padding-top: 45px;
+}
+
+.padding-top-90 {
+	padding-top: 90px;
+}
+
 	.root-container	{
+		background-color: #fff;
 		width: inherit;
 		min-height: inherit;
 		padding: 10px 0px;
@@ -18,7 +33,7 @@
 	}
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .list-empty {
@@ -43,6 +58,212 @@
 		opacity: 0.7;
 		text-indent: -9999px;
 	}
+	
+.modal-window {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1500;
+	background : rgba(151,151,151,0.7);
+	height: 100%;
+	width: 100%;
+}
+
+	.modal-window .message-box {
+		box-sizing: border-box;
+		padding: 10px;
+		width: 250px;
+		background: #fff;
+		border: 1px solid #b49b83;
+	}
+	
+	.modal-window .message-box form {
+		width: 100%;
+		height: 100%;
+	}
+	
+		.modal-window .message-box form > div:first-child {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		
+		.modal-window .message-box label {
+			font-size: 13px;
+			font-weight: bold;
+			text-align: center;
+		}
+	
+		.modal-window .message-box form input[type='text']{
+			height: 30px;
+			width: 100%;
+			margin: 25px auto;
+		}
+		
+		.modal-window .message-box form > div:nth-child(2) input {
+			box-sizing: border-box;
+			height: 30px;
+			width: 50%;
+			background: #fff;
+			color:  #b49b83;
+			border: 1px solid #d9cdc1;
+			float: left;
+		}
+/*------------------------------------ login ---------------------------------------------*/
+.main .root-container .login-form
+	{
+		width: 100%;
+		min-height: 100%;
+		font-weight: bold;
+	}
+	
+		.login-form form
+		{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: inherit;
+			min-height: inherit;
+		}
+	
+			.login-form > form > div:first-child
+			{
+				color: red;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 50px;
+				padding: 15px 0px;
+				border-bottom: 1px #d9cdc1 dashed;
+			}
+			
+			.login-form form ul 
+			{
+				display: flex;
+				flex-direction: column;
+				border-bottom: 1px #d9cdc1 dashed;
+			}
+			
+			.login-form ul li
+			{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 35px;
+				margin-bottom: 10px;
+			}
+			
+			.login-form ul li:first-child
+			{
+				margin-top: 30px;
+			}
+			
+				.login-form ul li input
+				{
+					width: 85%;
+					height: 100%;
+				}
+				
+				.login-form ul li:nth-of-type(3) input
+				{
+					border: none;
+					background-color : #b49b83;
+					color: #fff;
+					font-size: 17px;
+					font-weight: bold;
+				}
+					
+				.login-form ul li:last-child div 
+				{
+					display: flex;
+					width: 85%;
+				}
+				
+					.login-form ul li:last-child div img
+					{
+						width: 30px;
+						height: 30px;
+					}
+					
+					.login-form ul li:last-child div span,
+					#remeber-me
+					{
+						line-height: 30px;
+						width: 85%;
+						text-align: left;
+					}
+.hidden
+{
+	display: none;
+}
+
+/*------------------------------------------- join--------------------------------- */
+.join-form
+{
+	width: 100%;
+	height: inherit;
+}
+
+	.join-form h1
+	{ 
+		width: 85%;
+		margin: 10px auto;
+		font-size: 16px;
+		padding: 5px 0px;
+		border-bottom: 2px #b49b83 solid;
+	}
+
+	.join-form form table
+	{	
+		width: 100%;
+	}
+	
+	.join-form form table tr:nth-child(3),
+	.join-form form table tr:nth-child(5),
+	.join-form form table tr:nth-child(6)
+	{
+		display: block;
+		margin-bottom: 25px;
+	
+	}
+	
+	.join-form form table td
+	{
+		display: flex;
+		justify-content: center;
+	}
+
+		.join-form form table input,
+		.join-form form table textarea
+		{
+			width: 85%;
+			padding: 5px;
+			margin-top: -5px;
+		}
+		
+		.join-form form table input
+		{
+			height: 35px;
+		}
+		
+		.join-form form table textarea
+		{
+			box-sizing: border-box;
+			height: 70px;
+		}
+		
+		.join-form form table input[type='submit']
+		{
+			height: 35px;
+			background-color: #b49b83;
+			color: #fff;
+			font-size: 17px;
+			font-weight: bold;
+			border: none;
+		}
 /*--------------------------------- note-list------------------------------------- */
 .note-list	{ }
 	
@@ -52,7 +273,7 @@
 	
 		.note-list ul {
 			display: flex;
-			justify-content: space-arround;
+			justify-content: space-between;
 			align-content: flex-start;
 			flex-wrap: wrap;
 			font-weight: bold;
@@ -66,7 +287,7 @@
 				flex-direction: column;
 				justify-content: center;
  				width: 160px;
-				margin: 10px auto;
+				margin: 5px 10px;
 			}
 				.note-list ul li a img,
 				.note-list ul li div {
@@ -158,8 +379,415 @@
 			height: 30px;
 			width: 30px;
 		}	
+/*------------------------------------------------ note-detail --------------------------------------------*/
+.note-detail
+	{
+		background-color:  #fff;
+		width: 100%;
+		min-height: 530px;
+		padding-bottom:45px;
+	}
+		.note-detail .article-header
+		{
+			display: flex;
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;
+			min-height: 120px;
+			flex-wrap: wrap;
+			padding-bottom: 20px;
+			border-bottom: 1px #d9cdc1 dashed;
+		}
+		
+			.note-detail .article-header > div
+			{
+				display: flex;
+				min-height: 30px;
+			}
+			
+			.note-detail .article-header > div:nth-child(1)
+			{
+				width: 100%;
+				align-items: center;
+ 				flex-wrap: wrap;
+ 				margin-bottom: 5px;
+			}
+			
+			.note-detail .article-header > div:nth-child(1) > a
+			{
+				color:#b49b83;
+				max-width: 100px;
+				white-space: pre;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				margin-right: 15px;
+				text-decoration: underline;
+			}
+			
+			.note-detail .article-header > div:nth-child(1) > span
+			{
+				color: #d9cdc1;
+				font-weight: bold;
+			}
+			
+			.note-detail .article-header > div:nth-child(2)
+			{	
+				width: 100%;
+				align-items: center;
+				flex-wrap: wrap;
+				font-size: 25px;
+				font-weight: bold;
+				border-bottom: 2px #b49b83 solid;
+				margin-bottom: 10px;
+			}
+			
+			.note-detail .article-header > div:nth-child(3)
+			{
+				box-sizing: border-box;
+				max-width: 60px;
+				width: 60px;
+				max-height: 60px;
+				height: 60px;
+				margin-right: 15px;
+				border-radius: 30px;
+				border: 1px #d9cdc1 solid;
+				overflow: hidden;
+			}
+			
+				.note-detail .article-header > div:nth-child(3) img
+				{
+					width: 60px;
+					height: 60px;
+				}
+			
+			.note-detail .article-header > div:nth-child(4)
+			{
+				flex-direction: column;
+				justify-content: space-around;
+				box-sizing: border-box;
+				min-width: calc(100% - 75px);
+				height: 60px;
+			}
+			
+			.note-detail .article-header > div:nth-child(4) > span
+			{
+				font-weight: bold;
+				margin-right: auto;
+			}
+			
+			.note-detail .article-header > div:nth-child(5)
+			{
+				box-sizing: border-box;
+				min-width: 100%;
+				height: 30px;
+			}
+			
+			.note-detail .article-header > div:nth-child(5) span
+			{
+				color: #d9cdc1;
+				font-size: 14px;
+				display: flex;
+				align-items: center;
+			}
+			
+			.note-detail .article-header > div:nth-child(5) .devide-line
+			{
+				width: 1px;
+				margin: 10px  10px 8px 10px;
+				height: 12px;
+				background-color: #d9cdc1;
+			}
+			
+		.note-detail .article-main
+		{
+			margin-top: 20px;
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		.note-detail .article-main img
+		{
+			max-width: 100%;
+			margin: 10px auto;
+		}
+		
+			
+		.note-detail .article-footer
+		{
+			width: 100%;
+			background-color: #e9e9e9;
+			position: fixed;
+			bottom: 0px;
+			/* border-top: 1px#d9cdc1 solid; */ 
+		}
+		
+			.note-detail .article-footer ul
+			{
+				display: flex;
+				width: 100%;
+				height: 45px;
+				justify-content: space-between;
+				align-items: center;
+			}
+				
+				.note-detail .article-footer ul > li
+				{
+					display: flex;
+					align-items: center;
+				}
+		
+					.note-detail .article-footer ul > li a
+					{
+						display: flex;
+						align-items: center;
+						font-size: 18px;
+						line-height: 20px;
+						margin-left: 5px;
+					}
+					
+					.note-detail .article-footer ul > li a
+					{
+						margin-left: 10px;
+					}
+				
+					.note-detail .article-footer ul img
+					{
+						height: 30px;
+					}
+			
+					.note-detail .article-footer ul li:last-child
+					{
+						margin-right: 10px;
+					}
+/*------------------------------------------- note-reg -------------------------------------------*/
 
-/*-----------------------------/tag/------------------------------*/
+	.main .note-reg-form
+	{
+		min-height: inherit;
+	}
+	
+		.note-reg-form form > div
+		{
+			display: flex;
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;	
+			padding: 10px 0px;
+			border-bottom: 1px #d9cdc1 dashed;
+			
+		}
+		
+		.note-reg-form form > div:not(:nth-child(2))
+		{
+			min-height: 30px;
+		}
+		
+		
+		.note-reg-form form > div:first-child input,
+		.note-reg-form form #edit-content-viewer
+		{
+			border: none !important; 
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+			
+			.note-reg-form > form > div > input
+			{
+				height: 30px !important;
+			}
+			
+			.note-reg-form form #edit-content-viewer
+			{
+				box-sizing: border-box;
+				min-height: 300px;
+				padding: 5px;
+				resize: none;
+				overflow: hidden;
+			}
+			
+			.note-reg-form form #edit-content-viewer img
+			{
+				max-width: 100%;
+				margin: 5px 0px;
+			}
+			
+			.note-reg-form div > span:first-child
+			{
+				width: 70px;
+				font-weight: bold;
+				margin-right: 15px;
+				height: 30px;
+				line-height: 30px;
+			}
+			
+			.note-reg-form .publish-state
+			{
+				display: flex;
+				justify-content: space-between;
+			}
+			.note-reg-form .publish-state > div
+			{
+				position: relative;
+				width: 75%;
+				display: flex;
+			}
+			
+			.note-reg-form .publish-state label
+			{
+				width: 50%;
+				height: 30px;
+				display: flex;
+				position: relative;
+				line-height: 30px;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.note-reg-form .publish-state label.checked
+			{
+				background-color: #b49b83;
+				color: #fff;
+			}
+			
+			.note-reg-form .publish-state label::before 
+			{
+				height: 30px;
+				width: 100%;
+				display: block;
+				position: absolute;
+				content: '';
+				border: 1px #d9cdc1 solid;
+				box-sizing: border-box;
+				cursor: pointer;
+			}
+		.note-reg-form .tag-add-list
+		{
+			display: flex;
+			flex-direction: column;
+		}	
+			
+		.note-reg-form .tag-add-list > div:first-child
+		{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+		}
+		
+			.note-reg-form .tag-add-list > div:first-child > input[type='text']
+			{
+				width: calc(75% - 30px);
+				margin-left: auto;
+			}
+			
+				.note-reg-form .tag-add-list > div:first-child > a
+				{
+					display: inline-block;
+					height: 30px;
+					width: 30px;
+					background: url('../images/member/note/ic_add_box_black_24dp.png') no-repeat center;
+				}
+		
+		.note-reg-form .tag-add-list > div:last-child
+		{
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			padding-top: 10px;
+			
+		}
+			
+		.note-reg-form .tag-add-list > div:last-child > ul
+		{
+			width: 75%;
+			display: flex;
+			justify-content: flex-start;
+			margin-left: auto;
+			flex-wrap: wrap;
+		}
+			.note-reg-form .tag-add-list > div:last-child > ul > li 
+			{
+				margin-left: 5px;
+				margin-bottom: 5px;
+			}
+		
+			.note-reg-form .tag-add-list > div:last-child > ul > li > span
+			{
+				min-width: 20px;
+				text-align: center;
+				padding: 2px 5px;
+				display: inline-block;
+				border: none;
+				box-sizing: border-box;
+				color: #b49b83;
+				font-weight: bold;
+				text-decoration: underline;
+			}
+			
+				.note-reg-form .tag-add-list > div:last-child > ul > li > span:hover
+				{
+					cursor: pointer;
+				}
+
+		
+		
+		.note-reg-form .attached-image-list ul
+		{
+			align-self: center;
+			box-sizing: border-box;
+			width: 75%;
+			min-height: inherit;
+			border: 1px #d9cdc1 solid;
+		}
+			.attached-image-list ul li
+			{
+				width: calc(100% - 10px);
+				height: 30px;
+				padding-left: 10px;
+				line-height: 30px;
+				position: relative;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				color: #d9cdc1;
+				font-size: 15px;
+			}
+			
+				.attached-image-list ul li > div
+				{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 30px;
+					height: 30px;
+					position: absolute;
+					top: 0px;
+					right: 0px;
+				}
+				
+					.attached-image-list ul li > div > img
+					{
+						width: 20px;
+						height: 20px;
+						border: 1px #d9cdc1 solid;
+						background-color: rgba(225,225,225,0.7)
+					}
+					
+#tag-auto-complete
+{
+	box-sizing: border-box;
+	border: 1px #d9cdc1 solid;
+	width: calc(75% - 50px);
+	min-height: 50px;
+}
+
+	 #tag-auto-complete > li
+	{
+		height: 25px;
+		padding-left: 5px;
+	}
+/*-----------------------------------------/tag/------------------------------------------------------------*/
 
 .tag-list {
 	min-height: 180px;
@@ -605,8 +1233,6 @@
 					border-radius: 75px;
 					border: 1px #b49b83 solid;
 					margin: 0px auto;
-					background: url('../images/member/info/member_profile_placeholder.png') no-repeat center;
-					background-size: cover;
 					overflow: hidden;
 				}
 					.info-edit table tr td .viewer img	{
@@ -615,6 +1241,7 @@
 					}
 				
 					.info-edit table tr td .viewer+label {
+						align-self: center;
 						display: inline-block;
 						width: 50px;
 						height: 30px;
@@ -624,7 +1251,6 @@
 					}
 					
 				.info-edit table tr td:first-child label {
-					align-self: flex-start;
 					font-size: 13px;
 					font-weight: bold;
 					color: #b49b83;

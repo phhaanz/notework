@@ -3,6 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />
 
+<script>
+$(function(){
+	$("#cancel-btn").click(function(evt){
+		evt.preventDefault();
+		history.back();
+	});
+});
+</script>
+
 <header class="header note-reg-header">
 	<h1 class="title">노트 작성</h1>
 	<nav class="hor-menu note-reg-menu">

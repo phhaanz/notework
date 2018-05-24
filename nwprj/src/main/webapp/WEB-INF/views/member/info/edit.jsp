@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" value="${pageContext.request.contextPath}"/>
 <main class="main">
 	<div class="root-container">
 		<section class="info-edit">
 			<h1>회원정보 수정</h1>
-			<form method="post">
+			<form method="post" enctype="multipart/form-data">
 				<table>
 					<tr>
 						<td>
 							<div class="viewer">
-								<img>
+								<img src="${root}/resources/upload/profile/${member.id}/profile.jpg">
 							</div>
 							<label>이미지 변경</label>
 							<input class="hidden" type="file" name="profile-image">
@@ -20,7 +22,7 @@
 							<label for="id">아이디</label>
 						</td>
 						<td>
-							<input id="id" type="text" placeholder="아이디" readonly="readonly" value="${member.id}"/>
+							<input id="id" type="text" name="id" placeholder="아이디" readonly="readonly" value="${member.id}"/>
 						</td>	
 					</tr>
 					<tr>
@@ -86,7 +88,7 @@
 </main>
 <script>
 $(function(){
-	var imgBtn = $(".viewer>a");
+	var imgBtn = $(".viewer+label");
 	var fileBtn = $("input:file");
 	var viewer = $(".viewer");
 	
@@ -98,10 +100,9 @@ $(function(){
 		var reader = new FileReader();
 		
 		reader.onload = function(evt){
-			var img = $("<img />");
+			var img = $(".viewer img");
 			var src =  evt.target.result;
 			img.attr("src", src); 
-			img.appendTo(viewer);
 		};
 		
 		reader.readAsDataURL(fileBtn[0].files[0]);

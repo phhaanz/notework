@@ -7,11 +7,18 @@ public class Member {
 	private String name;
 	private String email;
 	private String introduce;
-
+	
 	public Member() {
 
 	}
 
+	public Member(String password, String name, String email, String introduce) {
+		this.password = password;
+		this.name = name;
+		this.email = email;
+		this.introduce = introduce;
+	}
+	
 	public Member(String id, String password, String name, String email, String introduce) {
 		this.id = id;
 		this.password = password;
@@ -19,7 +26,7 @@ public class Member {
 		this.email = email;
 		this.introduce = introduce;
 	}
-
+	
 	public Member(String password) {
 		this.password = password;
 	}

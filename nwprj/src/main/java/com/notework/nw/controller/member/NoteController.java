@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.notework.nw.entity.Comment;
+import com.notework.nw.entity.Image;
 import com.notework.nw.entity.Note;
 import com.notework.nw.entity.view.CommentView;
 import com.notework.nw.entity.view.NoteView;
@@ -41,7 +42,8 @@ public class NoteController {
 		List<NoteView> noteViews = service.getNoteListByWriterId(writerId, page);
 
 		model.addAttribute("noteViews", noteViews);
-
+		model.addAttribute("pageName", "MyNote List");
+		
 		return "member.note.list";
 	}
 	
@@ -49,9 +51,10 @@ public class NoteController {
 	public String detail(@PathVariable("id")Integer id, Model model) {
 		int result = service.updateNoteHit(id);
 		NoteView noteView = service.getNote(id);
+
 		model.addAttribute("noteView", noteView);
 		
-		return "member.note.detail";
+		return "member/note/detail";
 	}
 	
 	@GetMapping("{id}/comment")
@@ -64,8 +67,7 @@ public class NoteController {
 		return "member.note.comment";
 	}
 	
-	@PostMapping("{id}/comment")
-	@ResponseBody
+	@PostMapping("{id}/comment/reg")
 	public String noteComment(@PathVariable("id")Integer noteId, Comment comment, Principal principal) {
 		
 		String writerId = principal.getName();
@@ -73,32 +75,31 @@ public class NoteController {
 		comment.setNoteId(noteId);
 		int result = service.insertComment(comment);
 		
-		return "";
+		return "redirect:../comment";
 	}
 	
 	@GetMapping("{id}/clip")
 	@ResponseBody
-	public String clip(@PathVariable("id")Integer noteId, Principal principal)
-	{
+	public String clip(@PathVariable("id")Integer noteId, Principal principal) {
 		String memberId = principal.getName();
-		int result = service.insertClip(noteId, memberId);
+		service.insertClip(noteId, memberId);
+		int cnt = service.getClipCount(noteId);
+
 		
-		System.out.println(result);
-		
-		return String.valueOf(result);
+		return String.valueOf(cnt);
 	}
 	
 	
 	@GetMapping("edit")
 	public String edit(Note note) {
 		
-		return "member.note.edit";
+		return "member/note/edit";
 	}
 	
 	@GetMapping("reg")
 	public String reg() {
 
-		return "member.note.reg";
+		return "member/note/reg";
 	}
 
 	@PostMapping("reg")
@@ -107,15 +108,15 @@ public class NoteController {
 		String writerId = request.getUserPrincipal().getName();
 		note.setWriterId(writerId);
 
-		int result = service.insertNote(note, tags);
+		int noteId = service.insertNote(note, tags);
 		
 		if(!(files.length == 0))
 		{
 			try {
 				ServletContext ctx = request.getServletContext();
-				String path = ctx.getRealPath("/resources/upload/");
+				String path = ctx.getRealPath("/resources/upload/note/");
 				
-				File f = new File(path+writerId);
+				File f = new File(path+noteId);
 				
 				if(!f.exists())
 					f.mkdirs();
@@ -123,9 +124,9 @@ public class NoteController {
 				for(int i=0; i< files.length; i++)
 				{
 					InputStream is = files[i].getInputStream();
-					String fname = files[i].getOriginalFilename();
+					String imageName = files[i].getOriginalFilename();
 					
-					FileOutputStream os = new FileOutputStream(path+writerId+File.separator+fname);
+					FileOutputStream os = new FileOutputStream(path+noteId+File.separator+imageName);
 					
 					byte[] buf = new byte[1024];
 					
@@ -133,6 +134,8 @@ public class NoteController {
 					
 					while((size=is.read(buf, 0, 1024)) != -1)
 						os.write(buf, 0, size);
+					
+					service.insertImage(new Image(noteId, imageName));
 					
 					os.close();
 					is.close();

@@ -2,21 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.servletContext.contextPath }"/>
-<main class="main">
+<main id="top" class="main">
 	<h1 class="hidden">프리셋 노트</h1>
 	<div class="root-container">
 		<section class="note-list">
 			<h1 class="hidden">프리셋 노트 목록</h1>
 			<c:if test="${empty noteList}">
 			<div class="list-empty">
-				<span>등록한 노트가 없습니다.</span>
+				<span>노트가 없습니다.</span>
 			</div>
 			</c:if>
 			<c:if test="${!empty noteList}">
 			<ul>
 				<c:forEach var="n" items="${noteList}">
 				<li>
-					<a href="${n.id}">
+					<a href="${root}/member/note/${n.id}">
 						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
 					</a>
 					<div>
@@ -27,7 +27,7 @@
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
 						<span>${n.commentCnt}</span>
 					</div>
-				<div><a href="${n.id}">${n.title}</a></div>
+				<div><a href="${root}/member/note/${n.id}">${n.title}</a></div>
 				<div>
 					<c:if test="${empty n.tagList}">
 					<span>(태그 없음)</span>
@@ -48,3 +48,7 @@
 		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 	</div>
 </main>
+<section class="reg-button preset-reg-button">
+	<h1 class="hidden">프리셋 노트 등록</h1>
+	<a href="${root}/member/note/reg">노트 등록</a>
+</section>

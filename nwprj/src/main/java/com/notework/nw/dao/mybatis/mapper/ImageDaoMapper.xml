@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.notework.nw.dao.ImageDao">
+	<insert id="insert" parameterType="com.notework.nw.entity.Image">
+		insert into Image(noteId, imageName) values(#{noteId}, #{imageName})
+	</insert>
+	
+	<select id="getList" resultType="com.notework.nw.entity.Image">
+		select imageName from Image where noteId=#{noteId}
+	</select>
+
+</mapper>

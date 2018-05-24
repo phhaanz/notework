@@ -11,6 +11,8 @@ public class NoteView extends Note {
 	private List<Tag> tagList;
 	
 	private String writerName;
+	private String writerProfileImage;
+	private String thumb;
 	private int commentCnt;
 	private int clipCnt;
 	
@@ -30,6 +32,18 @@ public class NoteView extends Note {
 	public void setWriterName(String writerName) {
 		this.writerName = writerName;
 	}
+	public String getWriterProfileImage() {
+		return writerProfileImage;
+	}
+	public void setWriterProfileImage(String writerProfileImage) {
+		this.writerProfileImage = writerProfileImage;
+	}
+	public String getThumb() {
+		return thumb;
+	}
+	public void setThumb(String thumb) {
+		this.thumb = thumb;
+	}
 	public List<Tag> getTagList() {
 		return tagList;
 	}
@@ -48,4 +62,5 @@ public class NoteView extends Note {
 	public void setClipCnt(int clipCnt) {
 		this.clipCnt = clipCnt;
 	}
+	
 }

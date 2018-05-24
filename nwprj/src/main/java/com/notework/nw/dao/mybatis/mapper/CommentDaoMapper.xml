@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.notework.nw.dao.CommentDao">
 	<select id="getList" resultType="com.notework.nw.entity.view.CommentView">
-		select id, noteId, writerId, writerName, content, regDate from CommentView where noteId=#{noteId} 
+		select id, noteId, writerId, writerName, content, regDate from CommentView where noteId=#{noteId} order by regDate desc
 	</select>	
 	
 	<insert id="insert" parameterType="com.notework.nw.entity.Comment">

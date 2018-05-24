@@ -78,18 +78,20 @@ public class SearchService {
 	public int insertPreset(Preset preset) {
 		
 		String[] tags = preset.getLinkAddress().split("#");
+
 		String newTags = "";
 		//중복 쳐내기
-		for(int i=0; i<tags.length-1; i++) {
-			 if(i==0 || tags[i]==null || tags[i].equals(""))
+		for(int i=0; i<tags.length; i++) {
+			 if(tags[i]==null || tags[i].equals(""))
 				continue;
-			 else
-				 newTags += ("%23"+tags[i]);
+			 else {
+				newTags += ("#"+tags[i]);
 			 
-			for(int j=i+1; j<tags.length; j++) {
-				if(tags[i].equals(tags[j]))
-					tags[j] = null;
-			}
+				for(int j=i+1; j<tags.length; j++) {
+					if(tags[i].equals(tags[j]))
+						tags[j] = null;
+				}
+			 }
 		}
 		//중복 쳐낸 새로운 태그 삽입
 		preset.setLinkAddress(newTags);

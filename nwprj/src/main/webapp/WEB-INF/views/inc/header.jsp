@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="root" value="${pageContext.request.contextPath}" />
+
 
 <header class="header common-header">
 	<h1 class="title">메인</h1>
@@ -14,9 +16,12 @@
 				</span>
 			</li>
 			<li>
-				<a href="${root}/member/index">
-					<img src="${root}/resources/images/ic_account_circle_24dp_2x.png" alt="회원 메뉴">
-				</a>
+				<sec:authorize access="hasRole('ROLE_MEMBER')">
+					<sec:authentication var="username" property="principal.username"/>
+					<a href="${root}/member/info/${username}/edit">
+						<img src="${root}/resources/images/ic_account_circle_24dp_2x.png" alt="회원 메뉴">
+					</a>
+				</sec:authorize>
 			</li>
 		</ul>
 	</nav>

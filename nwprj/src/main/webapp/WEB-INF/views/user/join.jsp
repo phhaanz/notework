@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<main class="main">
+<main class="main no-padding">
 	<h1 class="hidden">회원가입</h1>
 	<div class="root-container">
 		<section class="join-form">

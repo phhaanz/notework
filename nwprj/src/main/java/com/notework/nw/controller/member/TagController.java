@@ -31,6 +31,7 @@ public class TagController {
 		
 		model.addAttribute("tagList", tagList);
 		model.addAttribute("favTagList", favTagList);
+		model.addAttribute("pageName", "MyTag List");
 
 		return "member.tag.index";
 	}
@@ -47,6 +48,7 @@ public class TagController {
 			tagList = service.getTagListById(memberId, id);
 		
 		model.addAttribute("tagList", tagList);
+		model.addAttribute("pageName", "tag : #"+id);
 		
 		return "member.tag.list";
 	}

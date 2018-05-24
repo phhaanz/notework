@@ -36,4 +36,13 @@ public class MyBatisMemberDao implements MemberDao {
 		return 0;
 	}
 
+	@Override
+	public int update(Member member) {
+		MemberDao memberDao = sqlsession.getMapper(MemberDao.class);
+		
+		int result = memberDao.update(member);
+		
+		return result;
+	}
+
 }

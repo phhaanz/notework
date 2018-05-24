@@ -12,4 +12,6 @@ public interface ClipDao {
 
 	int delete(@Param("noteId")Integer noteId, @Param("memberId")String memberId);
 
+	int getCount(Integer noteId);
+
 }

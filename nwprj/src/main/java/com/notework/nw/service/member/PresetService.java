@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.notework.nw.dao.NoteDao;
 import com.notework.nw.dao.PresetDao;
 import com.notework.nw.dao.TagDao;
+import com.notework.nw.entity.Preset;
 import com.notework.nw.entity.Tag;
 import com.notework.nw.entity.view.NoteView;
 import com.notework.nw.entity.view.PresetView;
@@ -37,7 +38,7 @@ public class PresetService {
 
 		return result;
 	}
-
+	
 	@Transactional
 	public List<NoteView> getPresetNoteList(Integer id) {
 		
@@ -45,18 +46,20 @@ public class PresetService {
 		String[] tagArray = preset.getLinkAddress().split("#");
 		Map<String, Object> tagMap = new HashMap<String, Object>();
 
+		String tags;
+		
 		for(int i=0; i< 5; i++) {
-			String tags = null;
 			
 			if(i < (tagArray.length-1))
 				tags = tagArray[i+1];
+			else
+				tags = null;
 			
 			tagMap.put("tag"+String.valueOf(i+1), tags);
 		}
 		
 		tagMap.put("writerId", preset.getMemberId());
 		tagMap.put("size", tagArray.length - 1);
-		
 		List<NoteView> noteList = noteDao.getListByTags(tagMap);
 		
 		for(NoteView n : noteList)
@@ -66,5 +69,12 @@ public class PresetService {
 		}
 		
 		return noteList;
+	}
+
+	@Transactional
+	public Preset getPreset(Integer id) {
+		Preset preset = presetDao.get(id);
+		
+		return preset;
 	}
 }

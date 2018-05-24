@@ -3,13 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />    
 
-<main class="main">
+<main class="main no-padding">
 	<div class="root-container">
 		<section class="login-form">
 			<h1 class="hidden">로그인 폼</h1>
 			<form method="post">
 				<div>
-						아이디 또는 비밀번호가 잘못되었습니다.
+				<c:if test="${param.error eq 1}">
+					아이디 또는 비밀번호가 잘못되었습니다.
+				</c:if>
+				<c:if test="${param.error ne 1}">
+					<span style="color: black">Stich the Notes, Notework</span>
+				</c:if>
 				</div>
 				<ul>
 					<li><input type="text" name="username"placeholder="아이디 입력..." /></li>

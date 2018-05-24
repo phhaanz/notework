@@ -2,6 +2,9 @@ package com.notework.nw.service.member;
 
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,9 +13,11 @@ import com.notework.nw.dao.ClipDao;
 import com.notework.nw.dao.NoteDao;
 import com.notework.nw.dao.TagDao;
 import com.notework.nw.dao.CommentDao;
+import com.notework.nw.dao.ImageDao;
 import com.notework.nw.dao.NoteTagDao;
 import com.notework.nw.entity.Clip;
 import com.notework.nw.entity.Comment;
+import com.notework.nw.entity.Image;
 import com.notework.nw.entity.Note;
 import com.notework.nw.entity.Tag;
 import com.notework.nw.entity.NoteTag;
@@ -24,6 +29,9 @@ public class NoteService {
 	
 	@Autowired
 	private NoteDao noteDao;
+	
+	@Autowired
+	private ImageDao imageDao;
 	
 	@Autowired
 	private TagDao tagDao;
@@ -54,6 +62,20 @@ public class NoteService {
 	@Transactional
 	public NoteView getNote(Integer id) {
 		NoteView noteView = noteDao.get(id);
+		List<Image> images = imageDao.getList(id);
+		
+		String path = "/nwprj/resources/upload/note/"+String.valueOf(noteView.getId())+"/";
+		
+		Document doc = Jsoup.parse(noteView.getContent());
+		Elements img = doc.select("img");
+		
+		for(int i=0; i<images.size(); i++) {
+			img.eq(i).attr("src", path+images.get(i).getImageName());
+			
+			System.out.println(img.eq(i).toString());
+		}
+		
+		noteView.setContent(doc.toString());
 		
 		List<Tag> tagList = tagDao.getListByNoteId(id); 
 			
@@ -81,7 +103,7 @@ public class NoteService {
 			int result = tagNoteDao.insert(noteTag);
 		}
 	
-		return 0;
+		return noteId;
 	}
 
 	@Transactional
@@ -102,8 +124,9 @@ public class NoteService {
 			clip = new Clip(noteId, memberId);
 			result = clipDao.insert(clip);
 		}
-		else
+		else {
 			clipDao.delete(noteId, memberId);
+		}
 		
 		return result;
 	}
@@ -124,12 +147,22 @@ public class NoteService {
 		return result;
 	}
 
+
 	@Transactional
-	public List<NoteView> getNoteListByClip(String memberId) {
+	public int getClipCount(Integer noteId) {
+
+		int cnt = clipDao.getCount(noteId);
 		
-		List<NoteView> noteViews  = noteDao.getListByClip(memberId);
+		return cnt;
+	}
+
+	@Transactional
+	public int insertImage(Image image) {
 		
-		return noteViews;
+		
+		int result = imageDao.insert(image);
+		
+		return result;
 	}
 	
 }

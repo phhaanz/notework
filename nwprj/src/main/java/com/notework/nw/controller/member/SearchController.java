@@ -27,7 +27,9 @@ public class SearchController {
 	private SearchService service;
 	
 	@GetMapping("index")
-	public String index() {
+	public String index(Model model) {
+		model.addAttribute("pageName", "Note Search");
+		
 		return "member.search.index";
 	}
 	
@@ -37,12 +39,12 @@ public class SearchController {
 		String writerId = principal.getName();
 		List<NoteView> noteList = service.getNoteListByTitle(title, writerId);
 		model.addAttribute("noteList", noteList);
-		
+		model.addAttribute("pageName", "title : "+title);
 		return "member.search.list-by-title";
 	}
 	
 	@GetMapping("list-by-tags")
-	public String listByTags(@RequestParam("tags") String tags, Principal principal, Model model) {
+	public String listByTags(@RequestParam(value="tags", defaultValue="") String tags, Principal principal, Model model) {
 		
 		String writerId = principal.getName();
 		List<NoteView> noteList = service.getNoteListByTags(tags, writerId);
@@ -50,12 +52,12 @@ public class SearchController {
 		tags.replace("%23", "#");
 		model.addAttribute("noteList", noteList);
 		model.addAttribute("tags", tags);
+		model.addAttribute("pageName", "tags : "+tags);
 		
 		return "member.search.list-by-tags";
 	}
 	
 	@PostMapping("list-by-tags/reg")
-	@ResponseBody
 	public String regPreset(String tags, Preset preset , Principal principal, HttpServletRequest request) {
 		
 		preset.setLinkAddress(tags);
@@ -63,11 +65,6 @@ public class SearchController {
 		
 		int result = service.insertPreset(preset);
 		
-		String message = "등록에 실패하였습니다.";
-		
-		if(result!=0)
-			message = "성공적으로 등록되었습니다.";
-		
-		return message;
+		return "redirect:../index";
 	}
 }

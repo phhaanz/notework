@@ -7,6 +7,12 @@
 	<div class="root-container">
 		<section class="tag-preset-list">
 			<h1 class="hidden">태그 프리셋 목록</h1>
+			<c:if test="${empty presetList}">
+			<div class="list-empty">
+				<span>등록한 프리셋이 없습니다.</span>
+			</div>
+			</c:if>
+			<c:if test="${!empty presetList}">
 			<ul>
 				<c:forEach var="p" items="${presetList}">
 				<li>
@@ -21,6 +27,7 @@
 				</li>
 				</c:forEach>
 			</ul>
+			</c:if>
 		</section>
 	</div>
 </main>

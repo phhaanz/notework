@@ -23,6 +23,7 @@ public class NoteController {
 	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model) {
 		List<Note> notes = service.getNoteList(page);
 		model.addAttribute("notes", notes);
+		model.addAttribute("pageName", "MyNote List");
 
 		return "note.list";
 	}

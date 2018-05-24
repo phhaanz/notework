@@ -40,7 +40,14 @@ public class MyBatisClipDao implements ClipDao {
 		System.out.println(memberId);
 		int result = clipDao.delete(noteId, memberId);
 		
-		System.out.println(result);
+		return result;
+	}
+
+	@Override
+	public int getCount(Integer noteId) {
+		ClipDao clipDao = sqlSession.getMapper(ClipDao.class);
+		
+		int result = clipDao.getCount(noteId);
 		
 		return result;
 	}

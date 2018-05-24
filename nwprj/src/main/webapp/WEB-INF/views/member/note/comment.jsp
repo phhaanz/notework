@@ -7,7 +7,7 @@
 <main class="main">
 	<section class="comment-input">
 		<h1>댓글 작성</h1>
-		<form method="post">
+		<form action="./comment/reg" method="post">
 			<label class="hidden">댓글 내용</label>
 			<textarea name="content"></textarea>
 			<input type="submit" value="등록">
@@ -20,7 +20,7 @@
 			<li>
 				<table>
 					<tr class="profile-image">
-						<td rowspan="2"><img src="${root}/resources/images/dummy/profile.jpeg"></td>
+						<td rowspan="2"><img src="${root}/resources/upload/profile/${noteView.writerId}/profile.jpg"></td>
 					</tr>
 					<tr>
 						<td>

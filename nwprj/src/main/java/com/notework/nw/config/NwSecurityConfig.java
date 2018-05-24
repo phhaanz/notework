@@ -39,6 +39,7 @@ public class NwSecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin()
 					.loginPage("/user/login")
 					.loginProcessingUrl("/user/login")
+					.failureForwardUrl("/user/login?error=1")
 					.successHandler(successHandler)
 					.permitAll()
 					.and()

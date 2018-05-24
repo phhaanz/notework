@@ -2,9 +2,21 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
-
-<section class="visual">
-	<span class="currentPath">currentPage</span>
+<section class="modal-window hidden">
+	<h1 class="hidden">프리셋 등록 폼</h1>
+	<div class="message-box">
+		<form action="list-by-tags/reg" method="post">
+			<div>
+				<label>등록할 프리셋 이름을 정해 주십시오.</label>
+				<input type="text" name="name" placeholder="프리셋 이름" required/>
+				<input type="hidden" name="tags" value="${tags}" />
+			</div>	
+			<div>	
+				<input type="button" value="취소" />
+				<input type="submit" value="등록" />
+			</div>
+		</form>
+	</div>
 </section>
 <main id="top" class="main padding-top-45">
 	<div class="root-container">
@@ -55,27 +67,23 @@
 	<h1 class="hidden">프리셋 등록 버튼</h1>
 	<a href="">프리셋 등록</a>
 </section>
-<section class="modal-window">
-	<h1 class="hidden">프리셋 등록 폼</h1>
-	<form action="list-by-tags/reg" method="post">
-		<div>
-			<label>등록할 이름을 선택해 주십시오.</label>
-			<input type="text" name="name" />
-			<input type="hidden" name="tags" value="${tags}" />
-		</div>	
-		<div>	
-			<input type="button" value="취소" />
-			<input type="submit" value="등록" />
-		</div>
-	</form>
-</section>
 <script>
 $(function(){
-	var modal = $(".modal-window");
-	var form = $(".modal-window form");
-	var submitBtn = $(".modal-window form input[value='등록']");
-	var cancelBtn = $(".modal-window form input[value='취소']");
+	var regBtn = $(".preset-reg-button");
+	
+	regBtn.click(function(evt){
+		evt.preventDefault();
+		
+		var modal = $(".modal-window");
+		var submitBtn = modal.find("input[value='등록']");
+		var cancelBtn = modal.find("input[value='취소']");
+	
+		modal.removeClass("hidden");
+		
+		cancelBtn.click(function(){	
+			modal.addClass("hidden");
+		});
+	});
 
 });
-
 </script>

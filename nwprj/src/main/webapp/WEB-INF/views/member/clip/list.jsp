@@ -3,16 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 
-<section class="visual">
-	<span class="currentPath">currentPage</span>
-</section>
 <main id="top" class="main padding-top-45">
 	<div class="root-container">
 		<section class="note-list">
 			<h1 class="hidden">검색 목록</h1>
 			<c:if test="${empty noteList}">
 			<div class="list-empty">
-				<span>검색된 노트가 없습니다.</span>
+				<span>클립한 노트가 없습니다.</span>
 			</div>
 			</c:if>
 			<c:if test="${!empty noteList}">

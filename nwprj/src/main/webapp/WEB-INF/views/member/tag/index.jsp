@@ -7,7 +7,7 @@
 	<div class="root-container">
 		<section class="tag-none">
 			<h1>
-				<a href="${root}/search/list-by-tags">태그 없음<span>(갯수)</span></a>
+				<a href="${root}/member/search/list-by-tags">태그 없음<span>(갯수)</span></a>
 			 </h1>
 		</section>
 		<section class="tag-list tag-favorite">

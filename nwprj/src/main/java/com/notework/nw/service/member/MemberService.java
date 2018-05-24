@@ -1,6 +1,8 @@
 package com.notework.nw.service.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,5 +21,18 @@ public class MemberService {
 		Member member = memberDao.get(id);
 
 		return member;
+	}
+
+	@Transactional
+	public int updateMember(Member member) {
+		
+		PasswordEncoder encoder = new BCryptPasswordEncoder();
+		String password = member.getPassword();
+		String hashedPassword = encoder.encode(password);
+		member.setPassword(hashedPassword);
+		
+		int result = memberDao.update(member);
+		
+		return result;
 	}
 }

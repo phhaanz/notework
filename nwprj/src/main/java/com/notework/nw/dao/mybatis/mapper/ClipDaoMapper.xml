@@ -5,7 +5,12 @@
 <mapper namespace="com.notework.nw.dao.ClipDao">
 	<select id="get" resultType="com.notework.nw.entity.Clip">
 		select noteId, memberId from Clip where noteId=#{noteId} and memberId=#{memberId}
-	</select>	
+	</select>
+	
+	<select id="getCount" parameterType="Integer" resultType="Integer">
+		select count(memberId) as cnt from Clip where noteId=#{noteId} 
+	</select>
+	
 	<insert id="insert" parameterType="com.notework.nw.entity.Clip">
 		insert into Clip(noteId, memberId) values(#{noteId}, #{memberId})
 	</insert>

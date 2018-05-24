@@ -33,7 +33,7 @@ public class NwLoginSuccessHandler implements AuthenticationSuccessHandler {
 			redirectStrategy.sendRedirect(request, response, returnUrl);
 		}
 		else {
-			redirectStrategy.sendRedirect(request, response, "/member/index");
+			redirectStrategy.sendRedirect(request, response, "/member/note/list");
 		}
 	}
 	

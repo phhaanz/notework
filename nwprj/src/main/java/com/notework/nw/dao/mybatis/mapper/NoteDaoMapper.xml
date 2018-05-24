@@ -15,6 +15,9 @@
 	<select id="getListByTags" parameterType="Map" resultType="com.notework.nw.entity.view.NoteView">
 		select id, title, writerId, writerName, hit, regDate, commentCnt, clipCnt from
 		<choose>
+			<when test="size == 0">
+				NoteSearchT0View
+			</when>
 			<when test="size == 1">
 				NoteSearchT1View
 			</when>
@@ -39,8 +42,8 @@
 		<if test="tag5 != null"> and t5=#{tag5}</if> 
 	</select>
 	
-	<select id="getListByClip">
-		select id, title, writerId, writerName, content, hit, regDate, commentCnt, clipCnt from NoteView where 	
+	<select id="getListByClip" parameterType="String" resultType="com.notework.nw.entity.view.NoteView">
+		select id, title, writerId, writerName, content, hit, regDate, commentCnt, clipCnt from NoteView where writerId=#{memberId} 	
 	</select>
 
 	<select id="get" resultType="com.notework.nw.entity.view.NoteView">

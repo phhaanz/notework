@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <c:set var="root" value="${pageContext.request.contextPath}" />
 <script>
 $(function() {
@@ -25,6 +26,31 @@ $(function() {
 });
 </script>
 
+<sec:authorize access="!isAuthenticated()">
+<nav class="aside">
+	<h1 class="hidden">사이드 바</h1>
+	<div>
+	<a href="">
+		<img src="${root}/resources/images/ic_clear_24dp_2x.png">
+	</a>
+	</div>
+	<ul>
+		<li>
+			<a href="${root}/index">
+				<img src="${root}/resources/images/ic_home_black_24dp.png">
+				<span>HOME</span>
+			</a>
+		</li>
+		<li>
+			<a href="${root}/user/login">
+				<img src="${root}/resources/images/baseline_power_settings_new_black.png">
+				<span>LogIn</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+</sec:authorize>
+<sec:authorize access="isAuthenticated()">
 <nav class="aside">
 	<h1 class="hidden">사이드 바</h1>
 	<div>
@@ -58,7 +84,7 @@ $(function() {
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="${root}/member/clip/list">
 				<img src="${root}/resources/images/ic_star_black_24dp.png">
 				<span>My Clip</span>
 			</a>
@@ -70,9 +96,13 @@ $(function() {
 			</a>
 		</li>
 		<li>
-			<a href="${root}/user/logout">임시 로그아웃버튼</a>
+			<a href="${root}/user/logout">
+				<img src="${root}/resources/images/baseline_input_black.png">
+				<span>LogOut</span>
+			</a>
 		</li>
 	</ul>
 </nav>
+</sec:authorize>
 <div class="aside-bg">
 </div>

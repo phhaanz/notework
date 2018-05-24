@@ -3,9 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
 
-<section class="visual">
-	<span class="currentPath">currentPage</span>
-</section>
 <main id="top" class="main padding-top-45">
 	<div class="root-container">
 		<section class="note-list">
@@ -51,3 +48,7 @@
 		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 	</div>
 </main>
+<section class="reg-button preset-reg-button">
+	<h1 class="hidden">프리셋 노트 등록</h1>
+	<a href="${root}/member/note/reg">노트 등록</a>
+</section>

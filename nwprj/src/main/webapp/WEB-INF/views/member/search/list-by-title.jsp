@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
-
-<section class="visual">
-	<span class="currentPath">currentPage</span>
-</section>
 <main id="top" class="main padding-top-45">
 	<div class="root-container">
 		<section class="note-list">
