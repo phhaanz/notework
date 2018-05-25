@@ -35,17 +35,16 @@ public class SearchController {
 	
 	@GetMapping("list-by-title")
 	public String listByTitle(@RequestParam(value="title", defaultValue="") String title, Principal principal, Model model) {
-		
 		String writerId = principal.getName();
 		List<NoteView> noteList = service.getNoteListByTitle(title, writerId);
 		model.addAttribute("noteList", noteList);
 		model.addAttribute("pageName", "title : "+title);
+		
 		return "member.search.list-by-title";
 	}
 	
 	@GetMapping("list-by-tags")
-	public String listByTags(@RequestParam(value="tags", defaultValue="") String tags, Principal principal, Model model) {
-		
+	public String listByTags(@RequestParam(value="tags", defaultValue="") String tags, Principal principal, Model model) {	
 		String writerId = principal.getName();
 		List<NoteView> noteList = service.getNoteListByTags(tags, writerId);
 		
@@ -59,7 +58,6 @@ public class SearchController {
 	
 	@PostMapping("list-by-tags/reg")
 	public String regPreset(String tags, Preset preset , Principal principal, HttpServletRequest request) {
-		
 		preset.setLinkAddress(tags);
 		preset.setMemberId(principal.getName());
 		

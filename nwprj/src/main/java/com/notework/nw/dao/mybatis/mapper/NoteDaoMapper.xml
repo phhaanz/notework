@@ -43,7 +43,7 @@
 	</select>
 	
 	<select id="getListByClip" parameterType="String" resultType="com.notework.nw.entity.view.NoteView">
-		select id, title, writerId, writerName, content, hit, regDate, commentCnt, clipCnt from NoteView where writerId=#{memberId} 	
+		select id, title, writerId, writerName, content, hit, regDate, commentCnt, clipCnt from NoteClipView where memberId=#{memberId} 	
 	</select>
 
 	<select id="get" resultType="com.notework.nw.entity.view.NoteView">

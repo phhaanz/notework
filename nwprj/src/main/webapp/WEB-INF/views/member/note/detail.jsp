@@ -11,6 +11,7 @@
 		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
+		<link rel="icon" href="${root}/resources/images/icon/favicon.ico">
 		<link rel="stylesheet" href="${root}/resources/css/common.css" type="text/css">
 		<link rel="stylesheet" href="${root}/resources/css/style.css" type="text/css">
 		
@@ -59,12 +60,12 @@
 					<div class="article-footer">
 						<ul>
 							<li>
-								<a href="list"><img src="${root}/resources/images/note/ic_chevron_left_black_24dp.png"></a>
+								<a href="list"><img src="${root}/resources/images/note/baseline_keyboard_arrow_left_white.png"></a>
 							</li>
 							
 							<li>
-								<a id="note-clip-btn" href=""><img src="${root}/resources/images/note/ic_star_black_24dp.png"></a><span>${noteView.clipCnt}</span>
-								<a href="${noteView.id}/comment"><img src="${root}/resources/images/note/ic_insert_comment_black_24dp.png"></a><span>${noteView.commentCnt}</span>
+								<a id="note-clip-btn" href=""><img src="${root}/resources/images/note/baseline_grade_white.png"></a><span>${noteView.clipCnt}</span>
+								<a href="${noteView.id}/comment"><img src="${root}/resources/images/note/baseline_comment_white.png"></a><span>${noteView.commentCnt}</span>
 							</li>
 						</ul>
 					</div>
@@ -88,6 +89,21 @@
 						
 						clipNum.text(result);
 					});	
+				});
+			});
+			$(function(){
+				$("#more-button").click(function(evt){
+					var writeMenu = $("#more-button+ul");
+					var closeBtn = writeMenu.find("li:last-child a");	
+					if(writeMenu.hasClass("hidden"))
+						$("#more-button+ul").removeClass("hidden");
+					else
+						writeMenu.addClass("hidden");
+					
+					closeBtn.click(function(e){
+						e.preventDefault();
+						writeMenu.addClass("hidden");
+					});
 				});
 			});
 		</script>

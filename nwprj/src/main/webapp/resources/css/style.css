@@ -110,6 +110,64 @@
 			border: 1px solid #d9cdc1;
 			float: left;
 		}
+/*-------------------------------------------index--------------------------------- */
+.main .index {
+	width: 100%;
+	height: inherit;
+}
+
+	.main .index ul{
+		margin: 0px auto;
+		width: 90%;
+	}
+	 
+		.main .index ul > li {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 20px 0px;
+			border-bottom: 1px #d9cdc1 dashed;
+		}
+		
+		.index ul> li:last-child {
+			border-bottom: none;
+		}
+		
+			.index ul > li > article h1 {
+				box-sizing: border-box;
+				padding-left: 26px;
+				width: 100%;
+				border-bottom: 2px #b49b83 solid;
+				background: url('../images/baseline_import_contacts.png') no-repeat left center;
+			}
+			.index ul> li > article div {
+				margin: 10px 0px;
+				width: 100%;
+				height: 150px;
+				border: 1px #d9cdc1 solid;
+				background-size: cover;
+			}
+			
+			.index ul > li > artice h2 {
+				font-size: 13px; 
+				font-weight: normal;
+			}
+
+.reg-explanation {
+	background: url('../images/bg_reg_explanation.png') no-repeat center;
+}
+
+.tag-explanation {
+	background: url('../images/bg_tag_explanation.png') no-repeat center;
+}
+
+.preset-explanation {
+	background: url('../images/bg_preset_explanation.png') no-repeat center;
+}
+
+.clip-explanation {
+	background: url('../images/bg_clip_explanation.png') no-repeat center;
+}			
+
 /*------------------------------------ login ---------------------------------------------*/
 .main .root-container .login-form
 	{
@@ -195,11 +253,6 @@
 						width: 85%;
 						text-align: left;
 					}
-.hidden
-{
-	display: none;
-}
-
 /*------------------------------------------- join--------------------------------- */
 .join-form
 {
@@ -310,7 +363,7 @@
 				}
 				
 				.note-list ul li a+div {	
-					background-color: /* rgba(188, 155, 131, 0.5); */#B49B83;
+					background-color: #B49B83;
 					display: flex;
 					justify-content: flex-end;
 					height: 25px;
@@ -364,7 +417,7 @@
 						color: #d9cdc1;
 						font-size: 13px;
 					}
-					
+	
 	.top-anchor,
 	.top-anchor > a {	
 		display: flex;
@@ -379,13 +432,19 @@
 			height: 30px;
 			width: 30px;
 		}	
+.top-anchor.comment {
+	position: fixed;
+	bottom: 0px;
+}
+	
 /*------------------------------------------------ note-detail --------------------------------------------*/
 .note-detail
 	{
 		background-color:  #fff;
 		width: 100%;
 		min-height: 530px;
-		padding-bottom:45px;
+		margin-bottom:45px;
+		border-bottom: 1px #d9cdc1 dashed;
 	}
 		.note-detail .article-header
 		{
@@ -500,10 +559,8 @@
 			
 		.note-detail .article-main
 		{
-			margin-top: 20px;
+			margin: 20px auto 40px auto;
 			width: 95%;
-			margin-left: auto;
-			margin-right: auto;
 		}
 		
 		.note-detail .article-main img
@@ -516,9 +573,11 @@
 		.note-detail .article-footer
 		{
 			width: 100%;
-			background-color: #e9e9e9;
+			background-color: #d9cdc1;
 			position: fixed;
 			bottom: 0px;
+			font-weight: bold;
+			color: #fff;
 			/* border-top: 1px#d9cdc1 solid; */ 
 		}
 		
@@ -548,7 +607,7 @@
 					
 					.note-detail .article-footer ul > li a
 					{
-						margin-left: 10px;
+						margin-left: 15px;
 					}
 				
 					.note-detail .article-footer ul img

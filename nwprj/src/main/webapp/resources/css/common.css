@@ -29,6 +29,14 @@ h1
 	padding: 0px;
 }
 
+h2
+{
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+	font-size: 14px; 
+}
+
 input
 {
 	margin: 0px;
@@ -208,7 +216,34 @@ textarea
 			right: 0px;
 			top: 0px;
 		}
-
+		
+		.note-detail-menu > ul #more-button+ul	{
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 46px;
+			right: 2px;
+			font-weight: bold;
+			font-size: 14px;
+		}
+			.note-detail-menu > ul #more-button+ul li {
+				border: 1px  #d9cdc1 solid;
+				background: #fff;
+			}
+		
+			.note-detail-menu > ul #more-button+ul li,
+			.note-detail-menu > ul #more-button+ul li a {
+				height: 45px;
+				width: 100px;
+			}
+				.note-detail-menu > ul #more-button+ul li a {
+					display: inline-block;
+					text-align: center;
+					line-height: 45px;
+					color: #b49b83;
+				}
+				
+			
 /*---------------------------note-reg-header--------------------*/		
 .note-reg-header
 {

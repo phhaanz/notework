@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.notework.nw.dao.ImageDao;
 import com.notework.nw.dao.NoteDao;
 import com.notework.nw.dao.PresetDao;
 import com.notework.nw.dao.PresetTagDao;
 import com.notework.nw.dao.TagDao;
+import com.notework.nw.entity.Image;
 import com.notework.nw.entity.NoteTag;
 import com.notework.nw.entity.Preset;
 import com.notework.nw.entity.PresetTag;
@@ -23,6 +25,9 @@ public class SearchService {
 
 	@Autowired
 	private NoteDao noteDao;
+	
+	@Autowired
+	private ImageDao imageDao;
 	
 	@Autowired
 	private TagDao tagDao;
@@ -37,10 +42,14 @@ public class SearchService {
 		
 		List<NoteView> noteList = noteDao.getListByTitle(title, writerId);
 		
-		for(NoteView n : noteList)
+		for(NoteView nv : noteList)
 		{
-			List<Tag> tagList = tagDao.getListByNoteId(n.getId());
-			n.setTagList(tagList);
+			Image image = imageDao.getFirst(nv.getId());
+			if(image != null)
+				nv.setThumb(image.getImageName());
+			
+			List<Tag> tagList = tagDao.getListByNoteId(nv.getId());
+			nv.setTagList(tagList);
 		}
 		
 		return noteList;
@@ -65,10 +74,14 @@ public class SearchService {
 		
 		List<NoteView> noteList = noteDao.getListByTags(tagMap);
 		
-		for(NoteView n : noteList)
+		for(NoteView nv : noteList)
 		{
-			List<Tag> tagList = tagDao.getListByNoteId(n.getId());
-			n.setTagList(tagList);
+			Image image = imageDao.getFirst(nv.getId());
+			if(image != null)
+				nv.setThumb(image.getImageName());
+			
+			List<Tag> tagList = tagDao.getListByNoteId(nv.getId());
+			nv.setTagList(tagList);
 		}
 	
 		return noteList;
@@ -104,7 +117,6 @@ public class SearchService {
 			tagDao.insert(new Tag(t));
 			ptResult = presetTagDao.insert(new PresetTag(presetId, t));
 		}
-		
 		
 		return ptResult;
 	}

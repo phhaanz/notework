@@ -14,26 +14,33 @@
 			</c:if>
 			<c:if test="${!empty noteList}">
 			<ul>
-				<c:forEach var="n" items="${noteList}">
+				<c:forEach var="nv" items="${noteList}">
 				<li>
-					<a href="${root}/member/note/${n.id}">
-						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
+					<c:if test="${!empty nv.thumb}">
+					<a href="${nv.id}">
+						<img src="${root}/resources/upload/note/${nv.id}/${nv.thumb}" alt="미리보기">
 					</a>
+					</c:if>
+					<c:if test="${empty nv.thumb}">
+					<a href="${nv.id}">
+						<img src="${root}/resources/images/dummy/note_no_image_placeholder.png" alt="썸네일 없음">
+					</a>
+					</c:if>
 					<div>
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
-						<span>${n.hit}</span>
+						<span>${nv.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
-						<span>${n.clipCnt}</span>
+						<span>${nv.clipCnt}</span>
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
-						<span>${n.commentCnt}</span>
+						<span>${nv.commentCnt}</span>
 					</div>
-				<div><a href="${root}/member/note/${n.id}">${n.title}</a></div>
+				<div><a href="${nv.id}">${nv.title}</a></div>
 				<div>
-					<c:if test="${empty n.tagList}">
+					<c:if test="${empty nv.tagList}">
 					<span>(태그 없음)</span>
 					</c:if>
-					<c:if test="${!empty n.tagList }">
-					<c:forEach var="tag" items="${n.tagList}">
+					<c:if test="${!empty nv.tagList }">
+					<c:forEach var="tag" items="${nv.tagList}">
 						<a href="">#${tag.id}</a>
 					</c:forEach>
 					</c:if>

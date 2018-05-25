@@ -24,8 +24,8 @@ public class ClipController {
 	public String list(Principal principal, Model model)	{
 		
 		String memberId = principal.getName();
-		List<NoteView> noteViews = service.getNoteListByClip(memberId);
-		model.addAttribute("noteViews", noteViews);
+		List<NoteView> noteList = service.getNoteListByClip(memberId);
+		model.addAttribute("noteList", noteList);
 		model.addAttribute("pageName", "MyClip List");
 		
 		return "member.clip.list";

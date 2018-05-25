@@ -22,7 +22,7 @@
 					<li><input type="submit" value="로그인" />	</li>
 					<li>
 						<div>
-							<img id="remember-me" src="${root}/resources/images/note/ic_check_box_black_off_24dp.png">
+							<img id="remember-me" src="${root}/resources/images/user/baseline_check_box_off.png">
 							<span>로그인 상태 유지</span>
 						</div>
 					</li>
@@ -37,8 +37,8 @@ $(function(){
 	
 	var rememberMeBtn = $("#remember-me");
 	
-	var offSrc = "${root}/resources/images/note/ic_check_box_black_off_24dp.png";
-	var onSrc = "${root}/resources/images/note/ic_check_box_black_on_24dp.png";
+	var offSrc = "${root}/resources/images/user/baseline_check_box_off.png";
+	var onSrc = "${root}/resources/images/user/baseline_check_box_on.png";
 	
 	rememberMeBtn.click(function() {	
 		
@@ -48,7 +48,7 @@ $(function(){
 		}
 		else	{
 			rememberMeBtn.addClass("check");
-			rememberMeBtn.attr("src", "${root}/resources/images/note/ic_check_box_black_on_24dp.png");
+			rememberMeBtn.attr("src", onSrc);
 		}
 	});
 });

@@ -2,22 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="root" value="${pageContext.request.contextPath}"/>
-<section class="modal-window hidden">
-	<h1 class="hidden">프리셋 등록 폼</h1>
-	<div class="message-box">
-		<form action="list-by-tags/reg" method="post">
-			<div>
-				<label>등록할 프리셋 이름을 정해 주십시오.</label>
-				<input type="text" name="name" placeholder="프리셋 이름" required/>
-				<input type="hidden" name="tags" value="${tags}" />
-			</div>	
-			<div>	
-				<input type="button" value="취소" />
-				<input type="submit" value="등록" />
-			</div>
-		</form>
-	</div>
-</section>
 <main id="top" class="main padding-top-45">
 	<div class="root-container">
 		<section class="note-list">
@@ -29,27 +13,34 @@
 			</c:if>
 			<c:if test="${!empty noteList}">
 			<ul>
-				<c:forEach var="n" items="${noteList}">
+				<c:forEach var="nv" items="${noteList}">
 				<li>
-					<a href="${root}/member/note/${n.id}">
-						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
+					<c:if test="${!empty nv.thumb}">
+					<a href="${nv.id}">
+						<img src="${root}/resources/upload/note/${nv.id}/${nv.thumb}" alt="미리보기">
 					</a>
+					</c:if>
+					<c:if test="${empty nv.thumb}">
+					<a href="${nv.id}">
+						<img src="${root}/resources/images/dummy/note_no_image_placeholder.png" alt="썸네일 없음">
+					</a>
+					</c:if>
 					<div>
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
-						<span>${n.hit}</span>
+						<span>${nv.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
-						<span>${n.clipCnt}</span>
+						<span>${nv.clipCnt}</span>
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
-						<span>${n.commentCnt}</span>
+						<span>${nv.commentCnt}</span>
 					</div>
-				<div><a href="${root}/member/note/${n.id}">${n.title}</a></div>
+				<div><a href="${nv.id}">${nv.title}</a></div>
 				<div>
-					<c:if test="${empty n.tagList}">
+					<c:if test="${empty nv.tagList}">
 					<span>(태그 없음)</span>
 					</c:if>
-					<c:if test="${!empty n.tagList }">
-					<c:forEach var="tag" items="${n.tagList}">
-						<a href="${root}/member/search/list-by-tags?tags=%23${tag.id}">#${tag.id}</a>
+					<c:if test="${!empty nv.tagList }">
+					<c:forEach var="tag" items="${nv.tagList}">
+						<a href="">#${tag.id}</a>
 					</c:forEach>
 					</c:if>
 				</div>
@@ -63,10 +54,12 @@
 		<a href="#top"><img src="${root}/resources/images/ic_keyboard_capslock_white_24dp.png" alt="최상위로"></a>
 	</div>
 </main>
+<c:if test="${!empty noteList}">
 <section class="reg-button preset-reg-button">
 	<h1 class="hidden">프리셋 등록 버튼</h1>
 	<a href="">프리셋 등록</a>
 </section>
+</c:if>
 <script>
 $(function(){
 	var regBtn = $(".preset-reg-button");

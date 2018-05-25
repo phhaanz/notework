@@ -39,9 +39,9 @@ public class NoteController {
 	public String list(@RequestParam(value="p", defaultValue="1")Integer page, Model model, HttpServletRequest request) {
 		
 		String writerId = request.getUserPrincipal().getName();
-		List<NoteView> noteViews = service.getNoteListByWriterId(writerId, page);
+		List<NoteView> noteList = service.getNoteListByWriterId(writerId, page);
 
-		model.addAttribute("noteViews", noteViews);
+		model.addAttribute("noteList", noteList);
 		model.addAttribute("pageName", "MyNote List");
 		
 		return "member.note.list";
@@ -63,8 +63,9 @@ public class NoteController {
 		List<CommentView> commentList = service.getCommentList(noteId);
 		
 		model.addAttribute("commentList", commentList);
+		model.addAttribute("noteId", noteId);
 		
-		return "member.note.comment";
+		return "member/note/comment";
 	}
 	
 	@PostMapping("{id}/comment/reg")
@@ -73,8 +74,15 @@ public class NoteController {
 		String writerId = principal.getName();
 		comment.setWriterId(writerId);
 		comment.setNoteId(noteId);
-		int result = service.insertComment(comment);
+		System.out.println(comment.getId());
+		System.out.println(comment.getNoteId());
+		System.out.println(comment.getWriterId());
+		System.out.println(comment.getRegDate());
+		System.out.println(comment.getContent());
 		
+		
+		int result = service.insertComment(comment);
+
 		return "redirect:../comment";
 	}
 	
@@ -90,8 +98,10 @@ public class NoteController {
 	}
 	
 	
-	@GetMapping("edit")
-	public String edit(Note note) {
+	@GetMapping("{id}/edit")
+	public String edit(@PathVariable("id")Integer noteId, Model model) {
+		NoteView noteView = service.getNote(noteId);
+		model.addAttribute("noteView", noteView);
 		
 		return "member/note/edit";
 	}

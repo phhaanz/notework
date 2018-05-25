@@ -42,8 +42,14 @@ $(function() {
 			</a>
 		</li>
 		<li>
+			<a href="${root}/user/join">
+				<img src="${root}/resources/images/baseline_member_join.png">
+				<span>JoinMember</span>
+			</a>
+		</li>
+		<li>
 			<a href="${root}/user/login">
-				<img src="${root}/resources/images/baseline_power_settings_new_black.png">
+				<img src="${root}/resources/images/baseline_power_settings_color.png">
 				<span>LogIn</span>
 			</a>
 		</li>
@@ -97,7 +103,7 @@ $(function() {
 		</li>
 		<li>
 			<a href="${root}/user/logout">
-				<img src="${root}/resources/images/baseline_input_black.png">
+				<img src="${root}/resources/images/baseline_exit_to_app_color.png">
 				<span>LogOut</span>
 			</a>
 		</li>

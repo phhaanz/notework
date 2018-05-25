@@ -16,12 +16,20 @@ public class MyBatisImageDao implements ImageDao {
 	private SqlSession sqlsession;
 	
 	@Override
+	public Image getFirst(int noteId) {
+		ImageDao imageDao = sqlsession.getMapper(ImageDao.class);
+		Image result  = imageDao.getFirst(noteId);
+
+		return result;
+	}
+	
+	@Override
 	public List<Image> getList(int noteId) {
 
 		ImageDao imageDao = sqlsession.getMapper(ImageDao.class);
-		List<Image> list = imageDao.getList(noteId);
+		List<Image> result = imageDao.getList(noteId);
 		
-		return list;
+		return result;
 	}
 
 	@Override

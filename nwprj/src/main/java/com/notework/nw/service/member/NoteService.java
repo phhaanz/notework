@@ -47,16 +47,20 @@ public class NoteService {
 	
 	@Transactional
 	public List<NoteView> getNoteListByWriterId(String writerId, Integer page) {
-		List<NoteView> noteViews = noteDao.getListByWriterId(writerId);
 		
-		for(NoteView nv : noteViews)
+		List<NoteView> noteList = noteDao.getListByWriterId(writerId);
+		
+		for(NoteView nv : noteList)
 		{
+			Image image = imageDao.getFirst(nv.getId());
+			if(image != null)
+				nv.setThumb(image.getImageName());
+			
 			List<Tag> tags = tagDao.getListByNoteId(nv.getId()); 
-
 			nv.setTagList(tags);
 		}
 		
-		return noteViews;
+		return noteList;
 	}
 	
 	@Transactional
@@ -71,8 +75,6 @@ public class NoteService {
 		
 		for(int i=0; i<images.size(); i++) {
 			img.eq(i).attr("src", path+images.get(i).getImageName());
-			
-			System.out.println(img.eq(i).toString());
 		}
 		
 		noteView.setContent(doc.toString());

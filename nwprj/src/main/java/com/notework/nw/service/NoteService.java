@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.notework.nw.dao.NoteDao;
 import com.notework.nw.entity.Note;
 
-@Service
+@Service("noteService")
 public class NoteService {
 	
 	@Autowired

@@ -7,33 +7,40 @@
 	<div class="root-container">
 		<section class="note-list">
 			<h1 class="hidden">노트 목록</h1>
-			<c:if test="${empty noteViews}">
+			<c:if test="${empty noteList}">
 			<div class="list-empty">
 				<span>등록한 노트가 없습니다.</span>
 			</div>
 			</c:if>
-			<c:if test="${!empty noteViews}">
+			<c:if test="${!empty noteList}">
 			<ul>
-				<c:forEach var="n" items="${noteViews}">
+				<c:forEach var="nv" items="${noteList}">
 				<li>
-					<a href="${n.id}">
-						<img src="${root}/resources/images/dummy/test-image.jpg" alt="미리보기">
+					<c:if test="${!empty nv.thumb}">
+					<a href="${nv.id}">
+						<img src="${root}/resources/upload/note/${nv.id}/${nv.thumb}" alt="미리보기">
 					</a>
+					</c:if>
+					<c:if test="${empty nv.thumb}">
+					<a href="${nv.id}">
+						<img src="${root}/resources/images/dummy/note_no_image_placeholder.png" alt="썸네일 없음">
+					</a>
+					</c:if>
 					<div>
 						<img src="${root}/resources/images/note/ic_visibility_white_24dp.png">
-						<span>${n.hit}</span>
+						<span>${nv.hit}</span>
 						<img src="${root}/resources/images/note/ic_star_white_24dp.png">
-						<span>${n.clipCnt}</span>
+						<span>${nv.clipCnt}</span>
 						<img src="${root}/resources/images/note/ic_message_white_24dp.png">
-						<span>${n.commentCnt}</span>
+						<span>${nv.commentCnt}</span>
 					</div>
-				<div><a href="${n.id}">${n.title}</a></div>
+				<div><a href="${nv.id}">${nv.title}</a></div>
 				<div>
-					<c:if test="${empty n.tagList}">
+					<c:if test="${empty nv.tagList}">
 					<span>(태그 없음)</span>
 					</c:if>
-					<c:if test="${!empty n.tagList }">
-					<c:forEach var="tag" items="${n.tagList}">
+					<c:if test="${!empty nv.tagList }">
+					<c:forEach var="tag" items="${nv.tagList}">
 						<a href="">#${tag.id}</a>
 					</c:forEach>
 					</c:if>
@@ -49,6 +56,6 @@
 	</div>
 </main>
 <section class="reg-button preset-reg-button">
-	<h1 class="hidden">프리셋 노트 등록</h1>
+	<h1 class="hidden">노트 등록</h1>
 	<a href="${root}/member/note/reg">노트 등록</a>
 </section>

@@ -12,6 +12,7 @@
 		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
+		<link rel="icon" href="${root}/resources/images/icon/favicon.ico">
 		<link rel="stylesheet" href="${root}/resources/css/common.css" type="text/css">
 		<link rel="stylesheet" href="${root}/resources/css/style.css" type="text/css">
 		
